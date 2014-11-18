@@ -14,6 +14,11 @@
 @property (nonatomic, strong) NSString *userName;
 @property (nonatomic, strong) NSArray *reviewArray;
 @property (nonatomic, strong) NSString *reviewText;
+@property (nonatomic, strong) NSString *email;
+@property (nonatomic, strong) NSString *password;
+@property (nonatomic, strong) NSString *passwordConfirm;
+
++ (NSData*)DictSerialization;
 
 - (instancetype) init;
 

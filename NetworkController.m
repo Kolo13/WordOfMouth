@@ -7,11 +7,11 @@
 //
 
 #import "NetworkController.h"
+#import "UserViewController.h"
 
 @interface  NetworkController()
 
 @property (nonatomic, strong) NSURLSession *URLSession;
-
 
 @end
 
@@ -34,6 +34,7 @@
     NSString *urlString = @"https://immense-fjord-7475.herokuapp.com/api/users";
     NSURL *url = [[NSURL alloc] initWithString:urlString];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+  
     
     [request setURL:url];
     [request setHTTPMethod:@"POST"];
@@ -41,7 +42,7 @@
                        stringWithFormat:@"%lu", (unsigned long)[jsonObject length]]
    forHTTPHeaderField:@"Content-Length"];
     [request setHTTPBody:jsonObject];
-    
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
 
     NSURLSessionDataTask *dataTask = [self.URLSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
@@ -51,6 +52,7 @@
                     if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
         
                         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                      NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         
                         NSInteger statusCode = [httpResponse statusCode];
         
@@ -81,5 +83,10 @@
     [dataTask resume];
 }
 //test
+
+
+
+
+
 
 @end

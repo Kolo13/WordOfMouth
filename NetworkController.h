@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UserViewController.h"
 
 @interface NetworkController : NSObject
 
-
+@property (nonatomic, strong) NSDictionary *bodyDictionary;
 
 
 + (NetworkController*)sharedManager;
-
+- (NSData*)DictSerialization;
+- (void)createNewUser: (NSData *)jsonObject completionHandler:(void (^)(NSData* rawData))completionHandler;
 @end

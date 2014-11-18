@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8B2088C71A1BB3C800166DE7 /* NetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2088C61A1BB3C800166DE7 /* NetworkController.m */; };
+		8B2089081A1BCF1A00166DE7 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2089071A1BCF1A00166DE7 /* UserViewController.m */; };
 		E1F7743B1A1926A2003E0AFE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F7743A1A1926A2003E0AFE /* main.m */; };
 		E1F7743E1A1926A2003E0AFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F7743D1A1926A2003E0AFE /* AppDelegate.m */; };
 		E1F774411A1926A2003E0AFE /* GroupProject2nd.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E1F7743F1A1926A2003E0AFE /* GroupProject2nd.xcdatamodeld */; };
@@ -40,6 +41,8 @@
 /* Begin PBXFileReference section */
 		8B2088C51A1BB3C800166DE7 /* NetworkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkController.h; sourceTree = "<group>"; };
 		8B2088C61A1BB3C800166DE7 /* NetworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkController.m; sourceTree = "<group>"; };
+		8B2089061A1BCF1A00166DE7 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
+		8B2089071A1BCF1A00166DE7 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
 		E1F774351A1926A2003E0AFE /* GroupProject2nd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupProject2nd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F774391A1926A2003E0AFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1F7743A1A1926A2003E0AFE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -94,6 +97,8 @@
 		E1F7742C1A1926A2003E0AFE = {
 			isa = PBXGroup;
 			children = (
+				8B2089061A1BCF1A00166DE7 /* UserViewController.h */,
+				8B2089071A1BCF1A00166DE7 /* UserViewController.m */,
 				E1F774791A1AA294003E0AFE /* MapKit.framework */,
 				E1F7746C1A19280E003E0AFE /* VIEWS */,
 				E1F7746B1A192808003E0AFE /* MODELS */,
@@ -305,6 +310,7 @@
 				E1F774881A1AEEBA003E0AFE /* Color.m in Sources */,
 				E1F7743B1A1926A2003E0AFE /* main.m in Sources */,
 				E1F774631A1927B5003E0AFE /* MainViewController.m in Sources */,
+				8B2089081A1BCF1A00166DE7 /* UserViewController.m in Sources */,
 				E1F774781A1A894E003E0AFE /* Review.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
