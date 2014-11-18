@@ -10,7 +10,7 @@
 #import "Food.h"
 #import "FoodViewController.h"
 #import "Color.h"
-
+#import "User.h"
 @interface MainViewController ()
 
 @end
@@ -25,6 +25,10 @@
     [self.tableView setContentOffset:CGPointMake(0.0, self.tableView.tableHeaderView.frame.size.height) animated:YES];
     
     self.fakeData = @[@"pho", @"burgers", @"pasta", @"ramen", @"sashimi", @"steak"];
+  
+    [[NetworkController sharedManager]createNewUser:[User DictSerialization] completionHandler:^(NSData *rawData) {
+      NSLog(@"Completed") ;
+    }];
         
 }
 

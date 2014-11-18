@@ -18,7 +18,7 @@
 @property (nonatomic, strong) NSString *password;
 @property (nonatomic, strong) NSString *passwordConfirm;
 
-- (NSData*)DictSerialization;
++ (NSData*)DictSerialization;
 
 - (instancetype) init;
 

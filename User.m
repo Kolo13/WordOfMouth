@@ -19,7 +19,7 @@
 }
 
 
-- (NSData*)DictSerialization{
++ (NSData*)DictSerialization{
   NSMutableDictionary *profileDict = [[NSMutableDictionary alloc] init];
    [profileDict setObject:@"Tuan" forKey:@"name"];
    [profileDict setObject:@"tnahvu@gmail.com" forKey:@"email"];

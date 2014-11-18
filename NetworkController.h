@@ -16,5 +16,5 @@
 
 + (NetworkController*)sharedManager;
 - (NSData*)DictSerialization;
-
+- (void)createNewUser: (NSData *)jsonObject completionHandler:(void (^)(NSData* rawData))completionHandler;
 @end

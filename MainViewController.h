@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NetworkController.h"
+#import "User.h"
 
 @interface MainViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UISearchBarDelegate>
 
