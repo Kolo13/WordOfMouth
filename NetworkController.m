@@ -27,46 +27,58 @@
   return sharedMyManager;
 }
 
-- (void)fetchStackData:(NSString *)searchTerm completionHandler:(void (^)(NSData* rawData))completionHandler {
-  NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-  self.URLSession = [NSURLSession sessionWithConfiguration:configuration];
-  NSURL *url = [[NSURL alloc] initWithString:searchTerm];
-  NSURLSessionDataTask *dataTask = [self.URLSession dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                    
-    if (error != nil) {
-      NSLog(@"%@", [error localizedDescription]);
-    } else {
-      if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+
+- (void)createNewUser: (NSData *)jsonObject completionHandler:(void (^)(NSData* rawData))completionHandler {
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    self.URLSession = [NSURLSession sessionWithConfiguration:configuration];
+    NSString *urlString = @"https://immense-fjord-7475.herokuapp.com/api/users";
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    
+    [request setURL:url];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:[NSString
+                       stringWithFormat:@"%lu", (unsigned long)[jsonObject length]]
+   forHTTPHeaderField:@"Content-Length"];
+    [request setHTTPBody:jsonObject];
+    
+
+    NSURLSessionDataTask *dataTask = [self.URLSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
-        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                if (error != nil) {
+                    NSLog(@"%@", [error localizedDescription]);
+                } else {
+                    if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
         
-        NSInteger statusCode = [httpResponse statusCode];
+                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
         
-        if (statusCode >= 200 && statusCode <= 299) {
-          
-          [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            completionHandler(data);
-            
-          }];
-          
-        } else if (statusCode >= 400 && statusCode <= 499) {
-          
-          NSLog(@"Error! Status code is: %lu", statusCode);
-          NSLog(@"This is the clients fault");
+                        NSInteger statusCode = [httpResponse statusCode];
         
-        } else if (statusCode >= 500 && statusCode <= 599) {
+                        if (statusCode >= 200 && statusCode <= 299) {
         
-          NSLog(@"Error! Status code is: %lu", statusCode);
-          
-          NSLog(@"This is the server's fault");
-        } else {
-          NSLog(@"Error! Status code is: %lu", statusCode);
-          NSLog(@"Bad Response");
-        }
-      }
-    }
-  }];
-  [dataTask resume];
+                            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                                completionHandler(data);
+        
+                            }];
+        
+                        } else if (statusCode >= 400 && statusCode <= 499) {
+        
+                            NSLog(@"Error! Status code is: %lu", statusCode);
+                            NSLog(@"This is the clients fault");
+        
+                        } else if (statusCode >= 500 && statusCode <= 599) {
+        
+                            NSLog(@"Error! Status code is: %lu", statusCode);
+        
+                            NSLog(@"This is the server's fault");
+                        } else {
+                            NSLog(@"Error! Status code is: %lu", statusCode);
+                            NSLog(@"Bad Response");
+                        }
+                    }
+                }
+    }];
+    [dataTask resume];
 }
 //test
 
