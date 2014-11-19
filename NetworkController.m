@@ -63,23 +63,50 @@
              
                  [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                      completionHandler(YES);
-             
-             
-    }];
+             }];
         }
     }];
 }
 
 -(void)getList: (NSString *)listType completionHandler:(void(^)(NSArray* list))completionHandler {
+    NSMutableString *urlString = [[NSMutableString alloc] initWithString:self.baseURL];
+    
     if ([listType  isEqualToString: @"cat"]){
         //make call to get list of catagories
+        [urlString appendString: @"/cat/list"];
     }
     else if ([listType isEqualToString: @"rest"]) {
         //make call to get list of resteraunts
+        [urlString appendString: @"/rest/test/list"];
     }
     else {
         NSLog(@"Attempted to get a non valid list type");
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            completionHandler(@[]);
+        }];
     }
+    NSLog(urlString);
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:url];
+    [request setHTTPMethod:@"GET"];
+    
+    
+    [[NetworkController sharedManager]performRequest:request completionHandler:^(NSData *rawData) {
+        //TO-DO Store the Token contained in rawData
+        if (rawData == nil) {
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                completionHandler(@[]);
+            }];
+        } else {
+            //call json parser with RawData
+            NSLog(@"Have raw data that needs to be processed");
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                completionHandler(@[]);
+            }];
+        }
+    }];
+    
 }
 //test
 
@@ -89,7 +116,7 @@
     NSURLSessionDataTask *dataTask = [self.URLSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
         if (error != nil) {
-            NSLog(@"%@", [error localizedDescription]);
+            NSLog(@"ERROR: %@", [error localizedDescription]);
         } else {
             if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
                 
