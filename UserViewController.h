@@ -8,12 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "User.h"
+#import "NetworkController.h"
 
 @interface UserViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITextField *userName;
-@property (weak, nonatomic) IBOutlet UITextField *email;
-@property (weak, nonatomic) IBOutlet UITextField *password;
-@property (weak, nonatomic) IBOutlet UITextField *passwordConfirm;
 
+- (IBAction)buttonPressed:(id)sender;
 
 @end

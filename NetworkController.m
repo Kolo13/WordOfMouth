@@ -38,8 +38,7 @@
     
     [request setURL:url];
     [request setHTTPMethod:@"POST"];
-    [request setValue:[NSString
-                       stringWithFormat:@"%lu", (unsigned long)[jsonObject length]]
+    [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)[jsonObject length]]
    forHTTPHeaderField:@"Content-Length"];
     [request setHTTPBody:jsonObject];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -52,7 +51,7 @@
                     if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
         
                         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-                      NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                        NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         
                         NSInteger statusCode = [httpResponse statusCode];
         
