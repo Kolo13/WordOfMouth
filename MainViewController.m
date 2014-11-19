@@ -25,11 +25,27 @@
     [self.tableView setContentOffset:CGPointMake(0.0, self.tableView.tableHeaderView.frame.size.height) animated:YES];
     
     self.fakeData = @[@"pho", @"burgers", @"pasta", @"ramen", @"sashimi", @"steak"];
-  
-    [[NetworkController sharedManager]createNewUser:[User DictSerialization] completionHandler:^(NSData *rawData) {
-      NSLog(@"Completed") ;
+    [[NetworkController sharedManager]createNewUser:[User DictSerialization] completionHandler:^(bool *success) {
+        if (success) {
+             NSLog(@"Completed");
+        }
+        else if (!success) {
+             NSLog(@"Failed");
+        }
+        else {
+            NSLog(@"Now I don't have a fucking clue");
+        }
     }];
-        
+    
+    [[NetworkController sharedManager]getList:@"rest" completionHandler:^(NSArray *list) {
+        if (list != nil){
+            self.tableData = list;
+        }
+        else {
+            NSLog([NSString stringWithFormat:@"Got an array with %lu items back",(unsigned long)self.tableData.count]);
+        }
+    }];
+    
 }
 
 
