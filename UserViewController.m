@@ -78,7 +78,7 @@
       }];
       
       [signUpAlert addTextFieldWithConfigurationHandler:^(UITextField *confirmPasswordTextField) {
-        confirmPasswordTextField.placeholder = @"comfirm password";
+        confirmPasswordTextField.placeholder = @"confirm password";
         confirmPasswordTextField.secureTextEntry = true;
       }];
      
