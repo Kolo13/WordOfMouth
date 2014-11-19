@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Review.h"
 
-@interface RestaurantViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate>
+@interface RestaurantViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UISearchBarDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ReviewViewController : UIViewController
+@interface ReviewViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *foodRatingTableView;
+@property (weak, nonatomic) IBOutlet UITableView *commentTableView;
+
+
 
 @end

@@ -10,6 +10,7 @@
 #import "Restaurant.h"
 #import "RestaurantViewController.h"
 #import "Color.h"
+#import "RestaurantCell.h"
 
 @interface MainRestViewController ()
 
@@ -31,6 +32,9 @@
     Restaurant *rest5 = [[Restaurant alloc]initName:@"Pike Place Chowder" latInit:0 lonInit:0 colorInit:nil];
     
     self.restaurantArray = @[rest1, rest2, rest3, rest4, rest5];
+    
+    UINib *nib = [UINib nibWithNibName:@"RestaurantCell" bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"RESTAURANT_CELL"];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -39,15 +43,19 @@
     [self.tableView deselectRowAtIndexPath:self.tableView.indexPathForSelectedRow animated:true];
 }
 
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [self.searchBar resignFirstResponder];
+}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.restaurantArray.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RESTAURANT_CELL" forIndexPath:indexPath];
+    RestaurantCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RESTAURANT_CELL" forIndexPath:indexPath];
     Restaurant *selectedRestaurant = self.restaurantArray[indexPath.row];
-    cell.textLabel.text = selectedRestaurant.name;
+    cell.nameLabel.text = selectedRestaurant.name;
+    
     return cell;
 }
 
