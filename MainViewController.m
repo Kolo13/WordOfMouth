@@ -12,7 +12,6 @@
 #import "Color.h"
 #import "User.h"
 
-
 @interface MainViewController ()
 
 @end
@@ -24,6 +23,7 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.searchBar.delegate = self;
     
     Food *food1 = [[Food alloc]initName:@"burger" colorInit:[Color color1]];
     Food *food2 = [[Food alloc]initName:@"pho" colorInit:[Color color2]];
@@ -35,11 +35,15 @@
     
 }
 
-
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear: animated];
+//    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     [self.tableView deselectRowAtIndexPath:self.tableView.indexPathForSelectedRow animated:true];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [self.searchBar resignFirstResponder];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
