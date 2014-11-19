@@ -37,13 +37,15 @@
         }
     }];
     
-    [[NetworkController sharedManager]getList:@"rest" completionHandler:^(NSArray *list) {
+    [[NetworkController sharedManager]getList:@"genre" completionHandler:^(NSArray *list) {
+        NSLog(@"Got list back...");
         if (list != nil){
             self.tableData = list;
         }
         else {
             NSLog([NSString stringWithFormat:@"Got an array with %lu items back",(unsigned long)self.tableData.count]);
         }
+        [self.tableView reloadData];
     }];
     
 }
@@ -57,13 +59,13 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.fakeData.count;
+    return self.tableData.count;
 }
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FOOD_CELL" forIndexPath:indexPath];
-     NSString *selectedFood = self.fakeData[indexPath.row];
+     NSString *selectedFood = self.tableData[indexPath.row];
     cell.textLabel.text = selectedFood;
     cell.backgroundColor = [Color colorForSomePurpose];
      return cell;

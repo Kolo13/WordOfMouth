@@ -8,6 +8,7 @@
 
 #import "NetworkController.h"
 #import "UserViewController.h"
+#import "jsonParser.h"
 
 @interface  NetworkController()
 
@@ -71,13 +72,13 @@
 -(void)getList: (NSString *)listType completionHandler:(void(^)(NSArray* list))completionHandler {
     NSMutableString *urlString = [[NSMutableString alloc] initWithString:self.baseURL];
     
-    if ([listType  isEqualToString: @"cat"]){
+    if ([listType  isEqualToString: @"genre"]){
         //make call to get list of catagories
-        [urlString appendString: @"/cat/list"];
+        [urlString appendString: @"/genre/list"];
     }
     else if ([listType isEqualToString: @"rest"]) {
         //make call to get list of resteraunts
-        [urlString appendString: @"/rest/test/list"];
+        [urlString appendString: @"/rest/list"];
     }
     else {
         NSLog(@"Attempted to get a non valid list type");
@@ -101,8 +102,9 @@
         } else {
             //call json parser with RawData
             NSLog(@"Have raw data that needs to be processed");
+            NSArray *list = [jsonParser parseJSONIntoListArray:(rawData)];
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                completionHandler(@[]);
+                completionHandler(list);
             }];
         }
     }];

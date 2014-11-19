@@ -14,7 +14,7 @@
 + (NSArray *) parseJSONIntoListArray: (NSData *) jsonData {
     NSError* error;
     NSDictionary* dictionaryOfObjects = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&error];
-    NSArray* itemsArray = dictionaryOfObjects[@"List"];
+    NSArray* itemsArray = dictionaryOfObjects[@"list"];
     return itemsArray;
     }
 
