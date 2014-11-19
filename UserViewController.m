@@ -97,10 +97,7 @@
         self.confirmPassword = confirmPasswordTextField.text;
         
         NSData *newUserJSON = [User DictSerialization:self.login email:self.email password:self.password];
-        [[NetworkController sharedManager]createNewUser:newUserJSON completionHandler:^(NSData *rawData) {
-          
-        }];
-         
+        
          
         NSLog(@"%@", self.login);
         NSLog(@"%@", self.email);
