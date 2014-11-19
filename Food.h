@@ -7,8 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface Food : NSObject
 
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) UIColor *cellColor;
+
+- (instancetype) initName:(NSString *)name colorInit:(UIColor *)color;
 
 @end

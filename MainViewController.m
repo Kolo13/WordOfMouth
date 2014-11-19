@@ -11,6 +11,7 @@
 #import "FoodViewController.h"
 #import "Color.h"
 #import "User.h"
+
 @interface MainViewController ()
 
 @end
@@ -19,10 +20,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    [self.tableView setContentOffset:CGPointMake(0.0, self.tableView.tableHeaderView.frame.size.height) animated:YES];
+    self.searchBar.delegate = self;
+    
+    Food *food1 = [[Food alloc]initName:@"burger" colorInit:[Color color1]];
+    Food *food2 = [[Food alloc]initName:@"pho" colorInit:[Color color2]];
+    Food *food3 = [[Food alloc]initName:@"pizza" colorInit:[Color color3]];
+    Food *food4 = [[Food alloc]initName:@"sushi" colorInit:[Color color4]];
+    Food *food5 = [[Food alloc]initName:@"tacos" colorInit:[Color color5]];
+    
+    self.fakeData = @[food1, food2, food3, food4, food5];
     
     self.fakeData = @[@"pho", @"burgers", @"pasta", @"ramen", @"sashimi", @"steak"];
     [[NetworkController sharedManager]createNewUser:[User DictSerialization] completionHandler:^(bool *success) {
@@ -50,12 +59,15 @@
     
 }
 
-
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear: animated];
+//    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     [self.tableView deselectRowAtIndexPath:self.tableView.indexPathForSelectedRow animated:true];
-    [self.tableView setContentOffset:CGPointMake(0, 44)];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [self.searchBar resignFirstResponder];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -72,7 +84,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-   FoodViewController *newVC = [self.storyboard instantiateViewControllerWithIdentifier:(@"FOOD_VC")];
+    FoodViewController *newVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FOOD_VC"];
     if ([newVC isKindOfClass:[UIViewController class]]){
         [self.navigationController pushViewController:newVC animated:true];
         

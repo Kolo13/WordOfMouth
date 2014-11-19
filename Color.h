@@ -10,6 +10,10 @@
 
 @interface Color : UIColor
 
-+(UIColor *) colorForSomePurpose;
++(UIColor *) color1;
++(UIColor *) color2;
++(UIColor *) color3;
++(UIColor *) color4;
++(UIColor *) color5;
 
 @end
