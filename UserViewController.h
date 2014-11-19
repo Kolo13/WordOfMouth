@@ -10,8 +10,11 @@
 #import "User.h"
 #import "NetworkController.h"
 
-@interface UserViewController : UIViewController
+@interface UserViewController : UIViewController <UITabBarControllerDelegate>
 
-- (IBAction)buttonPressed:(id)sender;
+@property (nonatomic, strong) NSString *login;
+@property (nonatomic, strong) NSString *email;
+@property (nonatomic, strong) NSString *password;
+@property (nonatomic, strong) NSString *confirmPassword;
 
 @end
