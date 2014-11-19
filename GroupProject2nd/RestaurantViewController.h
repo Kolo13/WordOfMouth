@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Review.h"
 
-@interface RestaurantViewController : UIViewController
+@interface RestaurantViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate>
+
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSArray *foodRatingArray;
+
+
 
 @end
