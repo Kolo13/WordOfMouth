@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *foodRatingArray;
+- (IBAction)rateButtonPressed:(id)sender;
 
 
 

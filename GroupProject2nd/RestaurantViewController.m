@@ -10,6 +10,7 @@
 #import "Food.h"
 #import "Color.h"
 #import "ReviewViewController.h"
+#import "RateViewController.h"
 
 @interface RestaurantViewController ()
 
@@ -60,4 +61,11 @@
 
 
 
+- (IBAction)rateButtonPressed:(id)sender {
+    RateViewController*newVC = [self.storyboard instantiateViewControllerWithIdentifier:@"RATING_VC"];
+    if ([newVC isKindOfClass:[UIViewController class]]){
+        [self.navigationController pushViewController:newVC animated:true];
+    }
+
+}
 @end

@@ -141,8 +141,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="rateButtonPressed:" destination="xas-8N-NzE" eventType="touchUpInside" id="WNE-Qc-wnw"/>
+                                </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="51" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ouY-EN-7m5">
+                            <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="51" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ouY-EN-7m5">
                                 <rect key="frame" x="0.0" y="322.5" width="600" height="277"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -226,7 +229,7 @@
         <!--Rate View Controller-->
         <scene sceneID="8VL-Ka-U7K">
             <objects>
-                <viewController id="cYm-TW-0t0" customClass="RateViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RATING_VC" id="cYm-TW-0t0" customClass="RateViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iXd-bw-l6r"/>
                         <viewControllerLayoutGuide type="bottom" id="rEg-gD-X29"/>
@@ -453,6 +456,9 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="rateButtonPressed:" destination="fcA-2g-svn" eventType="touchUpInside" id="5YX-gO-XMy"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="restaurant" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Pt-oQ-AjP">
                                         <rect key="frame" x="23" y="4" width="205" height="21"/>

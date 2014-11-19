@@ -13,6 +13,10 @@
 @property (weak, nonatomic) IBOutlet UITableView *foodRatingTableView;
 @property (weak, nonatomic) IBOutlet UITableView *commentTableView;
 
+@property (nonatomic, strong) NSArray *foodRatingArray;
+@property (nonatomic, strong) NSArray *commentArray;
+
+- (IBAction)rateButtonPressed:(id)sender;
 
 
 @end
