@@ -33,15 +33,16 @@
 - (instancetype)init {
     if (self = [super init]) {
         self.baseURL = @"https://immense-fjord-7475.herokuapp.com";
+        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        self.URLSession = [NSURLSession sessionWithConfiguration:configuration];
     }
     
     return self;
 }
 
 
-- (void)createNewUser: (NSData *)jsonObject completionHandler:(void(^)(bool* success))completionHandler {
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    self.URLSession = [NSURLSession sessionWithConfiguration:configuration];
+- (void)createNewUser: (NSData *)jsonObject completionHandler:(void(^)(bool success))completionHandler {
+
     NSString *urlString = @"https://immense-fjord-7475.herokuapp.com/api/users";
     NSURL *url = [[NSURL alloc] initWithString:urlString];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -57,12 +58,12 @@
         //TO-DO Store the Token contained in rawData
         if (rawData == nil) {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                completionHandler(NO);
+                completionHandler(false);
             }];
         } else {
              
                  [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                     completionHandler(YES);
+                     completionHandler(true);
              }];
         }
     }];
@@ -90,11 +91,11 @@
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:url];
     [request setHTTPMethod:@"GET"];
-    
-    
+    NSLog(@"Request ready to go!");
     [[NetworkController sharedManager]performRequest:request completionHandler:^(NSData *rawData) {
         //TO-DO Store the Token contained in rawData
         if (rawData == nil) {
+            NSLog(@"Raw data was Nil");
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 completionHandler(@[]);
             }];
@@ -113,19 +114,20 @@
 
 
 - (void)performRequest:(NSMutableURLRequest *)request completionHandler:(void (^)(NSData* rawData))completionHandler {
-    
+    NSLog(@"Performing Request");
     NSURLSessionDataTask *dataTask = [self.URLSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        
+        NSLog(@"Performing Task...");
         if (error != nil) {
             NSLog(@"ERROR: %@", [error localizedDescription]);
         } else {
+            NSLog(@"Entered Else");
             if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
                 
                 NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
                 NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
                 
                 NSInteger statusCode = [httpResponse statusCode];
-                
+                NSLog(@"The status code is %l",statusCode);
                 if (statusCode >= 200 && statusCode <= 299) {
                     
                     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
