@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		8B2088C71A1BB3C800166DE7 /* NetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2088C61A1BB3C800166DE7 /* NetworkController.m */; };
 		8B2089081A1BCF1A00166DE7 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2089071A1BCF1A00166DE7 /* UserViewController.m */; };
+		E115B73C1A1C4AFA00968627 /* pho.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E115B73B1A1C4AFA00968627 /* pho.jpg */; };
+		E115B7421A1C4CC600968627 /* MainRestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E115B7411A1C4CC600968627 /* MainRestViewController.m */; };
+		E115B7451A1C4D1400968627 /* ReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E115B7441A1C4D1400968627 /* ReviewViewController.m */; };
+		E193B7F11A1C6AED002CE393 /* RestaurantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E193B7EF1A1C6AED002CE393 /* RestaurantCell.m */; };
+		E193B7F21A1C6AED002CE393 /* RestaurantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E193B7F01A1C6AED002CE393 /* RestaurantCell.xib */; };
 		E1F7743B1A1926A2003E0AFE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F7743A1A1926A2003E0AFE /* main.m */; };
 		E1F7743E1A1926A2003E0AFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F7743D1A1926A2003E0AFE /* AppDelegate.m */; };
 		E1F774411A1926A2003E0AFE /* GroupProject2nd.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E1F7743F1A1926A2003E0AFE /* GroupProject2nd.xcdatamodeld */; };
@@ -24,7 +29,6 @@
 		E1F774751A1A7F20003E0AFE /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F774741A1A7F20003E0AFE /* User.m */; };
 		E1F774781A1A894E003E0AFE /* Review.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F774771A1A894E003E0AFE /* Review.m */; };
 		E1F7747A1A1AA294003E0AFE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F774791A1AA294003E0AFE /* MapKit.framework */; };
-		E1F774851A1AECEE003E0AFE /* pho.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E1F774841A1AECEE003E0AFE /* pho.jpg */; };
 		E1F774881A1AEEBA003E0AFE /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F774871A1AEEBA003E0AFE /* Color.m */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +47,14 @@
 		8B2088C61A1BB3C800166DE7 /* NetworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkController.m; sourceTree = "<group>"; };
 		8B2089061A1BCF1A00166DE7 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
 		8B2089071A1BCF1A00166DE7 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
+		E115B73B1A1C4AFA00968627 /* pho.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pho.jpg; sourceTree = "<group>"; };
+		E115B7401A1C4CC600968627 /* MainRestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainRestViewController.h; sourceTree = "<group>"; };
+		E115B7411A1C4CC600968627 /* MainRestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainRestViewController.m; sourceTree = "<group>"; };
+		E115B7431A1C4D1400968627 /* ReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewViewController.h; sourceTree = "<group>"; };
+		E115B7441A1C4D1400968627 /* ReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewViewController.m; sourceTree = "<group>"; };
+		E193B7EE1A1C6AED002CE393 /* RestaurantCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantCell.h; sourceTree = "<group>"; };
+		E193B7EF1A1C6AED002CE393 /* RestaurantCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantCell.m; sourceTree = "<group>"; };
+		E193B7F01A1C6AED002CE393 /* RestaurantCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantCell.xib; sourceTree = "<group>"; };
 		E1F774351A1926A2003E0AFE /* GroupProject2nd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupProject2nd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F774391A1926A2003E0AFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1F7743A1A1926A2003E0AFE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -70,7 +82,6 @@
 		E1F774761A1A894E003E0AFE /* Review.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Review.h; sourceTree = "<group>"; };
 		E1F774771A1A894E003E0AFE /* Review.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Review.m; sourceTree = "<group>"; };
 		E1F774791A1AA294003E0AFE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		E1F774841A1AECEE003E0AFE /* pho.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pho.jpg; sourceTree = "<group>"; };
 		E1F774861A1AEEBA003E0AFE /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
 		E1F774871A1AEEBA003E0AFE /* Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Color.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,11 +105,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E1F7742C1A1926A2003E0AFE = {
+		E115B73D1A1C4B8E00968627 /* FOOD TAB */ = {
+			isa = PBXGroup;
+			children = (
+				E1F774611A1927B5003E0AFE /* MainViewController.h */,
+				E1F774621A1927B5003E0AFE /* MainViewController.m */,
+				E1F774641A1927E2003E0AFE /* FoodViewController.h */,
+				E1F774651A1927E2003E0AFE /* FoodViewController.m */,
+			);
+			name = "FOOD TAB";
+			sourceTree = "<group>";
+		};
+		E115B73E1A1C4B9400968627 /* RESTAURANT TAB */ = {
+			isa = PBXGroup;
+			children = (
+				E115B7401A1C4CC600968627 /* MainRestViewController.h */,
+				E115B7411A1C4CC600968627 /* MainRestViewController.m */,
+				E1F774671A1927F0003E0AFE /* RestaurantViewController.h */,
+				E1F774681A1927F0003E0AFE /* RestaurantViewController.m */,
+			);
+			name = "RESTAURANT TAB";
+			sourceTree = "<group>";
+		};
+		E115B73F1A1C4B9E00968627 /* PROFILE TAB */ = {
 			isa = PBXGroup;
 			children = (
 				8B2089061A1BCF1A00166DE7 /* UserViewController.h */,
 				8B2089071A1BCF1A00166DE7 /* UserViewController.m */,
+			);
+			name = "PROFILE TAB";
+			sourceTree = "<group>";
+		};
+		E1F7742C1A1926A2003E0AFE = {
+			isa = PBXGroup;
+			children = (
+				E115B73B1A1C4AFA00968627 /* pho.jpg */,
 				E1F774791A1AA294003E0AFE /* MapKit.framework */,
 				E1F7746C1A19280E003E0AFE /* VIEWS */,
 				E1F7746B1A192808003E0AFE /* MODELS */,
@@ -161,12 +202,11 @@
 				E1F7743D1A1926A2003E0AFE /* AppDelegate.m */,
 				8B2088C51A1BB3C800166DE7 /* NetworkController.h */,
 				8B2088C61A1BB3C800166DE7 /* NetworkController.m */,
-				E1F774641A1927E2003E0AFE /* FoodViewController.h */,
-				E1F774651A1927E2003E0AFE /* FoodViewController.m */,
-				E1F774671A1927F0003E0AFE /* RestaurantViewController.h */,
-				E1F774681A1927F0003E0AFE /* RestaurantViewController.m */,
-				E1F774611A1927B5003E0AFE /* MainViewController.h */,
-				E1F774621A1927B5003E0AFE /* MainViewController.m */,
+				E115B7431A1C4D1400968627 /* ReviewViewController.h */,
+				E115B7441A1C4D1400968627 /* ReviewViewController.m */,
+				E115B73E1A1C4B9400968627 /* RESTAURANT TAB */,
+				E115B73D1A1C4B8E00968627 /* FOOD TAB */,
+				E115B73F1A1C4B9E00968627 /* PROFILE TAB */,
 			);
 			name = CONTROLLERS;
 			sourceTree = "<group>";
@@ -191,7 +231,9 @@
 		E1F7746C1A19280E003E0AFE /* VIEWS */ = {
 			isa = PBXGroup;
 			children = (
-				E1F774841A1AECEE003E0AFE /* pho.jpg */,
+				E193B7EE1A1C6AED002CE393 /* RestaurantCell.h */,
+				E193B7EF1A1C6AED002CE393 /* RestaurantCell.m */,
+				E193B7F01A1C6AED002CE393 /* RestaurantCell.xib */,
 				E1F774451A1926A2003E0AFE /* Main.storyboard */,
 				E1F774481A1926A2003E0AFE /* Images.xcassets */,
 			);
@@ -279,8 +321,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1F774471A1926A2003E0AFE /* Main.storyboard in Resources */,
-				E1F774851A1AECEE003E0AFE /* pho.jpg in Resources */,
+				E115B73C1A1C4AFA00968627 /* pho.jpg in Resources */,
 				E1F7744C1A1926A2003E0AFE /* LaunchScreen.xib in Resources */,
+				E193B7F21A1C6AED002CE393 /* RestaurantCell.xib in Resources */,
 				E1F774491A1926A2003E0AFE /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,9 +346,12 @@
 				E1F774411A1926A2003E0AFE /* GroupProject2nd.xcdatamodeld in Sources */,
 				E1F774751A1A7F20003E0AFE /* User.m in Sources */,
 				E1F7746F1A1928AF003E0AFE /* Food.m in Sources */,
+				E193B7F11A1C6AED002CE393 /* RestaurantCell.m in Sources */,
 				8B2088C71A1BB3C800166DE7 /* NetworkController.m in Sources */,
+				E115B7451A1C4D1400968627 /* ReviewViewController.m in Sources */,
 				E1F774661A1927E2003E0AFE /* FoodViewController.m in Sources */,
 				E1F7743E1A1926A2003E0AFE /* AppDelegate.m in Sources */,
+				E115B7421A1C4CC600968627 /* MainRestViewController.m in Sources */,
 				E1F774691A1927F0003E0AFE /* RestaurantViewController.m in Sources */,
 				E1F774881A1AEEBA003E0AFE /* Color.m in Sources */,
 				E1F7743B1A1926A2003E0AFE /* main.m in Sources */,

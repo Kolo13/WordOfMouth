@@ -10,6 +10,7 @@
 #import "FoodViewController.h"
 #import "RestaurantViewController.h"
 #import "Color.h"
+#import "ReviewViewController.h"
 
 @interface FoodViewController ()
 
@@ -33,7 +34,7 @@
 //    Restaurant *paseo = [[Restaurant alloc] initName:@"paseo" latInit:39.5148178201756 lonInit:-99.4662610094639];
 //    Restaurant *elCamion = [[Restaurant alloc] initName:@"elCamion" latInit:39.4148178201756 lonInit:-99.4662610094639];
     
-    Restaurant *test = [[Restaurant alloc] initName:@"test" latInit:39.3148178201756 lonInit:-99.4621411360279 colorInit:[Color colorForSomePurpose]];
+    Restaurant *test = [[Restaurant alloc] initName:@"test" latInit:39.3148178201756 lonInit:-99.4621411360279 colorInit:[Color color5]];
     
 
     self.fakeRestaurantArray = @[test];
@@ -74,7 +75,7 @@
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"REST_CELL" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FOOD_CELL" forIndexPath:indexPath];
     Restaurant *selectedFood = self.fakeRestaurantArray[indexPath.row];
     cell.textLabel.text = selectedFood.name;
     cell.backgroundColor = selectedFood.cellColor;
@@ -82,7 +83,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    RestaurantViewController *newVC = [self.storyboard instantiateViewControllerWithIdentifier:(@"REST_VC")];
+    ReviewViewController *newVC = [self.storyboard instantiateViewControllerWithIdentifier:(@"REVIEW_VC")];
     if ([newVC isKindOfClass:[UIViewController class]]){
         [self.navigationController pushViewController:newVC animated:true];
         
