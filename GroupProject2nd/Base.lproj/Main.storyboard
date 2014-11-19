@@ -173,7 +173,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="3S0-sV-h1R"/>
+                    <tabBarItem key="tabBarItem" title="ME" id="3S0-sV-h1R"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LyL-6Y-Kl6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
