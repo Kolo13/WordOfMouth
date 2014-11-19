@@ -8,12 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "User.h"
+#import "Restaurant.h"
 
 @interface Review : NSObject
 
+@property Restaurant *restaurant;
+@property (nonatomic, strong) NSString *genreName;
 @property (nonatomic, strong) NSString *userName;
-@property (nonatomic, strong) NSString *review;
-@property  NSInteger rating;
+@property (nonatomic, strong) NSString *comment;
+@property  NSInteger overallRating;
+@property (nonatomic, strong) NSDictionary *categories;
+
 
 - (instancetype) init;
 

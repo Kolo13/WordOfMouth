@@ -15,7 +15,7 @@
 @property (nonatomic, strong) NSArray *fakeData;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-
+@property (nonatomic, strong) NSArray *tableData;
 
 
 @end
