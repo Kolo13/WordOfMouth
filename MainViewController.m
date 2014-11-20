@@ -72,13 +72,12 @@
     return self.tableData.count;
 }
 
-
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FoodTypeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FOOD_CELL" forIndexPath:indexPath];
-    Food *selectedFood = self.fakeData[indexPath.row];
-    cell.backgroundColor = selectedFood.cellColor;
-    cell.foodLabel.text = selectedFood.name;
-    return cell;
+     NSString *selectedFood = self.tableData[indexPath.row];
+    cell.foodLabel.text = selectedFood;
+    cell.backgroundColor = [Color color1];
+     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
