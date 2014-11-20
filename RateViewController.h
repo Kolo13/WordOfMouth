@@ -11,11 +11,14 @@
 @interface RateViewController : UIViewController
 
 - (IBAction)rateSubmissionPressed:(id)sender;
-@property (weak, nonatomic) IBOutlet UILabel *ratingLabel1;
-@property (weak, nonatomic) IBOutlet UILabel *ratingLabel2;
-@property (weak, nonatomic) IBOutlet UILabel *ratingLabel3;
-@property (weak, nonatomic) IBOutlet UILabel *ratingLabel4;
-@property (weak, nonatomic) IBOutlet UILabel *ratingLabel5;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel1;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel2;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel3;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel4;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel5;
+@property (weak, nonatomic) IBOutlet UILabel *restaurantLabel;
+@property (weak, nonatomic) IBOutlet UILabel *averageLabel;
+@property (weak, nonatomic) IBOutlet UITextField *commentTextField;
 
 
 
