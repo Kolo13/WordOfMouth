@@ -24,9 +24,8 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.searchBar.delegate = self;
+  
     
-    self.fakeData = @[@"pho", @"burgers", @"pasta", @"ramen", @"sashimi", @"steak"];
 //    [[NetworkController sharedManager]createNewUser:[User DictSerialization] completionHandler:^(bool *success) {
 //        if (success) {
 //             NSLog(@"Completed");
@@ -64,9 +63,6 @@
     [self.tableView deselectRowAtIndexPath:self.tableView.indexPathForSelectedRow animated:true];
 }
 
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    [self.searchBar resignFirstResponder];
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.tableData.count;
