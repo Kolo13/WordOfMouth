@@ -87,7 +87,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     RestaurantViewController *newVC = [self.storyboard instantiateViewControllerWithIdentifier:@"RESTAURANT_VC"];
     if ([newVC isKindOfClass:[UIViewController class]]){
-      newVC.selectedRestaurant = self.restaurantArray[indexPath.row];
+      newVC.selectedRestaurant = [[Restaurant alloc]initName:self.restaurantArray[indexPath.row] latInit:0 lonInit:0 colorInit:nil];
         [self.navigationController pushViewController:newVC animated:true];
     }
 }

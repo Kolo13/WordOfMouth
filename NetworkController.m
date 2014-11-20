@@ -118,8 +118,10 @@
 //test
 
 -(void)getGenresForRest: (NSString *)restName completionHandler:(void(^)(NSArray* list))completionHandler {
+    NSLog(@"Entered Network Controller");
     NSMutableString *urlString = [[NSMutableString alloc] initWithString:self.baseURL];
-    [urlString appendString: (@"/rest/genres/%@", restName)];
+    [urlString appendString: @"/rest/genres/"];
+    [urlString appendString: restName];
     NSLog(urlString);
     NSURL *url = [[NSURL alloc] initWithString:urlString];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];

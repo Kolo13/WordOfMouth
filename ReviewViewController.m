@@ -28,6 +28,10 @@
     
     [self.commentTableView deselectRowAtIndexPath:self.commentTableView.indexPathForSelectedRow animated:true];
     [self.foodRatingTableView deselectRowAtIndexPath:self.foodRatingTableView.indexPathForSelectedRow animated:true];
+   
+    [NetworkController sharedManager] getReviewsForRestWithGenre
+    
+   // get(rest/comments/_name_)
 }
 
 

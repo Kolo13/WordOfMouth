@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Review.h"
 #import "Restaurant.h"
+#import "MainViewController.h"
 
 @interface RestaurantViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UISearchBarDelegate>
 

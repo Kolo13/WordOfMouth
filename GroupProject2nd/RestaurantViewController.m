@@ -10,7 +10,6 @@
 #import "Food.h"
 #import "Color.h"
 #import "ReviewViewController.h"
-#import "NetworkController.h"
 
 @interface RestaurantViewController ()
 
@@ -36,7 +35,13 @@
     [[NetworkController sharedManager]getGenresForRest:self.selectedRestaurant.name completionHandler:^(NSArray *list) {
         NSLog(@"Got rest list back...");
         if (list != nil){
-            self.foodRatingArray = list;
+            NSMutableArray *newFoods = [[NSMutableArray alloc] initWithCapacity:40];
+            for (NSString* foodNames in list) {
+                Food *currentFood = [[Food alloc]initName:foodNames colorInit:[Color color1]];
+                [newFoods addObject:currentFood];
+            }
+            
+            self.foodRatingArray = newFoods;
         }
         else {
             // NSLog([NSString stringWithFormat:@"Got an array with %lu items back",(unsigned long)self.restaurantArray.count]);
@@ -66,6 +71,8 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ReviewViewController *newVC = [self.storyboard instantiateViewControllerWithIdentifier:@"REVIEW_VC"];
     if ([newVC isKindOfClass:[UIViewController class]]){
+        newVC.selectedRestaurant = self.selectedRestaurant;
+        newVC.selectedGenre = self.foodRatingArray[indexPath.row];
         [self.navigationController pushViewController:newVC animated:true];
     }
 }
