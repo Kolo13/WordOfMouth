@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface CommentCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *commentLabel;
+@property (weak, nonatomic) IBOutlet UILabel *userLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 @end

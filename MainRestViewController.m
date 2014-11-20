@@ -26,11 +26,11 @@
     self.tableView.dataSource = self;
     self.searchBar.delegate = self;
     
-    Restaurant *rest1 = [[Restaurant alloc]initName:@"Pho Bac" latInit:0 lonInit:0 colorInit:nil];
-    Restaurant *rest2 = [[Restaurant alloc]initName:@"El Camion" latInit:0 lonInit:0 colorInit:nil];
-    Restaurant *rest3 = [[Restaurant alloc]initName:@"Paseo" latInit:0 lonInit:0 colorInit:nil];
-    Restaurant *rest4 = [[Restaurant alloc]initName:@"Dick's" latInit:0 lonInit:0 colorInit:nil];
-    Restaurant *rest5 = [[Restaurant alloc]initName:@"Pike Place Chowder" latInit:0 lonInit:0 colorInit:nil];
+    Restaurant *rest1 = [[Restaurant alloc]initName:@"Pho Bac" latInit:0 lonInit:0 colorInit:[Color color1]];
+    Restaurant *rest2 = [[Restaurant alloc]initName:@"El Camion" latInit:0 lonInit:0 colorInit:[Color color2]];
+    Restaurant *rest3 = [[Restaurant alloc]initName:@"Paseo" latInit:0 lonInit:0 colorInit:[Color color3]];
+    Restaurant *rest4 = [[Restaurant alloc]initName:@"Dick's" latInit:0 lonInit:0 colorInit:[Color color4]];
+    Restaurant *rest5 = [[Restaurant alloc]initName:@"Pike Place Chowder" latInit:0 lonInit:0 colorInit:[Color color5]];
     
     
 //    [[NetworkController sharedManager]createNewUser:[User DictSerialization] completionHandler:^(bool success) {
@@ -80,6 +80,7 @@
     RestaurantCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RESTAURANT_CELL" forIndexPath:indexPath];
     Restaurant *selectedRestaurant = [[Restaurant alloc]initName:self.restaurantArray[indexPath.row] latInit:0 lonInit:0 colorInit:nil];
     cell.nameLabel.text = selectedRestaurant.name;
+    cell.backgroundColor = selectedRestaurant.cellColor;
     
     return cell;
 }

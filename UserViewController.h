@@ -10,7 +10,7 @@
 #import "User.h"
 #import "NetworkController.h"
 
-@interface UserViewController : UIViewController <UITabBarControllerDelegate>
+@interface UserViewController : UIViewController <UITabBarControllerDelegate, UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, strong) NSString *login;
 @property (nonatomic, strong) NSString *email;
