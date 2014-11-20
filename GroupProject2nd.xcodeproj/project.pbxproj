@@ -15,6 +15,10 @@
 		E113CBEA1A1D3DC60010E898 /* bowl8.png in Resources */ = {isa = PBXBuildFile; fileRef = E113CBE91A1D3DC60010E898 /* bowl8.png */; };
 		E113CBF41A1D48020010E898 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E113CBF21A1D48020010E898 /* CommentCell.m */; };
 		E113CBF51A1D48020010E898 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E113CBF31A1D48020010E898 /* CommentCell.xib */; };
+		E113CBF91A1D96920010E898 /* FoodTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E113CBF71A1D96920010E898 /* FoodTypeCell.m */; };
+		E113CBFA1A1D96920010E898 /* FoodTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E113CBF81A1D96920010E898 /* FoodTypeCell.xib */; };
+		E113CBFE1A1DA45A0010E898 /* RatingCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E113CBFC1A1DA45A0010E898 /* RatingCategoryCell.m */; };
+		E113CBFF1A1DA45A0010E898 /* RatingCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E113CBFD1A1DA45A0010E898 /* RatingCategoryCell.xib */; };
 		E115B73C1A1C4AFA00968627 /* pho.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E115B73B1A1C4AFA00968627 /* pho.jpg */; };
 		E115B7421A1C4CC600968627 /* MainRestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E115B7411A1C4CC600968627 /* MainRestViewController.m */; };
 		E115B7451A1C4D1400968627 /* ReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E115B7441A1C4D1400968627 /* ReviewViewController.m */; };
@@ -63,6 +67,12 @@
 		E113CBF11A1D48020010E898 /* CommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
 		E113CBF21A1D48020010E898 /* CommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
 		E113CBF31A1D48020010E898 /* CommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
+		E113CBF61A1D96920010E898 /* FoodTypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodTypeCell.h; sourceTree = "<group>"; };
+		E113CBF71A1D96920010E898 /* FoodTypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodTypeCell.m; sourceTree = "<group>"; };
+		E113CBF81A1D96920010E898 /* FoodTypeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodTypeCell.xib; sourceTree = "<group>"; };
+		E113CBFB1A1DA45A0010E898 /* RatingCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingCategoryCell.h; sourceTree = "<group>"; };
+		E113CBFC1A1DA45A0010E898 /* RatingCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingCategoryCell.m; sourceTree = "<group>"; };
+		E113CBFD1A1DA45A0010E898 /* RatingCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RatingCategoryCell.xib; sourceTree = "<group>"; };
 		E115B73B1A1C4AFA00968627 /* pho.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pho.jpg; sourceTree = "<group>"; };
 		E115B7401A1C4CC600968627 /* MainRestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainRestViewController.h; sourceTree = "<group>"; };
 		E115B7411A1C4CC600968627 /* MainRestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainRestViewController.m; sourceTree = "<group>"; };
@@ -253,6 +263,7 @@
 		E1F7746C1A19280E003E0AFE /* VIEWS */ = {
 			isa = PBXGroup;
 			children = (
+				E1F774451A1926A2003E0AFE /* Main.storyboard */,
 				E113CBF11A1D48020010E898 /* CommentCell.h */,
 				E113CBF21A1D48020010E898 /* CommentCell.m */,
 				E113CBF31A1D48020010E898 /* CommentCell.xib */,
@@ -260,7 +271,12 @@
 				E193B7EE1A1C6AED002CE393 /* RestaurantCell.h */,
 				E193B7EF1A1C6AED002CE393 /* RestaurantCell.m */,
 				E193B7F01A1C6AED002CE393 /* RestaurantCell.xib */,
-				E1F774451A1926A2003E0AFE /* Main.storyboard */,
+				E113CBFB1A1DA45A0010E898 /* RatingCategoryCell.h */,
+				E113CBFC1A1DA45A0010E898 /* RatingCategoryCell.m */,
+				E113CBFD1A1DA45A0010E898 /* RatingCategoryCell.xib */,
+				E113CBF61A1D96920010E898 /* FoodTypeCell.h */,
+				E113CBF71A1D96920010E898 /* FoodTypeCell.m */,
+				E113CBF81A1D96920010E898 /* FoodTypeCell.xib */,
 				E1F774481A1926A2003E0AFE /* Images.xcassets */,
 			);
 			name = VIEWS;
@@ -349,7 +365,9 @@
 				E1F774471A1926A2003E0AFE /* Main.storyboard in Resources */,
 				E115B73C1A1C4AFA00968627 /* pho.jpg in Resources */,
 				E113CBEA1A1D3DC60010E898 /* bowl8.png in Resources */,
+				E113CBFA1A1D96920010E898 /* FoodTypeCell.xib in Resources */,
 				E1F7744C1A1926A2003E0AFE /* LaunchScreen.xib in Resources */,
+				E113CBFF1A1DA45A0010E898 /* RatingCategoryCell.xib in Resources */,
 				E193B7F21A1C6AED002CE393 /* RestaurantCell.xib in Resources */,
 				E1F774491A1926A2003E0AFE /* Images.xcassets in Resources */,
 				E113CBF51A1D48020010E898 /* CommentCell.xib in Resources */,
@@ -373,6 +391,7 @@
 				7009CBCE1A1D262C00872D0E /* jsonParser.m in Sources */,
 				E1F774721A1928ED003E0AFE /* Restaurant.m in Sources */,
 				E1F774411A1926A2003E0AFE /* GroupProject2nd.xcdatamodeld in Sources */,
+				E113CBFE1A1DA45A0010E898 /* RatingCategoryCell.m in Sources */,
 				E1F774751A1A7F20003E0AFE /* User.m in Sources */,
 				E113CBF41A1D48020010E898 /* CommentCell.m in Sources */,
 				E1F7746F1A1928AF003E0AFE /* Food.m in Sources */,
@@ -386,6 +405,7 @@
 				E1F774691A1927F0003E0AFE /* RestaurantViewController.m in Sources */,
 				E1F774881A1AEEBA003E0AFE /* Color.m in Sources */,
 				E1F7743B1A1926A2003E0AFE /* main.m in Sources */,
+				E113CBF91A1D96920010E898 /* FoodTypeCell.m in Sources */,
 				E1F774631A1927B5003E0AFE /* MainViewController.m in Sources */,
 				8B2089081A1BCF1A00166DE7 /* UserViewController.m in Sources */,
 				E113CBE61A1D14010010E898 /* DetailedReviewViewController.m in Sources */,

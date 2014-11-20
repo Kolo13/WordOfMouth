@@ -21,4 +21,6 @@
 
 
 
+- (IBAction)rateSubmissionPressed:(id)sender {
+}
 @end

@@ -11,6 +11,7 @@
 #import "FoodViewController.h"
 #import "Color.h"
 #import "User.h"
+#import "FoodTypeCell.h"
 
 @interface MainViewController ()
 
@@ -50,6 +51,10 @@
         [self.tableView reloadData];
     }];
     
+    UINib *nib = [UINib nibWithNibName:@"FoodTypeCell" bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"FOOD_CELL"];
+
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -68,9 +73,9 @@
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FOOD_CELL" forIndexPath:indexPath];
+    FoodTypeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FOOD_CELL" forIndexPath:indexPath];
      NSString *selectedFood = self.tableData[indexPath.row];
-    cell.textLabel.text = selectedFood;
+    cell.foodLabel.text = selectedFood;
     cell.backgroundColor = [Color color1];
      return cell;
 }
