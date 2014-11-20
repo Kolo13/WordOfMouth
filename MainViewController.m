@@ -15,18 +15,21 @@
 
 @interface MainViewController ()
 
+@property (nonatomic, strong) NSArray *colors;
+
 @end
 
 @implementation MainViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.searchBar.delegate = self;
+  
+    self.colors = @[[Color color1], [Color color2], [Color color3],[Color color4], [Color color5], [Color color4], [Color color3], [Color color2]];
     
-    self.fakeData = @[@"pho", @"burgers", @"pasta", @"ramen", @"sashimi", @"steak"];
 //    [[NetworkController sharedManager]createNewUser:[User DictSerialization] completionHandler:^(bool *success) {
 //        if (success) {
 //             NSLog(@"Completed");
@@ -53,6 +56,8 @@
     
     UINib *nib = [UINib nibWithNibName:@"FoodTypeCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"FOOD_CELL"];
+    
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 
     
 }
@@ -64,9 +69,6 @@
     [self.tableView deselectRowAtIndexPath:self.tableView.indexPathForSelectedRow animated:true];
 }
 
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    [self.searchBar resignFirstResponder];
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.tableData.count;
@@ -76,7 +78,9 @@
     FoodTypeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FOOD_CELL" forIndexPath:indexPath];
      NSString *selectedFood = self.tableData[indexPath.row];
     cell.foodLabel.text = selectedFood;
-    cell.backgroundColor = [Color color1];
+    
+    NSInteger index = indexPath.row % self.colors.count;
+    cell.backgroundColor = self.colors[index];
      return cell;
 }
 
@@ -84,7 +88,6 @@
     FoodViewController *newVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FOOD_VC"];
     if ([newVC isKindOfClass:[UIViewController class]]){
         [self.navigationController pushViewController:newVC animated:true];
-        
     }
     
 }

@@ -24,6 +24,7 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
     Food *food1 = [[Food alloc]initName:@"burger" colorInit:[Color color1]];
     Food *food2 = [[Food alloc]initName:@"pho" colorInit:[Color color2]];
