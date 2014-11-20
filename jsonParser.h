@@ -11,5 +11,6 @@
 @interface jsonParser : NSObject
 
 + (NSArray *) parseJSONIntoListArray: (NSData *) jsonData;
++ (BOOL) extractJWTTokenAndStoreIt: (NSData *) jsonData;
 
 @end

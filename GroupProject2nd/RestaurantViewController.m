@@ -28,7 +28,7 @@
     Food *food1 = [[Food alloc]initName:@"burger" colorInit:[Color color1]];
     Food *food2 = [[Food alloc]initName:@"pho" colorInit:[Color color2]];
     Food *food3 = [[Food alloc]initName:@"pizza" colorInit:[Color color3]];
-    
+    //make a network call to generate list of genres for THIS resteraunt
     self.foodRatingArray = @[food1, food2, food3];
 }
 

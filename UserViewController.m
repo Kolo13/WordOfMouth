@@ -28,6 +28,7 @@
 
   
   if ([[[NSUserDefaults standardUserDefaults] valueForKey:@"authToken"] isKindOfClass:[NSString class]]) {
+      NSLog(@"We have a stored auth token");
       // getUserRatingList
   }else{
     
@@ -95,11 +96,6 @@
         
         UITextField *confirmPasswordTextField = signUpAlert.textFields[3];
         self.confirmPassword = confirmPasswordTextField.text;
-        
-        NSData *newUserJSON = [User DictSerialization:self.login email:self.email password:self.password];
-        [[NetworkController  sharedManager]createNewUser:newUserJSON completionHandler:^(bool success) {
-            //code
-        }];
          
         NSLog(@"%@", self.login);
         NSLog(@"%@", self.email);
@@ -114,6 +110,13 @@
           [self presentViewController:passwordAlert animated:true completion:nil];
 
         }
+        
+          NSData *newUserJSON = [User DictSerialization:self.login email:self.email password:self.password];
+          [[NetworkController  sharedManager]createNewUser:newUserJSON completionHandler:^(bool success) {
+              //code
+          }];
+          
+          
       }];
       
       UIAlertAction *Cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {

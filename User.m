@@ -36,6 +36,7 @@
   [profileDict setObject:name forKey:@"name"];
   [profileDict setObject:email forKey:@"email"];
   [profileDict setObject:password forKey:@"password"];
+  [profileDict setObject:password forKey:@"passwordConfirm"];
   NSError *error;
   NSData *profileJSON = [NSJSONSerialization dataWithJSONObject:profileDict options:0 error:&error];
   return profileJSON;

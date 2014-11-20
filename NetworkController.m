@@ -61,11 +61,16 @@
                 completionHandler(false);
             }];
         } else {
-             
-                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                     completionHandler(true);
+             //Extract JWT token and store it.
+            BOOL success = [jsonParser extractJWTTokenAndStoreIt:(rawData)];
+            
+            if (success) {
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    completionHandler(true);
+
              }];
-        }
+            }
+            }
     }];
 }
 
@@ -112,13 +117,40 @@
 }
 //test
 
+-(void)getGenresForRest: (NSString *)restName completionHandler:(void(^)(NSArray* list))completionHandler {
+    NSMutableString *urlString = [[NSMutableString alloc] initWithString:self.baseURL];
+    [urlString appendString: (@"/rest/genres/%@", restName)];
+    NSLog(urlString);
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:url];
+    [request setHTTPMethod:@"GET"];
+    NSLog(@"Request ready to go!");
+    [[NetworkController sharedManager]performRequest:request completionHandler:^(NSData *rawData) {
+        //TO-DO Store the Token contained in rawData
+        if (rawData == nil) {
+            NSLog(@"Raw data was Nil");
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                completionHandler(@[]);
+            }];
+        } else {
+            //call json parser with RawData
+            NSLog(@"Have raw data that needs to be processed");
+            NSArray *list = [jsonParser parseJSONIntoListArray:(rawData)];
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                completionHandler(list);
+            }];
+        }
+    }];
+    
+}
 
 - (void)performRequest:(NSMutableURLRequest *)request completionHandler:(void (^)(NSData* rawData))completionHandler {
     NSLog(@"Performing Request");
     NSURLSessionDataTask *dataTask = [self.URLSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSLog(@"Performing Task...");
         if (error != nil) {
-            NSLog(@"ERROR: %@", [error localizedDescription]);
+            NSLog(@"DATA TASK ERROR: %@", [error localizedDescription]);
         } else {
             NSLog(@"Entered Else");
             if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
