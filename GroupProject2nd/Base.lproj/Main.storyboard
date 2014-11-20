@@ -466,6 +466,7 @@
                         <outlet property="scoreLabel3" destination="UV1-xy-dKR" id="ALl-c3-YoA"/>
                         <outlet property="scoreLabel4" destination="AJE-5R-FnL" id="yvi-0g-kl7"/>
                         <outlet property="scoreLabel5" destination="ApH-7t-2pu" id="OF9-gm-IWg"/>
+                        <outlet property="userLabel" destination="um4-WA-6rA" id="jFx-0R-OfX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nuk-CM-mwp" userLabel="First Responder" sceneMemberID="firstResponder"/>
