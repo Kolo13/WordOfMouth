@@ -11,6 +11,7 @@
 #import "FoodViewController.h"
 #import "Color.h"
 #import "User.h"
+#import "FoodTypeCell.h"
 
 @interface MainViewController ()
 
@@ -33,6 +34,10 @@
     
     self.fakeData = @[food1, food2, food3, food4, food5];
     
+    UINib *nib = [UINib nibWithNibName:@"FoodTypeCell" bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"FOOD_CELL"];
+
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -52,10 +57,10 @@
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FOOD_CELL" forIndexPath:indexPath];
+    FoodTypeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FOOD_CELL" forIndexPath:indexPath];
     Food *selectedFood = self.fakeData[indexPath.row];
     cell.backgroundColor = selectedFood.cellColor;
-    cell.textLabel.text = selectedFood.name;
+    cell.foodLabel.text = selectedFood.name;
     return cell;
 }
 

@@ -10,4 +10,13 @@
 
 @interface RateViewController : UIViewController
 
+- (IBAction)rateSubmissionPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *ratingLabel1;
+@property (weak, nonatomic) IBOutlet UILabel *ratingLabel2;
+@property (weak, nonatomic) IBOutlet UILabel *ratingLabel3;
+@property (weak, nonatomic) IBOutlet UILabel *ratingLabel4;
+@property (weak, nonatomic) IBOutlet UILabel *ratingLabel5;
+
+
+
 @end

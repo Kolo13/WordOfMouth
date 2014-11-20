@@ -11,6 +11,7 @@
 #import "Color.h"
 #import "ReviewViewController.h"
 #import "RateViewController.h"
+#import "FoodTypeCell.h"
 
 @interface RestaurantViewController ()
 
@@ -24,13 +25,17 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    
-    
     Food *food1 = [[Food alloc]initName:@"burger" colorInit:[Color color1]];
     Food *food2 = [[Food alloc]initName:@"pho" colorInit:[Color color2]];
     Food *food3 = [[Food alloc]initName:@"pizza" colorInit:[Color color3]];
+    Food *food4 = [[Food alloc]initName:@"sushi" colorInit:[Color color4]];
+    Food *food5 = [[Food alloc]initName:@"ramen" colorInit:[Color color5]];
     
-    self.foodRatingArray = @[food1, food2, food3];
+    
+    self.foodRatingArray = @[food1, food2, food3, food4, food5];
+    
+    UINib *nib = [UINib nibWithNibName:@"FoodTypeCell" bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"FOOD_CELL"];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -40,9 +45,9 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FOOD_CELL" forIndexPath:indexPath];
+    FoodTypeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FOOD_CELL" forIndexPath:indexPath];
     Food *selectedFood = self.foodRatingArray[indexPath.row];
-    cell.textLabel.text = selectedFood.name;
+    cell.foodLabel.text = selectedFood.name;
     cell.backgroundColor = selectedFood.cellColor;
     return cell;
 }
@@ -57,9 +62,6 @@
         [self.navigationController pushViewController:newVC animated:true];
     }
 }
-
-
-
 
 - (IBAction)rateButtonPressed:(id)sender {
     RateViewController*newVC = [self.storyboard instantiateViewControllerWithIdentifier:@"RATING_VC"];
