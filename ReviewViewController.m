@@ -30,7 +30,9 @@
     
     UINib *nib2 = [UINib nibWithNibName:@"RatingCategoryCell" bundle:nil];
     [self.ratingTableView registerNib:nib2 forCellReuseIdentifier:@"RATING_CELL"];
-    
+  
+  
+  
     self.foodRatingArray = @[@"Food Label 1", @"Food Label 2", @"Food Label 3"];
     
 }
