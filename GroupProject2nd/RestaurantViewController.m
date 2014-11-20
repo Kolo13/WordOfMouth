@@ -7,6 +7,9 @@
 //
 
 #import "RestaurantViewController.h"
+#import "Food.h"
+#import "Color.h"
+#import "ReviewViewController.h"
 
 @interface RestaurantViewController ()
 
@@ -16,8 +19,44 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
+    
+    
+    Food *food1 = [[Food alloc]initName:@"burger" colorInit:[Color color1]];
+    Food *food2 = [[Food alloc]initName:@"pho" colorInit:[Color color2]];
+    Food *food3 = [[Food alloc]initName:@"pizza" colorInit:[Color color3]];
+    
+    self.foodRatingArray = @[food1, food2, food3];
 }
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear: animated];
+    
+    [self.tableView deselectRowAtIndexPath:self.tableView.indexPathForSelectedRow animated:true];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FOOD_CELL" forIndexPath:indexPath];
+    Food *selectedFood = self.foodRatingArray[indexPath.row];
+    cell.textLabel.text = selectedFood.name;
+    cell.backgroundColor = selectedFood.cellColor;
+    return cell;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.foodRatingArray.count;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ReviewViewController *newVC = [self.storyboard instantiateViewControllerWithIdentifier:@"REVIEW_VC"];
+    if ([newVC isKindOfClass:[UIViewController class]]){
+        [self.navigationController pushViewController:newVC animated:true];
+    }
+}
+
 
 
 

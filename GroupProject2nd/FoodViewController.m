@@ -10,6 +10,8 @@
 #import "FoodViewController.h"
 #import "RestaurantViewController.h"
 #import "Color.h"
+#import "ReviewViewController.h"
+#import "RestaurantCell.h"
 
 @interface FoodViewController ()
 
@@ -22,21 +24,26 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+//    self.searchBar.delegate = self;
+    
+    UINib *nib = [UINib nibWithNibName:@"RestaurantCell" bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"FOOD_CELL"];
+
+    
 //    self.locationManager = [[CLLocationManager alloc] init];
 //    self.locationManager.delegate = self;
 //    [self.locationManager startUpdatingLocation];
 //    self.mapView.showsUserLocation = YES;
-//    
+//
     
-//    Restaurant *phoBac = [[Restaurant alloc] initName:@"Pho Bac" latInit: 39.3148178201756 lonInit:-99.4621411360279];
-//    Restaurant *sushiLand = [[Restaurant alloc] initName:@"sushiLand" latInit:39.298878761661 lonInit:-99.4662610094639];
-//    Restaurant *paseo = [[Restaurant alloc] initName:@"paseo" latInit:39.5148178201756 lonInit:-99.4662610094639];
-//    Restaurant *elCamion = [[Restaurant alloc] initName:@"elCamion" latInit:39.4148178201756 lonInit:-99.4662610094639];
-    
-    Restaurant *test = [[Restaurant alloc] initName:@"test" latInit:39.3148178201756 lonInit:-99.4621411360279 colorInit:[Color colorForSomePurpose]];
+    Restaurant *test1 = [[Restaurant alloc] initName:@"Pho Bac" latInit:39.3148178201756 lonInit:-99.4621411360279 colorInit:[Color color1]];
+    Restaurant *test2 = [[Restaurant alloc] initName:@"Tamarind Tree" latInit:39.3148178201756 lonInit:-99.4621411360279 colorInit:[Color color2]];
+    Restaurant *test3 = [[Restaurant alloc] initName:@"Long Provincial" latInit:39.3148178201756 lonInit:-99.4621411360279 colorInit:[Color color3]];
+    Restaurant *test4 = [[Restaurant alloc] initName:@"Green Leaf" latInit:39.3148178201756 lonInit:-99.4621411360279 colorInit:[Color color4]];
+    Restaurant *test5 = [[Restaurant alloc] initName:@"Super Divey Pho" latInit:39.3148178201756 lonInit:-99.4621411360279 colorInit:[Color color5]];
     
 
-    self.fakeRestaurantArray = @[test];
+    self.fakeRestaurantArray = @[test1, test2, test3, test4, test5];
     
     for (Restaurant *restaurants in self.fakeRestaurantArray) {
         CLLocationDegrees latDegree =  restaurants.latitude;
@@ -67,22 +74,24 @@
     [self.tableView deselectRowAtIndexPath:self.tableView.indexPathForSelectedRow animated:true];
 }
 
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [self.searchBar resignFirstResponder];
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.fakeRestaurantArray.count;
 }
 
-
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"REST_CELL" forIndexPath:indexPath];
+    RestaurantCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FOOD_CELL" forIndexPath:indexPath];
     Restaurant *selectedFood = self.fakeRestaurantArray[indexPath.row];
-    cell.textLabel.text = selectedFood.name;
+    cell.nameLabel.text = selectedFood.name;
     cell.backgroundColor = selectedFood.cellColor;
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    RestaurantViewController *newVC = [self.storyboard instantiateViewControllerWithIdentifier:(@"REST_VC")];
+    ReviewViewController *newVC = [self.storyboard instantiateViewControllerWithIdentifier:(@"REVIEW_VC")];
     if ([newVC isKindOfClass:[UIViewController class]]){
         [self.navigationController pushViewController:newVC animated:true];
         

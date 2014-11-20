@@ -10,6 +10,14 @@
 
 @implementation Food
 
-
+- (instancetype) initName:(NSString *)name colorInit:(UIColor *)color {
+    self = [self init];
+    if (self) {
+        self.name = name;
+        self.cellColor = color;
+        
+    }
+    return self;
+}
 
 @end
