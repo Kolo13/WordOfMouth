@@ -29,16 +29,30 @@
     Food *food1 = [[Food alloc]initName:@"burger" colorInit:[Color color1]];
     Food *food2 = [[Food alloc]initName:@"pho" colorInit:[Color color2]];
     Food *food3 = [[Food alloc]initName:@"pizza" colorInit:[Color color3]];
-    Food *food4 = [[Food alloc]initName:@"sushi" colorInit:[Color color4]];
-    Food *food5 = [[Food alloc]initName:@"ramen" colorInit:[Color color5]];
-    
-    
-    self.foodRatingArray = @[food1, food2, food3, food4, food5];
-    
+    //make a network call to generate list of genres for THIS resteraunt
+   
     UINib *nib = [UINib nibWithNibName:@"FoodTypeCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"FOOD_CELL"];
+    
+    
+    [[NetworkController sharedManager]getGenresForRest:self.selectedRestaurant.name completionHandler:^(NSArray *list) {
+        NSLog(@"Got rest list back...");
+        if (list != nil){
+            NSMutableArray *newFoods = [[NSMutableArray alloc] initWithCapacity:40];
+            for (NSString* foodNames in list) {
+                Food *currentFood = [[Food alloc]initName:foodNames colorInit:[Color color1]];
+                [newFoods addObject:currentFood];
+            }
+            
+            self.foodRatingArray = newFoods;
+        }
+        else {
+            // NSLog([NSString stringWithFormat:@"Got an array with %lu items back",(unsigned long)self.restaurantArray.count]);
+        }
+        [self.tableView reloadData];
+    }];
 }
-
+    
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear: animated];
     
@@ -60,6 +74,8 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ReviewViewController *newVC = [self.storyboard instantiateViewControllerWithIdentifier:@"REVIEW_VC"];
     if ([newVC isKindOfClass:[UIViewController class]]){
+        newVC.selectedRestaurant = self.selectedRestaurant;
+        newVC.selectedGenre = self.foodRatingArray[indexPath.row];
         [self.navigationController pushViewController:newVC animated:true];
     }
 }
