@@ -10,6 +10,7 @@
 #import "Food.h"
 #import "Color.h"
 #import "ReviewViewController.h"
+#import "NetworkController.h"
 
 @interface RestaurantViewController ()
 
@@ -29,9 +30,21 @@
     Food *food2 = [[Food alloc]initName:@"pho" colorInit:[Color color2]];
     Food *food3 = [[Food alloc]initName:@"pizza" colorInit:[Color color3]];
     //make a network call to generate list of genres for THIS resteraunt
-    self.foodRatingArray = @[food1, food2, food3];
+   
+    
+    
+    [[NetworkController sharedManager]getGenresForRest:self.selectedRestaurant.name completionHandler:^(NSArray *list) {
+        NSLog(@"Got rest list back...");
+        if (list != nil){
+            self.foodRatingArray = list;
+        }
+        else {
+            // NSLog([NSString stringWithFormat:@"Got an array with %lu items back",(unsigned long)self.restaurantArray.count]);
+        }
+        [self.tableView reloadData];
+    }];
 }
-
+    
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear: animated];
     
