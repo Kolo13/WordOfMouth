@@ -33,17 +33,18 @@
     
     self.foodRatingArray = @[@"Food Label 1", @"Food Label 2", @"Food Label 3"];
     
+    //populate self.previousReviews with Review Objects
+    [[NetworkController sharedManager] getReviewsForRestInGenre:self.selectedRestaurant selectedFood:self.selectedGenre completionHandler:^(NSArray *list) {
+        self.previousReviews = list;
+    }];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear: animated];
     
     [self.commentTableView deselectRowAtIndexPath:self.commentTableView.indexPathForSelectedRow animated:true];
-    [self.foodRatingTableView deselectRowAtIndexPath:self.foodRatingTableView.indexPathForSelectedRow animated:true];
-   
-    [NetworkController sharedManager] getReviewsForRestWithGenre
-    
-   // get(rest/comments/_name_)
+    [self.ratingTableView deselectRowAtIndexPath:self.commentTableView.indexPathForSelectedRow animated:true];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

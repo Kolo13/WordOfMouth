@@ -49,8 +49,16 @@
     [[NetworkController sharedManager]getList:@"rest" completionHandler:^(NSArray *list) {
         NSLog(@"Got rest list back...");
         if (list != nil){
-            self.restaurantArray = list;
-        }
+                NSMutableArray *newPlaces = [[NSMutableArray alloc] initWithCapacity:40];
+                for (NSString* restName in list) {
+                    Restaurant *currentResteraunt = [[Restaurant alloc]initName:restName latInit:0.0 lonInit:0.0 colorInit:[Color color1]];
+                    [newPlaces addObject:currentResteraunt];
+                }
+            
+            //[[Restaurant alloc]initName:self.restaurantArray[indexPath.row]
+                
+                self.restaurantArray = newPlaces;
+            }
         else {
            // NSLog([NSString stringWithFormat:@"Got an array with %lu items back",(unsigned long)self.restaurantArray.count]);
         }
@@ -78,7 +86,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     RestaurantCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RESTAURANT_CELL" forIndexPath:indexPath];
-    Restaurant *selectedRestaurant = [[Restaurant alloc]initName:self.restaurantArray[indexPath.row] latInit:0 lonInit:0 colorInit:nil];
+    Restaurant *selectedRestaurant = self.restaurantArray[indexPath.row];
     cell.nameLabel.text = selectedRestaurant.name;
     cell.backgroundColor = selectedRestaurant.cellColor;
     
@@ -88,7 +96,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     RestaurantViewController *newVC = [self.storyboard instantiateViewControllerWithIdentifier:@"RESTAURANT_VC"];
     if ([newVC isKindOfClass:[UIViewController class]]){
-      newVC.selectedRestaurant = [[Restaurant alloc]initName:self.restaurantArray[indexPath.row] latInit:0 lonInit:0 colorInit:nil];
+      newVC.selectedRestaurant = self.restaurantArray[indexPath.row];
         [self.navigationController pushViewController:newVC animated:true];
     }
 }

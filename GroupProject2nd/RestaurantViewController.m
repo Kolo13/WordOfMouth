@@ -30,6 +30,8 @@
     Food *food3 = [[Food alloc]initName:@"pizza" colorInit:[Color color3]];
     //make a network call to generate list of genres for THIS resteraunt
    
+    UINib *nib = [UINib nibWithNibName:@"FoodTypeCell" bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"FOOD_CELL"];
     
     
     [[NetworkController sharedManager]getGenresForRest:self.selectedRestaurant.name completionHandler:^(NSArray *list) {

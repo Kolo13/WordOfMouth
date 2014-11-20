@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommentCell.h"
 #import "Restaurant.h"
 #import "MainViewController.h"
 #import "Food.h"
@@ -16,9 +17,20 @@
 @property (weak, nonatomic) IBOutlet UITableView *ratingTableView;
 
 @property (weak, nonatomic) IBOutlet UITableView *commentTableView;
+@property (weak, nonatomic) IBOutlet UILabel *ratingLabel1;
+@property (weak, nonatomic) IBOutlet UILabel *ratingLabel2;
+@property (weak, nonatomic) IBOutlet UILabel *ratingLabel3;
+@property (weak, nonatomic) IBOutlet UILabel *ratingLabel4;
+@property (weak, nonatomic) IBOutlet UIView *ratingLabel5;
 @property (nonatomic, strong) Restaurant *selectedRestaurant;
 @property (nonatomic, strong) Food *selectedGenre;
-@property (nonatomic, strong) NSArray *previousRatings;
+@property (nonatomic, strong) NSArray *previousReviews;
+
+@property (nonatomic, strong) NSArray *foodRatingArray;
+@property (nonatomic, strong) NSArray *commentArray;
+@property (nonatomic, strong) NSArray *foodCategoryArray;
+
+- (IBAction)rateButtonPressed:(id)sender;
 
 
 @end

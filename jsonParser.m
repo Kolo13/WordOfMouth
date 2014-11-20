@@ -31,11 +31,14 @@
         return (false);
     }
     
-    
-//    NSError* error;
-//    NSArray* dictionaryOfObjects = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&error];
-//    //NSArray* itemsArray = dictionaryOfObjects[@"list"];
-   
+}
+
++ (NSDictionary *) parseJSONIntoReviewDictionary: (NSData *) jsonData {
+    NSError* error;
+    NSDictionary* dictionaryOfObjects = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&error];
+    NSDictionary* itemsDictionary = dictionaryOfObjects[@"ratings"];
+   // NSArray* itemsArray = itemsDictionary[@"catsArray"];
+    return itemsDictionary;
 }
 
 

@@ -12,5 +12,6 @@
 
 + (NSArray *) parseJSONIntoListArray: (NSData *) jsonData;
 + (BOOL) extractJWTTokenAndStoreIt: (NSData *) jsonData;
++ (NSDictionary *) parseJSONIntoReviewDictionary: (NSData *) jsonData;
 
 @end

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "UserViewController.h"
+#import "Food.h"
 
 @interface NetworkController : NSObject
 
@@ -20,6 +21,6 @@
 - (void)performRequest:(NSMutableURLRequest *)request completionHandler:(void (^)(NSData* rawData))completionHandler;
 - (void)getList: (NSString *)listType completionHandler:(void(^)(NSArray* list))completionHandler;
 -(void)getGenresForRest: (NSString *)restName completionHandler:(void(^)(NSArray* list))completionHandler;
--(void)getReviewsForRestWithGenre: (NSString *)restName completionHandler:(void(^)(NSArray* list))completionHandler;
+-(void)getReviewsForRestInGenre: (Restaurant *)restName selectedFood: (Food *) selectedFood completionHandler:(void(^)(NSArray* list))completionHandler;
 
 @end
