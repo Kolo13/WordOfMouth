@@ -460,6 +460,7 @@
                     </view>
                     <connections>
                         <outlet property="averageLabel" destination="IkW-kx-lSJ" id="tZw-bO-K77"/>
+                        <outlet property="commentLabel" destination="Cyi-2i-w1H" id="Zfm-qG-lDI"/>
                         <outlet property="restaurantLabel" destination="XDq-1U-2X7" id="08Y-iC-5OL"/>
                         <outlet property="scoreLabel1" destination="oZ9-g2-yQs" id="pRh-kp-7p4"/>
                         <outlet property="scoreLabel2" destination="lT7-jX-W7Z" id="wrJ-YT-xt3"/>
@@ -642,6 +643,7 @@
                     </view>
                     <connections>
                         <outlet property="averageLabel" destination="mA1-Af-2sU" id="2vn-q6-fiS"/>
+                        <outlet property="commentTextField" destination="rZH-Q4-pBV" id="bty-Xg-kn9"/>
                         <outlet property="restaurantLabel" destination="Ysq-jt-tt8" id="WS0-GZ-kIc"/>
                         <outlet property="scoreLabel1" destination="jXn-rJ-1IR" id="zhX-NX-876"/>
                         <outlet property="scoreLabel2" destination="yKI-wy-ZTK" id="y7W-ZV-ahr"/>

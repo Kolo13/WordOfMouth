@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *averageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *restaurantLabel;
 @property (weak, nonatomic) IBOutlet UILabel *userLabel;
+@property (weak, nonatomic) IBOutlet UILabel *commentLabel;
 
 @end

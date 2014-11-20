@@ -15,9 +15,12 @@
 
 @interface MainViewController ()
 
+@property (nonatomic, strong) NSArray *colors;
+
 @end
 
 @implementation MainViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,6 +28,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
   
+    self.colors = @[[Color color1], [Color color2], [Color color3],[Color color4], [Color color5], [Color color4], [Color color3], [Color color2]];
     
 //    [[NetworkController sharedManager]createNewUser:[User DictSerialization] completionHandler:^(bool *success) {
 //        if (success) {
@@ -72,7 +76,7 @@
     FoodTypeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FOOD_CELL" forIndexPath:indexPath];
      NSString *selectedFood = self.tableData[indexPath.row];
     cell.foodLabel.text = selectedFood;
-    cell.backgroundColor = [Color color1];
+    cell.backgroundColor = self.colors[indexPath.row];
      return cell;
 }
 

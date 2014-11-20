@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel5;
 @property (weak, nonatomic) IBOutlet UILabel *restaurantLabel;
 @property (weak, nonatomic) IBOutlet UILabel *averageLabel;
+@property (weak, nonatomic) IBOutlet UITextField *commentTextField;
 
 
 
