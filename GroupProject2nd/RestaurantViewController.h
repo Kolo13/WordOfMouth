@@ -8,13 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "Review.h"
+#import "Restaurant.h"
 
 @interface RestaurantViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UISearchBarDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *foodRatingArray;
+@property (nonatomic, strong) Restaurant *selectedRestaurant;
 
 
+  //getGenresForRest /*instead of getList*/
 
 @end
