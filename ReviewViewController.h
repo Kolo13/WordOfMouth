@@ -14,7 +14,6 @@
 
 @interface ReviewViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UITableView *ratingTableView;
 
 @property (weak, nonatomic) IBOutlet UITableView *commentTableView;
 @property (weak, nonatomic) IBOutlet UILabel *ratingLabel1;

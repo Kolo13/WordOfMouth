@@ -14,6 +14,7 @@
 #import "RestaurantCell.h"
 
 @interface FoodViewController ()
+@property (nonatomic, strong) NSArray *colors;
 
 @end
 
@@ -25,6 +26,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
 //    self.searchBar.delegate = self;
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
     UINib *nib = [UINib nibWithNibName:@"RestaurantCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"FOOD_CELL"];
@@ -42,6 +44,7 @@
     Restaurant *test4 = [[Restaurant alloc] initName:@"Green Leaf" latInit:39.3148178201756 lonInit:-99.4621411360279 colorInit:[Color color4]];
     Restaurant *test5 = [[Restaurant alloc] initName:@"Super Divey Pho" latInit:39.3148178201756 lonInit:-99.4621411360279 colorInit:[Color color5]];
     
+    self.colors = @[[Color color1], [Color color2], [Color color3],[Color color4], [Color color5], [Color color4], [Color color3], [Color color2], [Color color1]];
 
     self.fakeRestaurantArray = @[test1, test2, test3, test4, test5];
     
@@ -86,7 +89,9 @@
     RestaurantCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FOOD_CELL" forIndexPath:indexPath];
     Restaurant *selectedFood = self.fakeRestaurantArray[indexPath.row];
     cell.nameLabel.text = selectedFood.name;
-    cell.backgroundColor = selectedFood.cellColor;
+    
+    NSInteger index = indexPath.row % self.colors.count;
+    cell.backgroundColor = self.colors[index];
     return cell;
 }
 
