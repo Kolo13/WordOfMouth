@@ -56,6 +56,8 @@
     
     UINib *nib = [UINib nibWithNibName:@"FoodTypeCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"FOOD_CELL"];
+    
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 
     
 }
@@ -76,7 +78,9 @@
     FoodTypeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FOOD_CELL" forIndexPath:indexPath];
      NSString *selectedFood = self.tableData[indexPath.row];
     cell.foodLabel.text = selectedFood;
-    cell.backgroundColor = self.colors[indexPath.row];
+    
+    NSInteger index = indexPath.row % self.colors.count;
+    cell.backgroundColor = self.colors[index];
      return cell;
 }
 
@@ -84,7 +88,6 @@
     FoodViewController *newVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FOOD_VC"];
     if ([newVC isKindOfClass:[UIViewController class]]){
         [self.navigationController pushViewController:newVC animated:true];
-        
     }
     
 }
