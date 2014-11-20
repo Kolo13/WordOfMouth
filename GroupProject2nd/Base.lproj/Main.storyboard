@@ -491,7 +491,7 @@
                                     <constraint firstAttribute="height" constant="45" id="Jtd-Zy-wNd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="35"/>
-                                <state key="normal" title="RATE">
+                                <state key="normal" title="SUBMIT">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -501,7 +501,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="od5-Fz-9D0">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="277"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="277.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EKR-Gq-AuG">
                                         <rect key="frame" x="0.0" y="237" width="600" height="40"/>
@@ -579,7 +579,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="average" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mA1-Af-2sU">
-                                        <rect key="frame" x="8" y="49" width="61" height="20.5"/>
+                                        <rect key="frame" x="8" y="50" width="61" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
