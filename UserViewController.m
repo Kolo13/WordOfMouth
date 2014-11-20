@@ -9,7 +9,6 @@
 #import "UserViewController.h"
 #import "User.h"
 
-
 @interface UserViewController ()
 
 @end
@@ -26,7 +25,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
   [super viewWillAppear:animated];
-  
+
   
   if ([[[NSUserDefaults standardUserDefaults] valueForKey:@"authToken"] isKindOfClass:[NSString class]]) {
       // getUserRatingList
@@ -45,10 +44,10 @@
     
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
       
-      NSString *login = loginAlert.textFields[0];
-      NSString *password = loginAlert.textFields[1];
-      NSLog(@"%@", login);
-      NSLog(@"%@", password);
+      self.login = loginAlert.textFields[0];
+      self.password = loginAlert.textFields[1];
+      NSLog(@"%@", self.login);
+      NSLog(@"%@", self.password);
 
         //pass user data to network controller for authentication
         //return BOOL
@@ -84,16 +83,37 @@
      
       UIAlertAction *Ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         
-        self.login = signUpAlert.textFields[0];
-        self.email = signUpAlert.textFields[1];
-        self.password = signUpAlert.textFields[2];
-        self.confirmPassword = signUpAlert.textFields[3];
         
+        UITextField *loginTextField = signUpAlert.textFields[1];
+        self.login = loginTextField.text;
+        
+        UITextField *mailTextField = signUpAlert.textFields[1];
+        self.email = mailTextField.text;
+        
+        UITextField *passwordTextField = signUpAlert.textFields[2];
+        self.password = passwordTextField.text;
+        
+        UITextField *confirmPasswordTextField = signUpAlert.textFields[3];
+        self.confirmPassword = confirmPasswordTextField.text;
+        
+        NSData *newUserJSON = [User DictSerialization:self.login email:self.email password:self.password];
+        [[NetworkController  sharedManager]createNewUser:newUserJSON completionHandler:^(bool success) {
+            //code
+        }];
+         
         NSLog(@"%@", self.login);
         NSLog(@"%@", self.email);
         NSLog(@"%@", self.password);
         NSLog(@"%@", self.confirmPassword);
 
+        
+        
+        if (![self.password isEqualToString:self.confirmPassword]){
+          UIAlertController *passwordAlert = [UIAlertController alertControllerWithTitle:nil message:@"Passwords don't match" preferredStyle:UIAlertControllerStyleAlert];
+        
+          [self presentViewController:passwordAlert animated:true completion:nil];
+
+        }
       }];
       
       UIAlertAction *Cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {

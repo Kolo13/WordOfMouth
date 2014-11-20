@@ -16,9 +16,8 @@
 @property (nonatomic, strong) NSString *reviewText;
 @property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSString *password;
-@property (nonatomic, strong) NSString *passwordConfirm;
 
-+ (NSData*)DictSerialization;
++ (NSData*)DictSerialization: (NSString*)name email:(NSString*)email password:(NSString*)password;
 
 - (instancetype) init;
 

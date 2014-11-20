@@ -26,13 +26,30 @@
     self.tableView.dataSource = self;
     self.searchBar.delegate = self;
     
-    Food *food1 = [[Food alloc]initName:@"burger" colorInit:[Color color1]];
-    Food *food2 = [[Food alloc]initName:@"pho" colorInit:[Color color2]];
-    Food *food3 = [[Food alloc]initName:@"pizza" colorInit:[Color color3]];
-    Food *food4 = [[Food alloc]initName:@"sushi" colorInit:[Color color4]];
-    Food *food5 = [[Food alloc]initName:@"tacos" colorInit:[Color color5]];
+    self.fakeData = @[@"pho", @"burgers", @"pasta", @"ramen", @"sashimi", @"steak"];
+//    [[NetworkController sharedManager]createNewUser:[User DictSerialization] completionHandler:^(bool *success) {
+//        if (success) {
+//             NSLog(@"Completed");
+//        }
+//        else if (!success) {
+//             NSLog(@"Failed");
+//        }
+//        else {
+//            NSLog(@"Now I don't have a fucking clue");
+//        }
+//    }];
     
-    self.fakeData = @[food1, food2, food3, food4, food5];
+  //  self.fakeData = @[food1, food2, food3, food4, food5];
+    [[NetworkController sharedManager]getList:@"genre" completionHandler:^(NSArray *list) {
+        NSLog(@"Got genre list back...");
+        if (list != nil){
+            self.tableData = list;
+        }
+        else {
+            NSLog([NSString stringWithFormat:@"Got an array with %lu items back",(unsigned long)self.tableData.count]);
+        }
+        [self.tableView reloadData];
+    }];
     
     UINib *nib = [UINib nibWithNibName:@"FoodTypeCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"FOOD_CELL"];
@@ -52,7 +69,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.fakeData.count;
+    return self.tableData.count;
 }
 
 

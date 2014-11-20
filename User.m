@@ -19,15 +19,27 @@
 }
 
 
-+ (NSData*)DictSerialization{
+//+ (NSData*)DictSerialization{
+//  NSMutableDictionary *profileDict = [[NSMutableDictionary alloc] init];
+//   [profileDict setObject:@"Tuan" forKey:@"name"];
+//   [profileDict setObject:@"tnahvu@gmail.com" forKey:@"email"];
+//   [profileDict setObject:@"123456" forKey:@"password"];
+//   [profileDict setObject:@"123456" forKey:@"passwordConfirm"];
+//   NSError *error;
+//   NSData *profileJSON = [NSJSONSerialization dataWithJSONObject:profileDict options:0 error:&error];
+//   return profileJSON;
+//   }
+
+
++ (NSData*)DictSerialization: (NSString*)name email:(NSString*)email password:(NSString*)password {
   NSMutableDictionary *profileDict = [[NSMutableDictionary alloc] init];
-   [profileDict setObject:@"Tuan" forKey:@"name"];
-   [profileDict setObject:@"tnahvu@gmail.com" forKey:@"email"];
-   [profileDict setObject:@"123456" forKey:@"password"];
-   [profileDict setObject:@"123456" forKey:@"passwordConfirm"];
-   NSError *error;
-   NSData *profileJSON = [NSJSONSerialization dataWithJSONObject:profileDict options:0 error:&error];
-   return profileJSON;
-   }
+  [profileDict setObject:name forKey:@"name"];
+  [profileDict setObject:email forKey:@"email"];
+  [profileDict setObject:password forKey:@"password"];
+  NSError *error;
+  NSData *profileJSON = [NSJSONSerialization dataWithJSONObject:profileDict options:0 error:&error];
+  return profileJSON;
+}
+
 
 @end
