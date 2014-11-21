@@ -28,4 +28,5 @@
 -(void) getGenreTemplateForRatingSubmission: (NSString *)genreName completionHandler:(void(^)(NSArray* list))completionHandler;
 -(void) submitNewReview: (NSDictionary *) newRaiting completionHandler:(void(^)(bool success)) completionHandler;
 -(void)getUserComments: (void(^)(NSArray* list))completionHandler;
+- (void)loginUser: (NSString *)encodedString completionHandler:(void(^)(bool success))completionHandler;
 @end

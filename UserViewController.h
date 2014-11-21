@@ -12,9 +12,9 @@
 
 @interface UserViewController : UIViewController <UITabBarControllerDelegate, UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate>
 
-@property (nonatomic, strong) NSString *login;
-@property (nonatomic, strong) NSString *email;
-@property (nonatomic, strong) NSString *password;
-@property (nonatomic, strong) NSString *confirmPassword;
+@property (nonatomic, strong) UITextField *login;
+@property (nonatomic, strong) UITextField *email;
+@property (nonatomic, strong) UITextField *password;
+@property (nonatomic, strong) UITextField *confirmPassword;
 
 @end

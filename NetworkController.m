@@ -392,4 +392,33 @@
     }];
 }
 
+- (void)loginUser: (NSString *)encodedString completionHandler:(void(^)(bool success))completionHandler {
+    
+    NSString *urlString = @"https://immense-fjord-7475.herokuapp.com/api/users";
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:url];
+    [request setHTTPMethod:@"Get"];
+    [request setValue:encodedString forHTTPHeaderField:@"Authentication"];
+    [[NetworkController sharedManager]performRequest:request completionHandler:^(NSData *rawData) {
+        //TO-DO Store the Token contained in rawData
+        if (rawData == nil) {
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                completionHandler(false);
+            }];
+        } else {
+            //Extract JWT token and store it.
+            BOOL success = [jsonParser extractJWTTokenAndStoreIt:(rawData)];
+            
+            if (success) {
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    completionHandler(true);
+                    
+                }];
+            }
+        }
+    }];
+}
+
+
 @end

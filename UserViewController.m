@@ -49,6 +49,27 @@
       
       self.login = loginAlert.textFields[0];
       self.password = loginAlert.textFields[1];
+        NSMutableString *stringToEncode = [[NSMutableString alloc]init];
+        [stringToEncode appendString:self.login.text];
+        [stringToEncode appendString:@":"];
+        [stringToEncode appendString:self.password.text];
+        // Create NSData object
+        NSData *nsdata = [stringToEncode dataUsingEncoding:NSUTF8StringEncoding];
+        
+        // Get NSString from NSData object in Base64
+        NSString *base64Encoded = [nsdata base64EncodedStringWithOptions:0];
+        
+        [[NetworkController sharedManager] loginUser:base64Encoded completionHandler:^(bool success) {
+            
+        }];
+        
+        // Print the Base64 encoded string
+        NSLog(@"Encoded: %@", base64Encoded);
+        NSMutableString * stringToPass = [[NSMutableString alloc] init];
+        [stringToPass appendString:@"Basic "];
+        [stringToPass appendString:base64Encoded];
+        
+
       NSLog(@"%@", self.login);
       NSLog(@"%@", self.password);
 
