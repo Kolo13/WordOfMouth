@@ -85,7 +85,7 @@
       UIAlertAction *Ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         
         
-        UITextField *loginTextField = signUpAlert.textFields[1];
+        UITextField *loginTextField = signUpAlert.textFields[0];
         self.login = loginTextField.text;
         
         UITextField *mailTextField = signUpAlert.textFields[1];
