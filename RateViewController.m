@@ -68,14 +68,10 @@
 }
 
 - (IBAction)rateSubmissionPressed:(id)sender {
-  
+
   UIAlertController *loginAlert = [UIAlertController alertControllerWithTitle:@"Rating Submitted" message:nil preferredStyle:UIAlertControllerStyleAlert];
   
   UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-    if (!(self.rating1 || self.rating2 ||self.rating3 || self.rating4 || self.rating5)) {
-
-      
-    }
     
     [self.navigationController popViewControllerAnimated:YES];
     
@@ -83,9 +79,11 @@
   
   [loginAlert addAction:ok];
   
-  
-  [self presentViewController:loginAlert animated:true completion:nil];
+  if (self.rating1 && self.rating2 && self.rating3 && self.rating4 && self.rating5) {
+    [self presentViewController:loginAlert animated:true completion:nil];
+  }
 
+  
   
     
 

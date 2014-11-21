@@ -63,9 +63,9 @@
       
       UIAlertController *signUpAlert = [UIAlertController alertControllerWithTitle:@"sign up" message:nil preferredStyle:UIAlertControllerStyleAlert];
       
-        [signUpAlert addTextFieldWithConfigurationHandler:^(UITextField *userNameTextField) {
-        userNameTextField.placeholder = @"username";
-        userNameTextField.keyboardType = UIKeyboardTypeEmailAddress;
+      [signUpAlert addTextFieldWithConfigurationHandler:^(UITextField *userNameTextField) {
+      userNameTextField.placeholder = @"username";
+      userNameTextField.keyboardType = UIKeyboardTypeEmailAddress;
       }];
       
       [signUpAlert addTextFieldWithConfigurationHandler:^(UITextField *emailTextField) {
@@ -104,18 +104,12 @@
 
         
         
-        if (![self.password isEqualToString:self.confirmPassword]){
-          UIAlertController *passwordAlert = [UIAlertController alertControllerWithTitle:nil message:@"Passwords don't match" preferredStyle:UIAlertControllerStyleAlert];
+      
+        NSData *newUserJSON = [User DictSerialization:self.login email:self.email password:self.password];
+        [[NetworkController  sharedManager]createNewUser:newUserJSON completionHandler:^(bool success) {
+            //code
+        }];
         
-          [self presentViewController:passwordAlert animated:true completion:nil];
-
-        }
-        
-          NSData *newUserJSON = [User DictSerialization:self.login email:self.email password:self.password];
-          [[NetworkController  sharedManager]createNewUser:newUserJSON completionHandler:^(bool success) {
-              //code
-          }];
-          
           
       }];
       
