@@ -15,5 +15,6 @@
 +(UIColor *) color3;
 +(UIColor *) color4;
 +(UIColor *) color5;
++(UIColor *) color6;
 
 @end
