@@ -51,6 +51,7 @@
     [self.tableView registerNib:nib forCellReuseIdentifier:@"FOOD_CELL"];
     
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    [[UITabBar appearance] setBarTintColor:[UIColor whiteColor]];
 
     
 }

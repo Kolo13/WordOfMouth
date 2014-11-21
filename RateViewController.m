@@ -7,7 +7,8 @@
 //
 
 #import "RateViewController.h"
-
+#import "NetworkController.h"
+#import "Review.h"
 @interface RateViewController ()
 
 
@@ -23,8 +24,21 @@
   [self createRating:self.rateView3];
   [self createRating:self.rateView4];
   [self createRating:self.rateView5];
-
-
+    
+    
+    self.catKey = [[NSMutableArray alloc]init];
+    //int x = 0;
+    for (NSDictionary *dictionary in self.selectedReview.catAvgArray){
+        [self.catKey addObjectsFromArray:[dictionary allKeys]];
+    }
+    
+    self.scoreLabel1.text = self.catKey[0];
+    self.scoreLabel2.text = self.catKey[1];
+    self.scoreLabel3.text = self.catKey[2];
+    self.scoreLabel4.text = self.catKey[3];
+    self.scoreLabel5.text = self.catKey[4];
+   
+    self.restaurantLabel.text = self.selectedReview.resteraunt;
 }
 
 - (void)rateView:(RateView *)rateView ratingDidChange:(float)rating {

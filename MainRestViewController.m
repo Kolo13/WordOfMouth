@@ -29,6 +29,7 @@
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     self.navigationController.navigationBar.barTintColor = [Color color2];
     [[UINavigationBar appearance] setTranslucent:NO];
+    [[UITabBar appearance] setBarTintColor:[UIColor whiteColor]];
     
 
   
