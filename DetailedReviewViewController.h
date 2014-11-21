@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Review.h"
 
 @interface DetailedReviewViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel1;
@@ -18,5 +19,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *restaurantLabel;
 @property (weak, nonatomic) IBOutlet UILabel *userLabel;
 @property (weak, nonatomic) IBOutlet UILabel *commentLabel;
+
+@property (nonatomic, strong) Review *selectedReview;
+@property (nonatomic, strong) NSMutableArray *catKey;
+@property (nonatomic, strong) NSMutableArray *catVal;
 
 @end

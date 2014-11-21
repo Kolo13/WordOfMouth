@@ -25,6 +25,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.searchBar.delegate = self;
+    self.searchBar.barTintColor = [Color color1];
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
 //    [[NetworkController sharedManager]createNewUser:[User DictSerialization] completionHandler:^(bool success) {
