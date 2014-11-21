@@ -10,7 +10,7 @@
 #import "NetworkController.h"
 #import "User.h"
 
-@interface MainViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate>
+@interface MainViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UITabBarControllerDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

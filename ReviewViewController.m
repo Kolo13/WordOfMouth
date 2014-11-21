@@ -27,6 +27,7 @@
     
     self.commentTableView.delegate = self;
     self.commentTableView.dataSource = self;
+    [self.commentTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 
     UINib *nib = [UINib nibWithNibName:@"CommentCell" bundle:nil];
     [self.commentTableView registerNib:nib forCellReuseIdentifier:@"COMMENT_CELL"];

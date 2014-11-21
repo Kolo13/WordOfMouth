@@ -27,9 +27,10 @@
     self.searchBar.delegate = self;
     self.searchBar.barTintColor = [Color color3];
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    self.navigationController.navigationBar.barTintColor = [Color color2];
+    self.navigationController.navigationBar.barTintColor = [Color color6];
     [[UINavigationBar appearance] setTranslucent:NO];
     [[UITabBar appearance] setBarTintColor:[UIColor whiteColor]];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
 
   
