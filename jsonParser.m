@@ -23,7 +23,14 @@
     NSString* tokenString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     
     if ([tokenString containsString:@"jwt"]) {
-        [[NSUserDefaults standardUserDefaults] setObject:tokenString forKey:@"authToken"];
+       // NSLog(tokenString);
+        NSArray *stringArray = [tokenString componentsSeparatedByString: @"\""];
+        // NSArray *stringArray2 = [stringArray[1] componentsSeparatedByString: @"'\'"];
+        NSString* authToken2 = stringArray[3];
+        
+        
+        
+        [[NSUserDefaults standardUserDefaults] setObject:authToken2 forKey:@"authToken"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         return (true);
     }else {
