@@ -15,6 +15,7 @@
 
 @interface RestaurantViewController ()
 
+@property (nonatomic, strong) NSArray *colors;
 @end
 
 @implementation RestaurantViewController
@@ -51,6 +52,8 @@
         }
         [self.tableView reloadData];
     }];
+    
+    self.colors = @[[Color color1], [Color color2], [Color color3],[Color color4], [Color color5], [Color color4], [Color color3], [Color color2]];
 }
     
 - (void)viewWillAppear:(BOOL)animated{
@@ -63,7 +66,8 @@
     FoodTypeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FOOD_CELL" forIndexPath:indexPath];
     Food *selectedFood = self.foodRatingArray[indexPath.row];
     cell.foodLabel.text = selectedFood.name;
-    cell.backgroundColor = selectedFood.cellColor;
+    NSInteger index = indexPath.row % self.colors.count;
+    cell.backgroundColor = self.colors[index];
     return cell;
 }
 

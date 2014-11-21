@@ -18,7 +18,7 @@
 @property (nonatomic, strong) NSString *userName;
 @property (nonatomic, strong) NSString *comment;
 @property  NSInteger overallRating;
-@property (nonatomic, strong) NSDictionary *categories;
+@property (nonatomic, strong) NSArray *categories;
 
 
 - (instancetype) initWithJSONDictionary: (NSDictionary *) jsonDict;
