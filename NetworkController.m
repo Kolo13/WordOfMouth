@@ -284,12 +284,13 @@
             }];
         }
     }];
-    
-    
+}
 
-    
+-(void) getGenreTemplateForRatingSubmission: (Food *) selectedFood completionHandler:(void(^)(NSArray* list))completionHandler {
+    //genre/cat/:genre
     
     
 }
+
 
 @end

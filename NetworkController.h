@@ -25,5 +25,5 @@
 -(void)getReviewsForRestInGenre: (Restaurant *)restName selectedFood: (Food *) selectedFood completionHandler:(void(^)(NSArray* list))completionHandler;
 -(void)getRestforGenres: (NSString *)genreName completionHandler:(void(^)(NSArray* list))completionHandler;
 -(void) getAverageRatingObjectForRest: (Restaurant *)restName selectedFood: (Food *) selectedFood completionHandler:(void(^)(averageObject* avgRest))completionHandler;
-
+-(void) getGenreTemplateForRatingSubmission: (NSString *)genreName completionHandler:(void(^)(NSArray* list))completionHandler;
 @end
