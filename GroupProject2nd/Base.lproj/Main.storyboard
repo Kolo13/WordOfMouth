@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="14B23" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BfW-5W-O78">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BfW-5W-O78">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -512,10 +512,20 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcu-3Q-kv3" customClass="RateView">
+                                                <rect key="frame" x="400" y="0.0" width="200" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="VNM-fo-eOA"/>
+                                                    <constraint firstAttribute="width" constant="200" id="iCi-x8-s3c"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.26363834720000001" green="0.79498937449999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstItem="fcu-3Q-kv3" firstAttribute="top" secondItem="EKR-Gq-AuG" secondAttribute="top" id="0sy-xo-ba5"/>
+                                            <constraint firstAttribute="trailing" secondItem="fcu-3Q-kv3" secondAttribute="trailing" id="41Y-M3-cer"/>
                                             <constraint firstAttribute="height" constant="40" id="hjP-DB-zBc"/>
+                                            <constraint firstAttribute="bottom" secondItem="fcu-3Q-kv3" secondAttribute="bottom" id="tJh-CH-lmY"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Rg-54-JwU">
@@ -527,10 +537,20 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Juh-4d-fPC" customClass="RateView">
+                                                <rect key="frame" x="400" y="0.0" width="200" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="Hsj-mV-f3B"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="eQA-1R-TAN"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.08911675778" green="0.64024263810000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Juh-4d-fPC" secondAttribute="trailing" id="7VH-9Q-eGr"/>
+                                            <constraint firstItem="Juh-4d-fPC" firstAttribute="top" secondItem="4Rg-54-JwU" secondAttribute="top" id="Efg-gP-Df1"/>
                                             <constraint firstAttribute="height" constant="40" id="Mks-DU-b3g"/>
+                                            <constraint firstAttribute="bottom" secondItem="Juh-4d-fPC" secondAttribute="bottom" id="oqb-nD-xGB"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ao6-7T-N3O">
@@ -542,10 +562,20 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0MQ-GU-Cf9" customClass="RateView">
+                                                <rect key="frame" x="400" y="0.0" width="200" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="1pg-xT-loy"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="uSd-mw-N3p"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.71967303530000004" green="0.66474191090000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="0MQ-GU-Cf9" secondAttribute="bottom" id="1Nv-e9-LZX"/>
+                                            <constraint firstItem="0MQ-GU-Cf9" firstAttribute="top" secondItem="ao6-7T-N3O" secondAttribute="top" id="CHf-Yb-gj4"/>
                                             <constraint firstAttribute="height" constant="40" id="Dw5-XH-KGs"/>
+                                            <constraint firstAttribute="trailing" secondItem="0MQ-GU-Cf9" secondAttribute="trailing" id="epB-eN-iDI"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1CL-pC-dJI">
@@ -557,10 +587,20 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edL-L1-iaG" customClass="RateView">
+                                                <rect key="frame" x="400" y="0.0" width="200" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="SD4-zw-B5R"/>
+                                                    <constraint firstAttribute="width" constant="200" id="qhL-VF-XZH"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.59932734440000002" blue="0.7309434655" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="edL-L1-iaG" secondAttribute="trailing" id="Ld3-wO-cEm"/>
+                                            <constraint firstAttribute="bottom" secondItem="edL-L1-iaG" secondAttribute="bottom" id="NhY-sK-Rgw"/>
                                             <constraint firstAttribute="height" constant="40" id="PHL-ka-hLp"/>
+                                            <constraint firstItem="edL-L1-iaG" firstAttribute="top" secondItem="1CL-pC-dJI" secondAttribute="top" id="TYu-CA-Gyl"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EdB-rz-AS1">
@@ -572,10 +612,19 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mW6-CF-x2i" customClass="RateView">
+                                                <rect key="frame" x="400" y="0.0" width="200" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="Bi4-tT-Eoa"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.71601046130000001" blue="0.66249188309999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="8at-Lr-dYV"/>
+                                            <constraint firstItem="mW6-CF-x2i" firstAttribute="top" secondItem="EdB-rz-AS1" secondAttribute="top" id="DV6-aM-lS7"/>
+                                            <constraint firstAttribute="bottom" secondItem="mW6-CF-x2i" secondAttribute="bottom" id="k3M-iC-byC"/>
+                                            <constraint firstAttribute="trailing" secondItem="mW6-CF-x2i" secondAttribute="trailing" id="yWw-i0-nlY"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="average" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mA1-Af-2sU">
@@ -642,6 +691,11 @@
                     <connections>
                         <outlet property="averageLabel" destination="mA1-Af-2sU" id="2vn-q6-fiS"/>
                         <outlet property="commentTextField" destination="rZH-Q4-pBV" id="bty-Xg-kn9"/>
+                        <outlet property="rateView" destination="mW6-CF-x2i" id="YSr-P9-k2M"/>
+                        <outlet property="rateView2" destination="edL-L1-iaG" id="A1G-SK-CaQ"/>
+                        <outlet property="rateView3" destination="0MQ-GU-Cf9" id="8gl-Dc-Jed"/>
+                        <outlet property="rateView4" destination="Juh-4d-fPC" id="bEZ-Js-ATv"/>
+                        <outlet property="rateView5" destination="fcu-3Q-kv3" id="lry-au-yv3"/>
                         <outlet property="restaurantLabel" destination="Ysq-jt-tt8" id="WS0-GZ-kIc"/>
                         <outlet property="scoreLabel1" destination="jXn-rJ-1IR" id="zhX-NX-876"/>
                         <outlet property="scoreLabel2" destination="yKI-wy-ZTK" id="y7W-ZV-ahr"/>
@@ -652,7 +706,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VjT-7X-ZGI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="892" y="2045"/>
+            <point key="canvasLocation" x="891" y="2045"/>
         </scene>
         <!--ME-->
         <scene sceneID="4hg-ip-r8q">

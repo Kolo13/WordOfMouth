@@ -30,8 +30,6 @@
 
     UINib *nib = [UINib nibWithNibName:@"CommentCell" bundle:nil];
     [self.commentTableView registerNib:nib forCellReuseIdentifier:@"COMMENT_CELL"];
-    
-    
   
     self.foodRatingArray = @[@"Food Label 1", @"Food Label 2", @"Food Label 3"];
     

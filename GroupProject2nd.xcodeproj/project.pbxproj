@@ -10,6 +10,9 @@
 		7009CBCE1A1D262C00872D0E /* jsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7009CBCD1A1D262C00872D0E /* jsonParser.m */; };
 		8B2088C71A1BB3C800166DE7 /* NetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2088C61A1BB3C800166DE7 /* NetworkController.m */; };
 		8B2089081A1BCF1A00166DE7 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2089071A1BCF1A00166DE7 /* UserViewController.m */; };
+		8BCDBD771A1EA3D100E7A01D /* RateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BCDBD761A1EA3D100E7A01D /* RateView.m */; };
+		8BCDBD7A1A1EAE3900E7A01D /* dot_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BCDBD781A1EAE3900E7A01D /* dot_selected.png */; };
+		8BCDBD7B1A1EAE3900E7A01D /* dot_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BCDBD791A1EAE3900E7A01D /* dot_empty.png */; };
 		E113CBE31A1D115A0010E898 /* RateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E113CBE21A1D115A0010E898 /* RateViewController.m */; };
 		E113CBE61A1D14010010E898 /* DetailedReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E113CBE51A1D14010010E898 /* DetailedReviewViewController.m */; };
 		E113CBEA1A1D3DC60010E898 /* bowl8.png in Resources */ = {isa = PBXBuildFile; fileRef = E113CBE91A1D3DC60010E898 /* bowl8.png */; };
@@ -19,7 +22,6 @@
 		E113CBFA1A1D96920010E898 /* FoodTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E113CBF81A1D96920010E898 /* FoodTypeCell.xib */; };
 		E113CBFE1A1DA45A0010E898 /* RatingCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E113CBFC1A1DA45A0010E898 /* RatingCategoryCell.m */; };
 		E113CBFF1A1DA45A0010E898 /* RatingCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E113CBFD1A1DA45A0010E898 /* RatingCategoryCell.xib */; };
-		E115B73C1A1C4AFA00968627 /* pho.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E115B73B1A1C4AFA00968627 /* pho.jpg */; };
 		E115B7421A1C4CC600968627 /* MainRestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E115B7411A1C4CC600968627 /* MainRestViewController.m */; };
 		E115B7451A1C4D1400968627 /* ReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E115B7441A1C4D1400968627 /* ReviewViewController.m */; };
 		E193B7F11A1C6AED002CE393 /* RestaurantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E193B7EF1A1C6AED002CE393 /* RestaurantCell.m */; };
@@ -59,6 +61,10 @@
 		8B2088C61A1BB3C800166DE7 /* NetworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkController.m; sourceTree = "<group>"; };
 		8B2089061A1BCF1A00166DE7 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
 		8B2089071A1BCF1A00166DE7 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
+		8BCDBD751A1EA3D100E7A01D /* RateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateView.h; sourceTree = "<group>"; };
+		8BCDBD761A1EA3D100E7A01D /* RateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateView.m; sourceTree = "<group>"; };
+		8BCDBD781A1EAE3900E7A01D /* dot_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot_selected.png; sourceTree = "<group>"; };
+		8BCDBD791A1EAE3900E7A01D /* dot_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot_empty.png; sourceTree = "<group>"; };
 		E113CBE11A1D115A0010E898 /* RateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateViewController.h; sourceTree = "<group>"; };
 		E113CBE21A1D115A0010E898 /* RateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateViewController.m; sourceTree = "<group>"; };
 		E113CBE41A1D14010010E898 /* DetailedReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedReviewViewController.h; sourceTree = "<group>"; };
@@ -73,7 +79,6 @@
 		E113CBFB1A1DA45A0010E898 /* RatingCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingCategoryCell.h; sourceTree = "<group>"; };
 		E113CBFC1A1DA45A0010E898 /* RatingCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingCategoryCell.m; sourceTree = "<group>"; };
 		E113CBFD1A1DA45A0010E898 /* RatingCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RatingCategoryCell.xib; sourceTree = "<group>"; };
-		E115B73B1A1C4AFA00968627 /* pho.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pho.jpg; sourceTree = "<group>"; };
 		E115B7401A1C4CC600968627 /* MainRestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainRestViewController.h; sourceTree = "<group>"; };
 		E115B7411A1C4CC600968627 /* MainRestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainRestViewController.m; sourceTree = "<group>"; };
 		E115B7431A1C4D1400968627 /* ReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewViewController.h; sourceTree = "<group>"; };
@@ -165,7 +170,8 @@
 		E1F7742C1A1926A2003E0AFE = {
 			isa = PBXGroup;
 			children = (
-				E115B73B1A1C4AFA00968627 /* pho.jpg */,
+				8BCDBD781A1EAE3900E7A01D /* dot_selected.png */,
+				8BCDBD791A1EAE3900E7A01D /* dot_empty.png */,
 				E1F774791A1AA294003E0AFE /* MapKit.framework */,
 				E1F7746C1A19280E003E0AFE /* VIEWS */,
 				E1F7746B1A192808003E0AFE /* MODELS */,
@@ -256,6 +262,8 @@
 				E1F774711A1928ED003E0AFE /* Restaurant.m */,
 				E1F7746D1A1928AF003E0AFE /* Food.h */,
 				E1F7746E1A1928AF003E0AFE /* Food.m */,
+				8BCDBD751A1EA3D100E7A01D /* RateView.h */,
+				8BCDBD761A1EA3D100E7A01D /* RateView.m */,
 			);
 			name = MODELS;
 			sourceTree = "<group>";
@@ -363,13 +371,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1F774471A1926A2003E0AFE /* Main.storyboard in Resources */,
-				E115B73C1A1C4AFA00968627 /* pho.jpg in Resources */,
+				8BCDBD7B1A1EAE3900E7A01D /* dot_empty.png in Resources */,
 				E113CBEA1A1D3DC60010E898 /* bowl8.png in Resources */,
 				E113CBFA1A1D96920010E898 /* FoodTypeCell.xib in Resources */,
 				E1F7744C1A1926A2003E0AFE /* LaunchScreen.xib in Resources */,
 				E113CBFF1A1DA45A0010E898 /* RatingCategoryCell.xib in Resources */,
 				E193B7F21A1C6AED002CE393 /* RestaurantCell.xib in Resources */,
 				E1F774491A1926A2003E0AFE /* Images.xcassets in Resources */,
+				8BCDBD7A1A1EAE3900E7A01D /* dot_selected.png in Resources */,
 				E113CBF51A1D48020010E898 /* CommentCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,6 +416,7 @@
 				E1F7743B1A1926A2003E0AFE /* main.m in Sources */,
 				E113CBF91A1D96920010E898 /* FoodTypeCell.m in Sources */,
 				E1F774631A1927B5003E0AFE /* MainViewController.m in Sources */,
+				8BCDBD771A1EA3D100E7A01D /* RateView.m in Sources */,
 				8B2089081A1BCF1A00166DE7 /* UserViewController.m in Sources */,
 				E113CBE61A1D14010010E898 /* DetailedReviewViewController.m in Sources */,
 				E1F774781A1A894E003E0AFE /* Review.m in Sources */,
