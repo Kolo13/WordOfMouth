@@ -13,7 +13,6 @@
 		8BCDBD771A1EA3D100E7A01D /* RateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BCDBD761A1EA3D100E7A01D /* RateView.m */; };
 		8BCDBD7A1A1EAE3900E7A01D /* dot_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BCDBD781A1EAE3900E7A01D /* dot_selected.png */; };
 		8BCDBD7B1A1EAE3900E7A01D /* dot_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BCDBD791A1EAE3900E7A01D /* dot_empty.png */; };
-		8BCDBD7E1A1EBB4C00E7A01D /* Category1View.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BCDBD7D1A1EBB4C00E7A01D /* Category1View.m */; };
 		E113CBE31A1D115A0010E898 /* RateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E113CBE21A1D115A0010E898 /* RateViewController.m */; };
 		E113CBE61A1D14010010E898 /* DetailedReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E113CBE51A1D14010010E898 /* DetailedReviewViewController.m */; };
 		E113CBEA1A1D3DC60010E898 /* bowl8.png in Resources */ = {isa = PBXBuildFile; fileRef = E113CBE91A1D3DC60010E898 /* bowl8.png */; };
@@ -66,8 +65,6 @@
 		8BCDBD761A1EA3D100E7A01D /* RateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateView.m; sourceTree = "<group>"; };
 		8BCDBD781A1EAE3900E7A01D /* dot_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot_selected.png; sourceTree = "<group>"; };
 		8BCDBD791A1EAE3900E7A01D /* dot_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot_empty.png; sourceTree = "<group>"; };
-		8BCDBD7C1A1EBB4C00E7A01D /* Category1View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Category1View.h; sourceTree = "<group>"; };
-		8BCDBD7D1A1EBB4C00E7A01D /* Category1View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Category1View.m; sourceTree = "<group>"; };
 		E113CBE11A1D115A0010E898 /* RateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateViewController.h; sourceTree = "<group>"; };
 		E113CBE21A1D115A0010E898 /* RateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateViewController.m; sourceTree = "<group>"; };
 		E113CBE41A1D14010010E898 /* DetailedReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedReviewViewController.h; sourceTree = "<group>"; };
@@ -262,8 +259,6 @@
 				7009CBCC1A1D262C00872D0E /* jsonParser.h */,
 				7009CBCD1A1D262C00872D0E /* jsonParser.m */,
 				E1F774701A1928ED003E0AFE /* Restaurant.h */,
-				8BCDBD7C1A1EBB4C00E7A01D /* Category1View.h */,
-				8BCDBD7D1A1EBB4C00E7A01D /* Category1View.m */,
 				E1F774711A1928ED003E0AFE /* Restaurant.m */,
 				E1F7746D1A1928AF003E0AFE /* Food.h */,
 				E1F7746E1A1928AF003E0AFE /* Food.m */,
@@ -417,7 +412,6 @@
 				E1F7743E1A1926A2003E0AFE /* AppDelegate.m in Sources */,
 				E115B7421A1C4CC600968627 /* MainRestViewController.m in Sources */,
 				E1F774691A1927F0003E0AFE /* RestaurantViewController.m in Sources */,
-				8BCDBD7E1A1EBB4C00E7A01D /* Category1View.m in Sources */,
 				E1F774881A1AEEBA003E0AFE /* Color.m in Sources */,
 				E1F7743B1A1926A2003E0AFE /* main.m in Sources */,
 				E113CBF91A1D96920010E898 /* FoodTypeCell.m in Sources */,

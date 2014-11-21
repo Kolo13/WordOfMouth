@@ -8,22 +8,29 @@
 
 #import <UIKit/UIKit.h>
 #import "CommentCell.h"
+#import "Restaurant.h"
+#import "MainViewController.h"
+#import "Food.h"
 
 @interface ReviewViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITableView *commentTableView;
-@property (weak, nonatomic) IBOutlet UILabel *averageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel1;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel2;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel3;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel4;
-@property (weak, nonatomic) IBOutlet UILabel *scoreLabel5;
-@property (weak, nonatomic) IBOutlet UILabel *restaurantLabel;
+@property (weak, nonatomic) IBOutlet UIView *scoreLabel5;
+@property (nonatomic, strong) Restaurant *selectedRestaurant;
+@property (nonatomic, strong) Food *selectedGenre;
+@property (nonatomic, strong) NSArray *previousReviews;
 
 @property (nonatomic, strong) NSArray *foodRatingArray;
-@property (nonatomic, strong) NSArray *commentArray;
+@property (nonatomic, strong) NSArray *reviewArray;
 @property (nonatomic, strong) NSArray *foodCategoryArray;
+
+@property (nonatomic, strong) NSArray *categoryKey;
+@property (nonatomic, strong) NSArray *categoryValue;
 
 - (IBAction)rateButtonPressed:(id)sender;
 

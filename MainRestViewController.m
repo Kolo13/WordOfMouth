@@ -14,7 +14,7 @@
 #import "MainViewController.h"
 
 @interface MainRestViewController ()
-
+@property (nonatomic, strong) NSArray *colors;
 @end
 
 @implementation MainRestViewController
@@ -25,13 +25,8 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.searchBar.delegate = self;
-    
-    Restaurant *rest1 = [[Restaurant alloc]initName:@"Pho Bac" latInit:0 lonInit:0 colorInit:[Color color1]];
-    Restaurant *rest2 = [[Restaurant alloc]initName:@"El Camion" latInit:0 lonInit:0 colorInit:[Color color2]];
-    Restaurant *rest3 = [[Restaurant alloc]initName:@"Paseo" latInit:0 lonInit:0 colorInit:[Color color3]];
-    Restaurant *rest4 = [[Restaurant alloc]initName:@"Dick's" latInit:0 lonInit:0 colorInit:[Color color4]];
-    Restaurant *rest5 = [[Restaurant alloc]initName:@"Pike Place Chowder" latInit:0 lonInit:0 colorInit:[Color color5]];
-    
+    self.searchBar.barTintColor = [Color color1];
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
 //    [[NetworkController sharedManager]createNewUser:[User DictSerialization] completionHandler:^(bool success) {
 //        if (success) {
@@ -49,14 +44,23 @@
     [[NetworkController sharedManager]getList:@"rest" completionHandler:^(NSArray *list) {
         NSLog(@"Got rest list back...");
         if (list != nil){
-            self.restaurantArray = list;
-        }
+                NSMutableArray *newPlaces = [[NSMutableArray alloc] initWithCapacity:40];
+                for (NSString* restName in list) {
+                    Restaurant *currentResteraunt = [[Restaurant alloc]initName:restName latInit:0.0 lonInit:0.0 colorInit:[Color color1]];
+                    [newPlaces addObject:currentResteraunt];
+                }
+            
+            //[[Restaurant alloc]initName:self.restaurantArray[indexPath.row]
+                
+                self.restaurantArray = newPlaces;
+            }
         else {
            // NSLog([NSString stringWithFormat:@"Got an array with %lu items back",(unsigned long)self.restaurantArray.count]);
         }
         [self.tableView reloadData];
     }];
     
+    self.colors = @[[Color color1], [Color color2], [Color color3],[Color color4], [Color color5], [Color color4], [Color color3], [Color color2]];
     
     UINib *nib = [UINib nibWithNibName:@"RestaurantCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"RESTAURANT_CELL"];
@@ -78,9 +82,10 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     RestaurantCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RESTAURANT_CELL" forIndexPath:indexPath];
-    Restaurant *selectedRestaurant = [[Restaurant alloc]initName:self.restaurantArray[indexPath.row] latInit:0 lonInit:0 colorInit:nil];
+    Restaurant *selectedRestaurant = self.restaurantArray[indexPath.row];
     cell.nameLabel.text = selectedRestaurant.name;
-    cell.backgroundColor = selectedRestaurant.cellColor;
+    NSInteger index = indexPath.row % self.colors.count;
+    cell.backgroundColor = self.colors[index];
     
     return cell;
 }

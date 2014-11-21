@@ -19,5 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *fakeRestaurantArray;
 @property (nonatomic, retain) CLLocationManager* locationManager;
+@property (nonatomic, strong) Food *selectedFood;
+@property (nonatomic, strong) NSArray *restaurantArray;
 
 @end

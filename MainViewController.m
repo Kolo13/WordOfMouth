@@ -46,7 +46,12 @@
     [[NetworkController sharedManager]getList:@"genre" completionHandler:^(NSArray *list) {
         NSLog(@"Got genre list back...");
         if (list != nil){
-            self.tableData = list;
+            NSMutableArray *newFoods = [[NSMutableArray alloc] initWithCapacity:40];
+            for (NSString* foodNames in list) {
+                Food *currentFood = [[Food alloc]initName:foodNames colorInit:[Color color1]];
+                [newFoods addObject:currentFood];
+            }
+            self.tableData = newFoods;
         }
         else {
             NSLog([NSString stringWithFormat:@"Got an array with %lu items back",(unsigned long)self.tableData.count]);
@@ -56,6 +61,8 @@
     
     UINib *nib = [UINib nibWithNibName:@"FoodTypeCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"FOOD_CELL"];
+    
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 
     
 }
@@ -74,17 +81,19 @@
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FoodTypeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FOOD_CELL" forIndexPath:indexPath];
-     NSString *selectedFood = self.tableData[indexPath.row];
-    cell.foodLabel.text = selectedFood;
-    cell.backgroundColor = self.colors[indexPath.row];
+     Food *selectedFood = self.tableData[indexPath.row];
+    cell.foodLabel.text = selectedFood.name;
+    
+    NSInteger index = indexPath.row % self.colors.count;
+    cell.backgroundColor = self.colors[index];
      return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     FoodViewController *newVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FOOD_VC"];
     if ([newVC isKindOfClass:[UIViewController class]]){
+        newVC.selectedFood = self.tableData[indexPath.row];
         [self.navigationController pushViewController:newVC animated:true];
-        
     }
     
 }

@@ -19,5 +19,28 @@
     }
 
 
++ (BOOL) extractJWTTokenAndStoreIt: (NSData *) jsonData {
+    NSString* tokenString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+    if ([tokenString containsString:@"jwt"]) {
+        [[NSUserDefaults standardUserDefaults] setObject:tokenString forKey:@"authToken"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        return (true);
+    }else {
+        NSLog(@"There was a problem with the token: %@", tokenString);
+        return (false);
+    }
+    
+}
+
++ (NSDictionary *) parseJSONIntoReviewDictionary: (NSData *) jsonData {
+    NSError* error;
+    NSDictionary* dictionaryOfObjects = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&error];
+    NSDictionary* itemsDictionary = dictionaryOfObjects[@"ratings"];
+   // NSArray* itemsArray = itemsDictionary[@"catsArray"];
+    return itemsDictionary;
+}
+
+
 
 @end

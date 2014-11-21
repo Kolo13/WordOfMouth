@@ -9,6 +9,7 @@
 #import "NetworkController.h"
 #import "UserViewController.h"
 #import "jsonParser.h"
+#import "Review.h"
 
 @interface  NetworkController()
 
@@ -61,11 +62,16 @@
                 completionHandler(false);
             }];
         } else {
-             
-                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                     completionHandler(true);
+             //Extract JWT token and store it.
+            BOOL success = [jsonParser extractJWTTokenAndStoreIt:(rawData)];
+            
+            if (success) {
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    completionHandler(true);
+
              }];
-        }
+            }
+            }
     }];
 }
 
@@ -112,13 +118,42 @@
 }
 //test
 
+-(void)getGenresForRest: (NSString *)restName completionHandler:(void(^)(NSArray* list))completionHandler {
+    NSLog(@"Entered Network Controller");
+    NSMutableString *urlString = [[NSMutableString alloc] initWithString:self.baseURL];
+    [urlString appendString: @"/rest/genres/"];
+    [urlString appendString: restName];
+    NSLog(urlString);
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:url];
+    [request setHTTPMethod:@"GET"];
+    NSLog(@"Request ready to go!");
+    [[NetworkController sharedManager]performRequest:request completionHandler:^(NSData *rawData) {
+        //TO-DO Store the Token contained in rawData
+        if (rawData == nil) {
+            NSLog(@"Raw data was Nil");
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                completionHandler(@[]);
+            }];
+        } else {
+            //call json parser with RawData
+            NSLog(@"Have raw data that needs to be processed");
+            NSArray *list = [jsonParser parseJSONIntoListArray:(rawData)];
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                completionHandler(list);
+            }];
+        }
+    }];
+    
+}
 
 - (void)performRequest:(NSMutableURLRequest *)request completionHandler:(void (^)(NSData* rawData))completionHandler {
     NSLog(@"Performing Request");
     NSURLSessionDataTask *dataTask = [self.URLSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSLog(@"Performing Task...");
         if (error != nil) {
-            NSLog(@"ERROR: %@", [error localizedDescription]);
+            NSLog(@"DATA TASK ERROR: %@", [error localizedDescription]);
         } else {
             NSLog(@"Entered Else");
             if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
@@ -154,7 +189,71 @@
     [dataTask resume];
 }
 
+- (void)getReviewsForRestInGenre: (Restaurant *)restName selectedFood: (Food *) selectedFood completionHandler:(void(^)(NSArray* list))completionHandler {
+  //get(rest/comments/_name_)
+    NSLog(@"Entered Network Controller");
+    NSMutableString *urlString = [[NSMutableString alloc] initWithString:self.baseURL];
+    [urlString appendString: @"/rest/comments/"];
+    [urlString appendString: restName.name];
+    NSLog(urlString);
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:url];
+    [request setHTTPMethod:@"GET"];
+    NSLog(@"Request ready to go!");
+    [[NetworkController sharedManager]performRequest:request completionHandler:^(NSData *rawData) {
+        //TO-DO Store the Token contained in rawData
+        if (rawData == nil) {
+            NSLog(@"Raw data was Nil");
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                completionHandler(@[]);
+            }];
+        } else {
+            //call json parser with RawData
+            NSLog(@"Have raw data that needs to be processed");
+            NSDictionary *dictionaryOfReviews = [jsonParser parseJSONIntoReviewDictionary:(rawData)];
+            NSArray *list = [Review parseDictionaryIntoArrayOfReviews:dictionaryOfReviews selectedGenre:selectedFood selectedRest:restName];
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                completionHandler(list);
+            }];
+        }
+    }];
+    
+    
+}
 
+
+-(void)getRestforGenres: (NSString *)genreName completionHandler:(void(^)(NSArray* list))completionHandler {
+    NSLog(@"Entered Network Controller");
+    NSMutableString *urlString = [[NSMutableString alloc] initWithString:self.baseURL];
+    [urlString appendString: @"/genre/listRests/"];
+    [urlString appendString: genreName];
+    NSLog(urlString);
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:url];
+    [request setHTTPMethod:@"GET"];
+    NSLog(@"Request ready to go!");
+    [[NetworkController sharedManager]performRequest:request completionHandler:^(NSData *rawData) {
+        //TO-DO Store the Token contained in rawData
+        if (rawData == nil) {
+            NSLog(@"Raw data was Nil");
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                completionHandler(@[]);
+            }];
+        } else {
+            //call json parser with RawData
+            NSLog(@"Have raw data that needs to be processed");
+            NSArray *list = [jsonParser parseJSONIntoListArray:(rawData)];
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                completionHandler(list);
+            }];
+        }
+    }];
+    
+}
+    
+    
 
 
 
