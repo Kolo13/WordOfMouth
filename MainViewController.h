@@ -10,11 +10,10 @@
 #import "NetworkController.h"
 #import "User.h"
 
-@interface MainViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UISearchBarDelegate>
+@interface MainViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate>
 
-@property (nonatomic, strong) NSArray *fakeData;
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, strong) NSArray *tableData;
 
 
