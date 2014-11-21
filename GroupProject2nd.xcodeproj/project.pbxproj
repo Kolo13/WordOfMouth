@@ -10,7 +10,6 @@
 		7009CBCE1A1D262C00872D0E /* jsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7009CBCD1A1D262C00872D0E /* jsonParser.m */; };
 		8B2088C71A1BB3C800166DE7 /* NetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2088C61A1BB3C800166DE7 /* NetworkController.m */; };
 		8B2089081A1BCF1A00166DE7 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2089071A1BCF1A00166DE7 /* UserViewController.m */; };
-		8BCDBD6D1A1E754600E7A01D /* AverageRating.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BCDBD6C1A1E754600E7A01D /* AverageRating.m */; };
 		8BCDBD771A1EA3D100E7A01D /* RateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BCDBD761A1EA3D100E7A01D /* RateView.m */; };
 		8BCDBD7A1A1EAE3900E7A01D /* dot_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BCDBD781A1EAE3900E7A01D /* dot_selected.png */; };
 		8BCDBD7B1A1EAE3900E7A01D /* dot_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BCDBD791A1EAE3900E7A01D /* dot_empty.png */; };
@@ -63,8 +62,6 @@
 		8B2088C61A1BB3C800166DE7 /* NetworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkController.m; sourceTree = "<group>"; };
 		8B2089061A1BCF1A00166DE7 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
 		8B2089071A1BCF1A00166DE7 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
-		8BCDBD6B1A1E754600E7A01D /* AverageRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AverageRating.h; sourceTree = "<group>"; };
-		8BCDBD6C1A1E754600E7A01D /* AverageRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AverageRating.m; sourceTree = "<group>"; };
 		8BCDBD751A1EA3D100E7A01D /* RateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateView.h; sourceTree = "<group>"; };
 		8BCDBD761A1EA3D100E7A01D /* RateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateView.m; sourceTree = "<group>"; };
 		8BCDBD781A1EAE3900E7A01D /* dot_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot_selected.png; sourceTree = "<group>"; };
@@ -258,8 +255,6 @@
 			children = (
 				E1F774861A1AEEBA003E0AFE /* Color.h */,
 				E1F774871A1AEEBA003E0AFE /* Color.m */,
-				8BCDBD6B1A1E754600E7A01D /* AverageRating.h */,
-				8BCDBD6C1A1E754600E7A01D /* AverageRating.m */,
 				E1F774731A1A7F20003E0AFE /* User.h */,
 				E1F774741A1A7F20003E0AFE /* User.m */,
 				E1F774761A1A894E003E0AFE /* Review.h */,
@@ -427,7 +422,6 @@
 				E1F7743B1A1926A2003E0AFE /* main.m in Sources */,
 				E113CBF91A1D96920010E898 /* FoodTypeCell.m in Sources */,
 				E1F774631A1927B5003E0AFE /* MainViewController.m in Sources */,
-				8BCDBD6D1A1E754600E7A01D /* AverageRating.m in Sources */,
 				8BCDBD771A1EA3D100E7A01D /* RateView.m in Sources */,
 				8B2089081A1BCF1A00166DE7 /* UserViewController.m in Sources */,
 				E113CBE61A1D14010010E898 /* DetailedReviewViewController.m in Sources */,
