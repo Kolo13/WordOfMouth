@@ -29,9 +29,11 @@
   
   if ([[[NSUserDefaults standardUserDefaults] valueForKey:@"authToken"] isKindOfClass:[NSString class]]) {
       NSLog(@"We have a stored auth token");
+      [[NetworkController sharedManager] getUserComments :^(NSArray *list) {
+          
+      }];
       // getUserRatingList
   }else{
-    
     UIAlertController *loginAlert = [UIAlertController alertControllerWithTitle:@"login" message:nil preferredStyle:UIAlertControllerStyleAlert];
     [loginAlert addTextFieldWithConfigurationHandler:^(UITextField *userNameTextField) {
       userNameTextField.placeholder = @"username";
