@@ -564,7 +564,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0MQ-GU-Cf9" customClass="RateView">
+                                            <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0MQ-GU-Cf9" customClass="RateView">
                                                 <rect key="frame" x="400" y="0.0" width="200" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="1pg-xT-loy"/>
@@ -589,7 +589,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edL-L1-iaG" customClass="RateView">
+                                            <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edL-L1-iaG" customClass="RateView">
                                                 <rect key="frame" x="400" y="0.0" width="200" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="SD4-zw-B5R"/>
@@ -614,7 +614,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mW6-CF-x2i" customClass="RateView">
+                                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mW6-CF-x2i" customClass="RateView">
                                                 <rect key="frame" x="400" y="0.0" width="200" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="Bi4-tT-Eoa"/>
@@ -695,6 +695,9 @@
                         <outlet property="commentTextField" destination="rZH-Q4-pBV" id="bty-Xg-kn9"/>
                         <outlet property="rateView" destination="mW6-CF-x2i" id="YSr-P9-k2M"/>
                         <outlet property="rateView2" destination="edL-L1-iaG" id="A1G-SK-CaQ"/>
+                        <outlet property="rateView3" destination="0MQ-GU-Cf9" id="8gl-Dc-Jed"/>
+                        <outlet property="rateView4" destination="Juh-4d-fPC" id="bEZ-Js-ATv"/>
+                        <outlet property="rateView5" destination="fcu-3Q-kv3" id="lry-au-yv3"/>
                         <outlet property="restaurantLabel" destination="Ysq-jt-tt8" id="WS0-GZ-kIc"/>
                         <outlet property="scoreLabel1" destination="jXn-rJ-1IR" id="zhX-NX-876"/>
                         <outlet property="scoreLabel2" destination="yKI-wy-ZTK" id="y7W-ZV-ahr"/>

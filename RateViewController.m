@@ -17,28 +17,41 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.rateView.notSelectedImage = [UIImage imageNamed:@"dot_empty.png"];
-  self.rateView.halfSelectedImage = [UIImage imageNamed:@"kermit_half.png"];
-  self.rateView.fullSelectedImage = [UIImage imageNamed:@"dot_selected.png"];
-  self.rateView.rating = 0;
-  self.rateView.editable = YES;
-  self.rateView.maxRating = 5;
-  self.rateView.delegate = self;
   
-  self.rateView2.notSelectedImage = [UIImage imageNamed:@"dot_empty.png"];
-  self.rateView2.halfSelectedImage = [UIImage imageNamed:@"kermit_half.png"];
-  self.rateView2.fullSelectedImage = [UIImage imageNamed:@"dot_selected.png"];
-  self.rateView2.rating = 0;
-  self.rateView2.editable = YES;
-  self.rateView2.maxRating = 5;
-  self.rateView2.delegate = self;
+  [self createRating:self.rateView];
+  [self createRating:self.rateView2];
+  [self createRating:self.rateView3];
+  [self createRating:self.rateView4];
+  [self createRating:self.rateView5];
+
+
 }
 
 - (void)rateView:(RateView *)rateView ratingDidChange:(float)rating {
-     self.scoreLabel1.text = [NSString stringWithFormat:@"%f", rating];
+  if (rateView.tag == 1){
+//     self.scoreLabel1.text = [NSString stringWithFormat:@"%f", rating];
+//  }else if (rateView.tag == 2){
+//    self.scoreLabel2.text = [NSString stringWithFormat:@"%f", rating];
+//  }else if (rateView.tag == 3){
+//    self.scoreLabel3.text = [NSString stringWithFormat:@"%f", rating];
+//  }else if (rateView.tag == 4){
+//    self.scoreLabel4.text = [NSString stringWithFormat:@"%f", rating];
+//  }else if (rateView.tag == 5){
+//    self.scoreLabel5.text = [NSString stringWithFormat:@"%f", rating];
+  }
+
 
 }
 
+-(void)createRating:(RateView*)newRating{
+  newRating.notSelectedImage = [UIImage imageNamed:@"dot_empty.png"];
+  newRating.halfSelectedImage = [UIImage imageNamed:@"kermit_half.png"];
+  newRating.fullSelectedImage = [UIImage imageNamed:@"dot_selected.png"];
+  newRating.rating = 0;
+  newRating.editable = YES;
+  newRating.maxRating = 5;
+  newRating.delegate = self;
+}
 
 - (IBAction)rateSubmissionPressed:(id)sender {
 }
