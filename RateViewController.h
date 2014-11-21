@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "RateView.h"
+#import "Food.h"
+#import "Restaurant.h"
+
 
 @interface RateViewController : UIViewController
 
@@ -33,11 +36,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *averageLabel;
 @property (weak, nonatomic) IBOutlet UITextField *commentTextField;
 
-@property float rating1;
-@property float rating2;
-@property float rating3;
-@property float rating4;
-@property float rating5;
+@property int rating1;
+@property int rating2;
+@property int rating3;
+@property int rating4;
+@property int rating5;
+@property Food *selectedFood;
+@property Restaurant *selectedRestaurant;
 
 
 @end

@@ -7,7 +7,8 @@
 //
 
 #import "RateViewController.h"
-
+#import "Restaurant.h"
+#import "NetworkController.h"
 @interface RateViewController ()
 
 
@@ -17,7 +18,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
+  [NetworkController sharedManager];
   [self createRating:self.rateView];
   [self createRating:self.rateView2];
   [self createRating:self.rateView3];
@@ -55,5 +56,20 @@
 
 - (IBAction)rateSubmissionPressed:(id)sender {
   
+  UIAlertController *loginAlert = [UIAlertController alertControllerWithTitle:@"Rating Submitted" message:nil preferredStyle:UIAlertControllerStyleAlert];
+  
+  UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    [self.navigationController popViewControllerAnimated:YES];
+
+  }];
+  
+  [loginAlert addAction:ok];
+  
+  
+  [self presentViewController:loginAlert animated:true completion:nil];
+
+  
+    
+
 }
 @end
