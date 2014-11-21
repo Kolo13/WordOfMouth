@@ -37,7 +37,10 @@
     [[NetworkController sharedManager] getReviewsForRestInGenre:self.selectedRestaurant selectedFood:self.selectedGenre completionHandler:^(NSArray *list) {
         self.previousReviews = list;
     }];
-    
+    //Get the average value object for this Rest in this Genre
+    [[NetworkController sharedManager] getAverageRatingObjectForRest:self.selectedRestaurant selectedFood:self.selectedGenre completionHandler:^(averageObject *avgRest) {
+        self.avgRest = avgRest;
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated{

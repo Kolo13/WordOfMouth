@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7009CBCE1A1D262C00872D0E /* jsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7009CBCD1A1D262C00872D0E /* jsonParser.m */; };
+		7099632E1A1ED4F1005FA49D /* averageObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7099632D1A1ED4F1005FA49D /* averageObject.m */; };
 		8B2088C71A1BB3C800166DE7 /* NetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2088C61A1BB3C800166DE7 /* NetworkController.m */; };
 		8B2089081A1BCF1A00166DE7 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2089071A1BCF1A00166DE7 /* UserViewController.m */; };
 		E113CBE31A1D115A0010E898 /* RateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E113CBE21A1D115A0010E898 /* RateViewController.m */; };
@@ -55,6 +56,8 @@
 /* Begin PBXFileReference section */
 		7009CBCC1A1D262C00872D0E /* jsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jsonParser.h; sourceTree = "<group>"; };
 		7009CBCD1A1D262C00872D0E /* jsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jsonParser.m; sourceTree = "<group>"; };
+		7099632C1A1ED4F1005FA49D /* averageObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = averageObject.h; sourceTree = "<group>"; };
+		7099632D1A1ED4F1005FA49D /* averageObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = averageObject.m; sourceTree = "<group>"; };
 		8B2088C51A1BB3C800166DE7 /* NetworkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkController.h; sourceTree = "<group>"; };
 		8B2088C61A1BB3C800166DE7 /* NetworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkController.m; sourceTree = "<group>"; };
 		8B2089061A1BCF1A00166DE7 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
@@ -256,6 +259,8 @@
 				E1F774711A1928ED003E0AFE /* Restaurant.m */,
 				E1F7746D1A1928AF003E0AFE /* Food.h */,
 				E1F7746E1A1928AF003E0AFE /* Food.m */,
+				7099632C1A1ED4F1005FA49D /* averageObject.h */,
+				7099632D1A1ED4F1005FA49D /* averageObject.m */,
 			);
 			name = MODELS;
 			sourceTree = "<group>";
@@ -408,6 +413,7 @@
 				E113CBF91A1D96920010E898 /* FoodTypeCell.m in Sources */,
 				E1F774631A1927B5003E0AFE /* MainViewController.m in Sources */,
 				8B2089081A1BCF1A00166DE7 /* UserViewController.m in Sources */,
+				7099632E1A1ED4F1005FA49D /* averageObject.m in Sources */,
 				E113CBE61A1D14010010E898 /* DetailedReviewViewController.m in Sources */,
 				E1F774781A1A894E003E0AFE /* Review.m in Sources */,
 			);
