@@ -46,6 +46,7 @@
 @property int rating3;
 @property int rating4;
 @property int rating5;
+@property (strong,nonatomic) NSArray *ratingsArray;
 @property Food *selectedFood;
 @property Restaurant *selectedRestaurant;
 @property (nonatomic, strong) NSMutableArray *catKey;
