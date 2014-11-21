@@ -7,6 +7,7 @@
 //
 
 #import "Review.h"
+#import "Color.h"
 
 @implementation Review
 
@@ -47,6 +48,24 @@
         
 };
    // NSMutableArray * list = [[NSMutableArray alloc]init];
+    
+    
+    
+    return list;
+    
+}
+
+
++ (NSArray *) parseFullDictionaryIntoArrayOfReviews: (NSDictionary *) dictionary  {
+    NSMutableArray * list = [[NSMutableArray alloc]init];
+    NSArray* rating = [dictionary objectForKey:@"ratingArray"];
+    for (id key in rating) {
+        Review * currentReview = [[Review alloc]initWithJSONDictionary:key];
+        Restaurant *selectedRest = [[Restaurant alloc]initName:currentReview.restaurant latInit:0.0 lonInit:0.0 colorInit:[Color color1]];
+        currentReview.restaurant = selectedRest;
+            [list addObject:currentReview];
+    };
+    // NSMutableArray * list = [[NSMutableArray alloc]init];
     
     
     

@@ -162,7 +162,8 @@
                 NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
                 
                 NSInteger statusCode = [httpResponse statusCode];
-                NSLog(@"The status code is %l",statusCode);
+                NSLog(@"The response message is: %@",responseString);
+                
                 if (statusCode >= 200 && statusCode <= 299) {
                     
                     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
@@ -172,6 +173,7 @@
                 } else if (statusCode >= 400 && statusCode <= 499) {
                     
                     NSLog(@"Error! Status code is: %lu", statusCode);
+                    NSLog(@"The failure mesage is: %@", responseString);
                     NSLog(@"This is the clients fault");
                     
                 } else if (statusCode >= 500 && statusCode <= 599) {
@@ -284,12 +286,110 @@
             }];
         }
     }];
-    
-    
+}
 
+-(void) getGenreTemplateForRatingSubmission: (Food *) selectedFood completionHandler:(void(^)(NSArray* list))completionHandler {
+    //genre/cat/:genre
+    NSLog(@"Entered Network Controller");
+    NSMutableString *urlString = [[NSMutableString alloc] initWithString:self.baseURL];
+    [urlString appendString: @"/genre/cat/"];
+    [urlString appendString: selectedFood.name];
+    NSLog(urlString);
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:url];
+    [request setHTTPMethod:@"GET"];
+    NSLog(@"Request ready to go!");
+    [[NetworkController sharedManager]performRequest:request completionHandler:^(NSData *rawData) {
+        //TO-DO Store the Token contained in rawData
+        if (rawData == nil) {
+            NSLog(@"Raw data was Nil");
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                completionHandler(@[]);
+            }];
+        } else {
+            //call json parser with RawData
+            NSLog(@"Have raw data that needs to be processed");
+            NSArray *list = [jsonParser parseJSONIntoListArray:(rawData)];
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                completionHandler(list);
+            }];
+        }
+    }];
     
-    
-    
+}
+
+-(void) submitNewReview: (NSDictionary *) newRaiting completionHandler:(void(^)(bool success)) completionHandler {
+//        ('comment/add') - post body must contain {"restaurant": "testaurant","rating": [5,5,5,2,4], "genre": "burger", "str": "testing add a comment1"}
+        
+        NSLog(@"Entered Network Controller to post a new review");
+        NSMutableString *urlString = [[NSMutableString alloc] initWithString:self.baseURL];
+        [urlString appendString: @"/comment/add"];
+        NSURL *url = [[NSURL alloc] initWithString:urlString];
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+        NSError *error;
+        NSData *jsonObject = [NSJSONSerialization dataWithJSONObject:newRaiting options:0 error:&error];
+        [request setURL:url];
+        [request setHTTPMethod:@"POST"];
+        [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)[jsonObject length]]
+       forHTTPHeaderField:@"Content-Length"];
+        [request setHTTPBody:jsonObject];
+        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        NSString* authToken =[[NSUserDefaults standardUserDefaults] objectForKey:@"authToken"];
+        [request setValue:authToken forHTTPHeaderField:@"jwt"];
+        [[NetworkController sharedManager]performRequest:request completionHandler:^(NSData *rawData) {
+            //TO-DO Store the Token contained in rawData
+            if (rawData == nil) {
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    completionHandler(false);
+                }];
+            } else {
+                //Verify comment was added successfully.
+                NSString *responseString = [[NSString alloc] initWithData:rawData encoding:NSUTF8StringEncoding];
+                
+                if ([responseString isEqualToString:@"comment added"]) {
+                    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                        completionHandler(true);
+                    }];
+                } else {
+                    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                        completionHandler(false);
+                    }];
+                }
+
+                }
+        }];
+}
+
+
+//comment/user/list
+-(void)getUserComments: (void(^)(NSArray* list))completionHandler {
+    NSMutableString *urlString = [[NSMutableString alloc] initWithString:self.baseURL];
+    [urlString appendString: @"/comment/user/list"];
+    NSLog(urlString);
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:url];
+    [request setHTTPMethod:@"GET"];
+    NSString* authToken =[[NSUserDefaults standardUserDefaults] objectForKey:@"authToken"];
+    [request setValue:authToken forHTTPHeaderField:@"jwt"];
+    [[NetworkController sharedManager]performRequest:request completionHandler:^(NSData *rawData) {
+        //TO-DO Store the Token contained in rawData
+        if (rawData == nil) {
+            NSLog(@"Raw data was Nil");
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                completionHandler(@[]);
+            }];
+        } else {
+            //call json parser with RawData
+            NSLog(@"Have raw data that needs to be processed");
+            NSDictionary *dictionaryOfReviews = [jsonParser parseJSONIntoReviewDictionaryForSingleUser:rawData];
+            NSArray *list = [Review parseFullDictionaryIntoArrayOfReviews:dictionaryOfReviews];
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                completionHandler(list);
+            }];
+        }
+    }];
 }
 
 @end

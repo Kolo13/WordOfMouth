@@ -9,6 +9,7 @@
 #import "RateViewController.h"
 #import "NetworkController.h"
 #import "Review.h"
+#import "Food.h"
 @interface RateViewController ()
 
 
@@ -69,6 +70,7 @@
 
 - (IBAction)rateSubmissionPressed:(id)sender {
 
+    [self submitRating];
   UIAlertController *loginAlert = [UIAlertController alertControllerWithTitle:@"Rating Submitted" message:nil preferredStyle:UIAlertControllerStyleAlert];
   
   UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
@@ -88,4 +90,32 @@
     
 
 }
-@end
+
+- (void)submitRating {
+   // post body must contain {"restaurant": "testaurant","rating": [5,5,5,2,4], "genre": "burger", "str": "testing add a comment1"}
+    NSArray *ratingArray = @[[NSNumber numberWithInt:self.rating1], [NSNumber numberWithInt:self.rating2], [NSNumber numberWithInt:self.rating3], [NSNumber numberWithInt:self.rating4], [NSNumber numberWithInt:self.rating5]];
+        NSDictionary* dictToSubmit = @{
+                                          @"restaurant": self.selectedRestaurant.name,
+                                          @"rating": ratingArray,
+                                          @"genre": self.selectedFood.name,
+                                          @"str" : self.commentTextField.text
+                                          };
+    [[NetworkController sharedManager] submitNewReview:dictToSubmit completionHandler:^(bool success) {
+        if (success) {
+            NSLog(@"Post Successful!");
+                  } else {
+                      NSLog(@"Post Fail");
+                  }
+    }];
+//    NSDictionary* dictionary0 = @{self.catVal[0] : [NSNumber numberWithInt:self.rating1]};
+//    NSDictionary* dictionary1 = @{self.catVal[1] : [NSNumber numberWithInt:self.rating2]};
+//    NSDictionary* dictionary2 = @{self.catVal[2] : [NSNumber numberWithInt:self.rating3]};
+//    NSDictionary* dictionary3 = @{self.catVal[3] : [NSNumber numberWithInt:self.rating4]};
+//    NSDictionary* dictionary4 = @{self.catVal[4] : [NSNumber numberWithInt:self.rating5]};
+//    NSArray* catArray =@[dictionary0, dictionary1, dictionary2, dictionary3, dictionary4];
+    
+    
+    
+    
+}
+    @end
