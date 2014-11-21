@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Food.h"
+#import "averageObject.h"
 
 @interface jsonParser : NSObject
 
 + (NSArray *) parseJSONIntoListArray: (NSData *) jsonData;
 + (BOOL) extractJWTTokenAndStoreIt: (NSData *) jsonData;
-+ (NSDictionary *) parseJSONIntoReviewDictionary: (NSData *) jsonData;
++ (NSDictionary *) parseJSONIntoReviewDictionary: (NSData *) jsonData selectedGenre: (Food *) selectedFood;
++ (averageObject *) parseJSONIntoAvgReviewObject: (NSData *) jsonData;
 
 @end

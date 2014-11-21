@@ -33,12 +33,30 @@
     
 }
 
-+ (NSDictionary *) parseJSONIntoReviewDictionary: (NSData *) jsonData {
++ (NSDictionary *) parseJSONIntoReviewDictionary: (NSData *) jsonData selectedGenre: (Food *) selectedFood {
     NSError* error;
     NSDictionary* dictionaryOfObjects = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&error];
-    NSDictionary* itemsDictionary = dictionaryOfObjects[@"ratings"];
+    NSMutableDictionary *itemsDictionary;
+    for (NSDictionary *dictionary in dictionaryOfObjects) {
+        if ([[dictionary objectForKey:@"genre"] isEqualToString:selectedFood.name]) {
+          itemsDictionary = dictionary[@"ratings"];
+        return itemsDictionary;
+        }
+    }
+   
+    
    // NSArray* itemsArray = itemsDictionary[@"catsArray"];
     return itemsDictionary;
+}
+
++ (averageObject *) parseJSONIntoAvgReviewObject: (NSData *) jsonData {
+    NSError* error;
+    NSDictionary* dictionaryOfObjects = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&error];
+    NSMutableDictionary *itemsDictionary;
+            itemsDictionary = dictionaryOfObjects[@"avgObject"];
+    averageObject * avgObject = [[averageObject alloc] initWithJSONDictionary:itemsDictionary];
+    return avgObject;
+
 }
 
 

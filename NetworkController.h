@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "UserViewController.h"
 #import "Food.h"
+#import "averageObject.h"
 
 @interface NetworkController : NSObject
 
@@ -23,5 +24,6 @@
 -(void)getGenresForRest: (NSString *)restName completionHandler:(void(^)(NSArray* list))completionHandler;
 -(void)getReviewsForRestInGenre: (Restaurant *)restName selectedFood: (Food *) selectedFood completionHandler:(void(^)(NSArray* list))completionHandler;
 -(void)getRestforGenres: (NSString *)genreName completionHandler:(void(^)(NSArray* list))completionHandler;
+-(void) getAverageRatingObjectForRest: (Restaurant *)restName selectedFood: (Food *) selectedFood completionHandler:(void(^)(averageObject* avgRest))completionHandler;
 
 @end

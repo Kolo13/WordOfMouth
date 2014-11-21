@@ -39,6 +39,10 @@
         [self.commentTableView reloadData];
         
     }];
+    
+    [[NetworkController sharedManager]getAverageRatingObjectForRest:self.selectedRestaurant selectedFood:self.selectedGenre completionHandler:^(averageObject *avgRest) {
+        self.avgRest = avgRest;
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated{

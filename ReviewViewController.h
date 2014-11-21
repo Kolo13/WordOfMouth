@@ -11,6 +11,7 @@
 #import "Restaurant.h"
 #import "MainViewController.h"
 #import "Food.h"
+#import "averageObject.h"
 
 @interface ReviewViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
@@ -28,6 +29,7 @@
 @property (nonatomic, strong) NSArray *foodRatingArray;
 @property (nonatomic, strong) NSArray *reviewArray;
 @property (nonatomic, strong) NSArray *foodCategoryArray;
+@property (nonatomic, strong) averageObject *avgRest;
 
 @property (nonatomic, strong) NSArray *categoryKey;
 @property (nonatomic, strong) NSArray *categoryValue;
