@@ -59,8 +59,13 @@
   UIAlertController *loginAlert = [UIAlertController alertControllerWithTitle:@"Rating Submitted" message:nil preferredStyle:UIAlertControllerStyleAlert];
   
   UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-    [self.navigationController popViewControllerAnimated:YES];
+    if (!(self.rating1 || self.rating2 ||self.rating3 || self.rating4 || self.rating5)) {
 
+      
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
   }];
   
   [loginAlert addAction:ok];
