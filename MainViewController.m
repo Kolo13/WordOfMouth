@@ -27,7 +27,7 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-     self.navigationController.navigationBar.barTintColor = [Color color2];
+     self.navigationController.navigationBar.barTintColor = [Color color6];
   
     self.colors = @[[Color color1], [Color color2], [Color color3],[Color color4], [Color color5], [Color color4], [Color color3], [Color color2]];
 
@@ -51,6 +51,10 @@
     [self.tableView registerNib:nib forCellReuseIdentifier:@"FOOD_CELL"];
     
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    [[UITabBar appearance] setBarTintColor:[UIColor whiteColor]];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+
 
     
 }
