@@ -22,5 +22,6 @@
 - (void)getList: (NSString *)listType completionHandler:(void(^)(NSArray* list))completionHandler;
 -(void)getGenresForRest: (NSString *)restName completionHandler:(void(^)(NSArray* list))completionHandler;
 -(void)getReviewsForRestInGenre: (Restaurant *)restName selectedFood: (Food *) selectedFood completionHandler:(void(^)(NSArray* list))completionHandler;
+-(void)getRestforGenres: (NSString *)genreName completionHandler:(void(^)(NSArray* list))completionHandler;
 
 @end
