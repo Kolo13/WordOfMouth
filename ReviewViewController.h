@@ -12,9 +12,11 @@
 #import "MainViewController.h"
 #import "Food.h"
 #import "averageObject.h"
-
+#import "RateView.h"
 @interface ReviewViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
+
+@property (weak, nonatomic) IBOutlet RateView *rateView;
 
 @property (weak, nonatomic) IBOutlet UILabel *restaurantLabel;
 @property (weak, nonatomic) IBOutlet UITableView *commentTableView;
@@ -36,6 +38,14 @@
 @property (nonatomic, strong) Review *review;
 @property (nonatomic, strong) NSMutableArray *catKey;
 @property (nonatomic, strong) NSMutableArray *catVal;
+
+@property int rating1;
+@property int rating2;
+@property int rating3;
+@property int rating4;
+@property int rating5;
+
+-(void)createRating:(RateView*)newRating;
 
 - (IBAction)rateButtonPressed:(id)sender;
 

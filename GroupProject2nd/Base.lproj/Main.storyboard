@@ -220,6 +220,9 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T13-WK-Llv" customClass="RateView">
+                                                <rect key="frame" x="285" y="-8" width="300" height="71"/>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.71601046125068346" blue="0.66249188312903518" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -276,6 +279,7 @@
                     </view>
                     <connections>
                         <outlet property="commentTableView" destination="ouY-EN-7m5" id="m7r-dP-U3Y"/>
+                        <outlet property="rateView" destination="T13-WK-Llv" id="CJ4-qs-mel"/>
                         <outlet property="restaurantLabel" destination="sQ8-Vy-HIC" id="DvB-V2-vFc"/>
                         <outlet property="scoreLabel1" destination="70s-Bx-gaC" id="maz-jc-dbT"/>
                         <outlet property="scoreLabel2" destination="Doy-qZ-gtT" id="4fs-U7-lJT"/>
@@ -286,7 +290,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d6i-oe-NSd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1539" y="2045"/>
+            <point key="canvasLocation" x="1539" y="2043"/>
         </scene>
         <!--Detailed Review View Controller-->
         <scene sceneID="Gjv-9l-CgM">
