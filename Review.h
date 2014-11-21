@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "User.h"
 #import "Restaurant.h"
+#import "Food.h"
 
 @interface Review : NSObject
 
@@ -20,6 +21,7 @@
 @property (nonatomic, strong) NSDictionary *categories;
 
 
-- (instancetype) init;
+- (instancetype) initWithJSONDictionary: (NSDictionary *) jsonDict;
++ (NSArray *) parseDictionaryIntoArrayOfReviews: (NSDictionary *) dictionary selectedGenre: (Food *)selectedFood selectedRest: (Restaurant *)selectedRest;
 
 @end

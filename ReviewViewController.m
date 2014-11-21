@@ -33,7 +33,10 @@
     
     self.foodRatingArray = @[@"Food Label 1", @"Food Label 2", @"Food Label 3"];
     
-    
+    //populate self.previousReviews with Review Objects
+    [[NetworkController sharedManager] getReviewsForRestInGenre:self.selectedRestaurant selectedFood:self.selectedGenre completionHandler:^(NSArray *list) {
+        self.previousReviews = list;
+    }];
     
 }
 

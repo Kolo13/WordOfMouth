@@ -283,9 +283,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="averageLabel" destination="1IW-hu-LWZ" id="Qbf-Cn-ztO"/>
                         <outlet property="commentTableView" destination="ouY-EN-7m5" id="m7r-dP-U3Y"/>
-                        <outlet property="restaurantLabel" destination="sQ8-Vy-HIC" id="Wgr-Nw-tBN"/>
                         <outlet property="scoreLabel1" destination="70s-Bx-gaC" id="maz-jc-dbT"/>
                         <outlet property="scoreLabel2" destination="Doy-qZ-gtT" id="4fs-U7-lJT"/>
                         <outlet property="scoreLabel3" destination="Zul-VE-Eai" id="iis-j7-3IQ"/>
