@@ -183,6 +183,11 @@
 		E1F7742C1A1926A2003E0AFE = {
 			isa = PBXGroup;
 			children = (
+				E1C0E3571A1ED548009683BB /* man288.png */,
+				E1C0E35D1A1ED6AD009683BB /* hamburger5.png */,
+				E1C0E35B1A1ED5AE009683BB /* plate7.png */,
+				E1C0E3581A1ED548009683BB /* sausage1.png */,
+				E1C0E3551A1ED4F9009683BB /* child3.png */,
 				8BCDBD781A1EAE3900E7A01D /* dot_selected.png */,
 				8BCDBD791A1EAE3900E7A01D /* dot_empty.png */,
 				E1F774791A1AA294003E0AFE /* MapKit.framework */,
@@ -386,6 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1F774471A1926A2003E0AFE /* Main.storyboard in Resources */,
+				E1C0E3591A1ED548009683BB /* man288.png in Resources */,
 				8BCDBD7B1A1EAE3900E7A01D /* dot_empty.png in Resources */,
 				E113CBEA1A1D3DC60010E898 /* bowl8.png in Resources */,
 				E1C0E35E1A1ED6AD009683BB /* hamburger5.png in Resources */,
@@ -396,6 +402,7 @@
 				E1C0E35A1A1ED548009683BB /* sausage1.png in Resources */,
 				E193B7F21A1C6AED002CE393 /* RestaurantCell.xib in Resources */,
 				E1F774491A1926A2003E0AFE /* Images.xcassets in Resources */,
+				E1C0E35C1A1ED5AE009683BB /* plate7.png in Resources */,
 				8BCDBD7A1A1EAE3900E7A01D /* dot_selected.png in Resources */,
 				E113CBF51A1D48020010E898 /* CommentCell.xib in Resources */,
 			);
