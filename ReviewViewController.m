@@ -31,13 +31,12 @@
     UINib *nib = [UINib nibWithNibName:@"CommentCell" bundle:nil];
     [self.commentTableView registerNib:nib forCellReuseIdentifier:@"COMMENT_CELL"];
     
-    self.foodRatingArray = @[@"Food Label 1", @"Food Label 2", @"Food Label 3"];
-    
     //populate self.previousReviews with Review Objects
     [[NetworkController sharedManager] getReviewsForRestInGenre:self.selectedRestaurant selectedFood:self.selectedGenre completionHandler:^(NSArray *list) {
-        self.previousReviews = list;
+        self.reviewArray = list;
+        [self.commentTableView reloadData];
+        
     }];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -47,21 +46,24 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.foodRatingArray.count;
+    return self.reviewArray.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
         CommentCell *cell = [tableView dequeueReusableCellWithIdentifier:@"COMMENT_CELL" forIndexPath:indexPath];
-    
-        cell.commentLabel.text = @"Given that, the short menu seems like an afterthought — maybe some nibbles to accompany your Chateau ";
-        cell.userLabel.text = @"teapain";
-        cell.dateLabel.text = @"11/23/14";
+    Review *comment = self.reviewArray[indexPath.row];
+        cell.commentLabel.text = comment.comment;
+        cell.userLabel.text = comment.userName;
+        cell.dateLabel.text = comment.genreName;
         return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     DetailedReviewViewController *newVC = [self.storyboard instantiateViewControllerWithIdentifier:@"DETAILED_VC"];
+
+    newVC.selectedReview = self.reviewArray[indexPath.row];
+    
     if ([newVC isKindOfClass:[UIViewController class]]){
         [self.navigationController pushViewController:newVC animated:true];
     }

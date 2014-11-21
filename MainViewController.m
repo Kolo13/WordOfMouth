@@ -27,7 +27,6 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.navigationController.navigationBar.barTintColor = [Color color3];
   
     self.colors = @[[Color color1], [Color color2], [Color color3],[Color color4], [Color color5], [Color color4], [Color color3], [Color color2]];
     

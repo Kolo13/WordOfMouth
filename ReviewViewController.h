@@ -26,8 +26,11 @@
 @property (nonatomic, strong) NSArray *previousReviews;
 
 @property (nonatomic, strong) NSArray *foodRatingArray;
-@property (nonatomic, strong) NSArray *commentArray;
+@property (nonatomic, strong) NSArray *reviewArray;
 @property (nonatomic, strong) NSArray *foodCategoryArray;
+
+@property (nonatomic, strong) NSArray *categoryKey;
+@property (nonatomic, strong) NSArray *categoryValue;
 
 - (IBAction)rateButtonPressed:(id)sender;
 

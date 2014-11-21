@@ -26,7 +26,6 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
 //    self.searchBar.delegate = self;
-    self.searchBar.barTintColor = [Color color3];
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
     UINib *nib = [UINib nibWithNibName:@"RestaurantCell" bundle:nil];
