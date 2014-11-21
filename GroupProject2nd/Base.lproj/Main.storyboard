@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BfW-5W-O78">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -68,7 +68,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="8Ny-A2-EzF">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Enter Search Right Churr" translatesAutoresizingMaskIntoConstraints="NO" id="8Ny-A2-EzF">
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="X0T-TR-HOD"/>
@@ -744,7 +744,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="ME" id="3S0-sV-h1R"/>
+                    <tabBarItem key="tabBarItem" title="ME" image="child3.png" selectedImage="child3.png" id="3S0-sV-h1R"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LyL-6Y-Kl6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -768,7 +768,7 @@
                                     <constraint firstAttribute="height" constant="250" id="gRU-Hp-s0s"/>
                                 </constraints>
                             </mapView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="M74-8Q-deH">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Enter Search Right Churr" translatesAutoresizingMaskIntoConstraints="NO" id="M74-8Q-deH">
                                 <rect key="frame" x="0.0" y="250" width="600" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="vq2-Nk-2Xg"/>
@@ -924,11 +924,11 @@
             </objects>
             <point key="canvasLocation" x="1863" y="1128"/>
         </scene>
-        <!--FOOD-->
+        <!--WOM-->
         <scene sceneID="mjx-t9-VQB">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="R6y-bJ-wNb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="FOOD" id="Wcd-A5-e5u"/>
+                <navigationController title="WOM" automaticallyAdjustsScrollViewInsets="NO" id="R6y-bJ-wNb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="FOOD" image="hamburger5.png" selectedImage="hamburger5.png" id="Wcd-A5-e5u"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dbZ-Xc-3YZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -967,7 +967,7 @@
         <scene sceneID="3Sv-9n-v47">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GzZ-es-qwV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="RESTAURANT" id="rFu-C7-gLY"/>
+                    <tabBarItem key="tabBarItem" title="RESTAURANT" image="plate7.png" selectedImage="plate7.png" id="rFu-C7-gLY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fQl-1b-BqK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -983,4 +983,9 @@
             <point key="canvasLocation" x="1863" y="-356"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="child3.png" width="24" height="27"/>
+        <image name="hamburger5.png" width="24" height="24"/>
+        <image name="plate7.png" width="24" height="24"/>
+    </resources>
 </document>
