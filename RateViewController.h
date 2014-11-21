@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RateView.h"
 
 @interface RateViewController : UIViewController
 
 - (IBAction)rateSubmissionPressed:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel1;
+@property (weak, nonatomic) IBOutlet RateView *rateView;
+
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel2;
+@property (weak, nonatomic) IBOutlet RateView *rateView2;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel3;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel4;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel5;

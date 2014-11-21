@@ -5,7 +5,6 @@
 //  Created by Kori Kolodziejczak on 11/20/14.
 //  Copyright (c) 2014 Tuan Vu. All rights reserved.
 //
-
 #import "RateView.h"
 
 @implementation RateView
@@ -51,6 +50,7 @@
   }
   return self;
 }
+
 
 - (void)refresh {
   for(int i = 0; i < self.imageViews.count; ++i) {
