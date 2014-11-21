@@ -15,10 +15,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel3;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel4;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel5;
-@property (weak, nonatomic) IBOutlet UILabel *averageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *restaurantLabel;
 @property (weak, nonatomic) IBOutlet UILabel *userLabel;
 @property (weak, nonatomic) IBOutlet UILabel *commentLabel;
+
 
 @property (nonatomic, strong) Review *selectedReview;
 @property (nonatomic, strong) NSMutableArray *catKey;

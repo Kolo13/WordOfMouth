@@ -19,20 +19,20 @@
     self.catKey = [[NSMutableArray alloc]init];
     self.commentLabel.text = [self.selectedReview comment];
     self.userLabel.text = [self.selectedReview userName];
+//    self.restaurantLabel.text = [self.selectedReview restaurant];
+    
     
     //int x = 0;
     for (NSDictionary *dictionary in self.selectedReview.categories){
         [self.catKey addObjectsFromArray:[dictionary allKeys]];
     }
     
-   // self.catKey = [self.selectedReview.categories allKeys];
-   // self.catVal = [self.selectedReview.categories allValues];
-    
     self.scoreLabel1.text = self.catKey[0];
     self.scoreLabel2.text = self.catKey[1];
     self.scoreLabel3.text = self.catKey[2];
     self.scoreLabel4.text = self.catKey[3];
     self.scoreLabel5.text = self.catKey[4];
+//    self.restaurantLabel.text = self.selectedReview.restaurant;
     
 }
 

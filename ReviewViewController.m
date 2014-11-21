@@ -27,11 +27,11 @@
     
     self.commentTableView.delegate = self;
     self.commentTableView.dataSource = self;
+    [self.commentTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 
     UINib *nib = [UINib nibWithNibName:@"CommentCell" bundle:nil];
     [self.commentTableView registerNib:nib forCellReuseIdentifier:@"COMMENT_CELL"];
   
-    self.foodRatingArray = @[@"Food Label 1", @"Food Label 2", @"Food Label 3"];
     
     //populate self.previousReviews with Review Objects
     [[NetworkController sharedManager] getReviewsForRestInGenre:self.selectedRestaurant selectedFood:self.selectedGenre completionHandler:^(NSArray *list) {
@@ -42,7 +42,19 @@
     
     [[NetworkController sharedManager]getAverageRatingObjectForRest:self.selectedRestaurant selectedFood:self.selectedGenre completionHandler:^(averageObject *avgRest) {
         self.avgRest = avgRest;
-    }];
+    
+    self.catKey = [[NSMutableArray alloc]init];
+    
+    for (NSDictionary *dictionary in self.avgRest.catAvgArray){
+        [self.catKey addObjectsFromArray:[dictionary allKeys]];
+    }
+    self.scoreLabel1.text = self.catKey[0];
+    self.scoreLabel2.text = self.catKey[1];
+    self.scoreLabel3.text = self.catKey[2];
+    self.scoreLabel4.text = self.catKey[3];
+    self.scoreLabel5.text = self.catKey[4];
+    self.restaurantLabel.text = self.avgRest.resteraunt;
+}];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -79,6 +91,7 @@
     RateViewController*newVC = [self.storyboard instantiateViewControllerWithIdentifier:@"RATING_VC"];
     if ([newVC isKindOfClass:[UIViewController class]]){
         [self.navigationController pushViewController:newVC animated:true];
+        newVC.selectedReview = self.avgRest;
     }
 
 }

@@ -27,22 +27,10 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+     self.navigationController.navigationBar.barTintColor = [Color color6];
   
     self.colors = @[[Color color1], [Color color2], [Color color3],[Color color4], [Color color5], [Color color4], [Color color3], [Color color2]];
-    
-//    [[NetworkController sharedManager]createNewUser:[User DictSerialization] completionHandler:^(bool *success) {
-//        if (success) {
-//             NSLog(@"Completed");
-//        }
-//        else if (!success) {
-//             NSLog(@"Failed");
-//        }
-//        else {
-//            NSLog(@"Now I don't have a fucking clue");
-//        }
-//    }];
-    
-  //  self.fakeData = @[food1, food2, food3, food4, food5];
+
     [[NetworkController sharedManager]getList:@"genre" completionHandler:^(NSArray *list) {
         NSLog(@"Got genre list back...");
         if (list != nil){
@@ -63,6 +51,10 @@
     [self.tableView registerNib:nib forCellReuseIdentifier:@"FOOD_CELL"];
     
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    [[UITabBar appearance] setBarTintColor:[UIColor whiteColor]];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+
 
     
 }

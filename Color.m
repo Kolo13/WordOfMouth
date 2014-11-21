@@ -15,6 +15,7 @@
 +(UIColor *) color3 { return [UIColor colorWithRed:0.4 green:0.6 blue:1.0 alpha:1.0]; }
 +(UIColor *) color4 { return [UIColor colorWithRed:0.5 green:0.5 blue:1.0 alpha:1.0]; }
 +(UIColor *) color5 { return [UIColor colorWithRed:0.6 green:0.4 blue:1.0 alpha:1.0]; }
++(UIColor *) color6 { return [UIColor colorWithRed:1.0 green:0.3 blue:0.3 alpha:0.2]; }
 
 
 
