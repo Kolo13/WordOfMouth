@@ -32,7 +32,7 @@
     self.scoreLabel3.text = self.catKey[2];
     self.scoreLabel4.text = self.catKey[3];
     self.scoreLabel5.text = self.catKey[4];
-//    self.restaurantLabel.text = self.selectedReview.restaurant;
+    self.restaurantLabel.text = self.selectedReview.restaurant.name;
     
 }
 

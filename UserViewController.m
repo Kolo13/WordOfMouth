@@ -8,8 +8,11 @@
 
 #import "UserViewController.h"
 #import "User.h"
+#import "CommentCell.h"
+#import "Review.h"
 
 @interface UserViewController ()
+
 
 @end
 
@@ -18,13 +21,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
   
-  
-    
-    
+    self.userReviews = [[NSArray alloc]init];
+
 }
+
 
 -(void)viewWillAppear:(BOOL)animated{
   [super viewWillAppear:animated];
+
+    
+    self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
+    self.profileImageView.clipsToBounds = YES;
+    
 
   
   if ([[[NSUserDefaults standardUserDefaults] valueForKey:@"authToken"] isKindOfClass:[NSString class]]) {
@@ -131,11 +139,20 @@
     [self presentViewController:loginAlert animated:true completion:nil];
     
   }
-  
-  
-  
-  
-
+    
 }
 
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.userReviews.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CommentCell* cell = [tableView dequeueReusableCellWithIdentifier:@"COMMENT_CELL" forIndexPath:indexPath];
+    Review* review = self.userReviews[indexPath.row];
+    cell.commentLabel.text = review.comment;
+    cell.userLabel.text = review.userName;
+    cell.dateLabel.text = review.genreName;
+    return cell;
+}
 @end

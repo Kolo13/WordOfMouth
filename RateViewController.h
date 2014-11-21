@@ -37,8 +37,9 @@
 @property (weak, nonatomic) IBOutlet RateView *rateView5;
 
 @property (weak, nonatomic) IBOutlet UILabel *restaurantLabel;
+@property (weak, nonatomic) IBOutlet UITextView *commentTextField;
 
-@property (weak, nonatomic) IBOutlet UITextField *commentTextField;
+
 @property (nonatomic, strong) averageObject *selectedReview;
 
 @property int rating1;
