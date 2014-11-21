@@ -267,6 +267,8 @@
 				E1F7746E1A1928AF003E0AFE /* Food.m */,
 				8BCDBD751A1EA3D100E7A01D /* RateView.h */,
 				8BCDBD761A1EA3D100E7A01D /* RateView.m */,
+				7099632C1A1ED4F1005FA49D /* averageObject.h */,
+				7099632D1A1ED4F1005FA49D /* averageObject.m */,
 			);
 			name = MODELS;
 			sourceTree = "<group>";
