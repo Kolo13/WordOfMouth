@@ -734,7 +734,7 @@
                                     <constraint firstAttribute="height" constant="20" id="mIn-ge-R3m"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="my comments" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FbV-AD-f7q">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="my history" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FbV-AD-f7q">
                                 <rect key="frame" x="0.0" y="264" width="600" height="45"/>
                                 <color key="backgroundColor" red="0.32994661069999998" green="0.4589456609" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
