@@ -19,11 +19,15 @@
 		E113CBFA1A1D96920010E898 /* FoodTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E113CBF81A1D96920010E898 /* FoodTypeCell.xib */; };
 		E113CBFE1A1DA45A0010E898 /* RatingCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E113CBFC1A1DA45A0010E898 /* RatingCategoryCell.m */; };
 		E113CBFF1A1DA45A0010E898 /* RatingCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E113CBFD1A1DA45A0010E898 /* RatingCategoryCell.xib */; };
-		E115B73C1A1C4AFA00968627 /* pho.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E115B73B1A1C4AFA00968627 /* pho.jpg */; };
 		E115B7421A1C4CC600968627 /* MainRestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E115B7411A1C4CC600968627 /* MainRestViewController.m */; };
 		E115B7451A1C4D1400968627 /* ReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E115B7441A1C4D1400968627 /* ReviewViewController.m */; };
 		E193B7F11A1C6AED002CE393 /* RestaurantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E193B7EF1A1C6AED002CE393 /* RestaurantCell.m */; };
 		E193B7F21A1C6AED002CE393 /* RestaurantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E193B7F01A1C6AED002CE393 /* RestaurantCell.xib */; };
+		E1C0E3561A1ED4F9009683BB /* child3.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C0E3551A1ED4F9009683BB /* child3.png */; };
+		E1C0E3591A1ED548009683BB /* man288.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C0E3571A1ED548009683BB /* man288.png */; };
+		E1C0E35A1A1ED548009683BB /* sausage1.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C0E3581A1ED548009683BB /* sausage1.png */; };
+		E1C0E35C1A1ED5AE009683BB /* plate7.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C0E35B1A1ED5AE009683BB /* plate7.png */; };
+		E1C0E35E1A1ED6AD009683BB /* hamburger5.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C0E35D1A1ED6AD009683BB /* hamburger5.png */; };
 		E1F7743B1A1926A2003E0AFE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F7743A1A1926A2003E0AFE /* main.m */; };
 		E1F7743E1A1926A2003E0AFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F7743D1A1926A2003E0AFE /* AppDelegate.m */; };
 		E1F774411A1926A2003E0AFE /* GroupProject2nd.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E1F7743F1A1926A2003E0AFE /* GroupProject2nd.xcdatamodeld */; };
@@ -73,7 +77,6 @@
 		E113CBFB1A1DA45A0010E898 /* RatingCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingCategoryCell.h; sourceTree = "<group>"; };
 		E113CBFC1A1DA45A0010E898 /* RatingCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingCategoryCell.m; sourceTree = "<group>"; };
 		E113CBFD1A1DA45A0010E898 /* RatingCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RatingCategoryCell.xib; sourceTree = "<group>"; };
-		E115B73B1A1C4AFA00968627 /* pho.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pho.jpg; sourceTree = "<group>"; };
 		E115B7401A1C4CC600968627 /* MainRestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainRestViewController.h; sourceTree = "<group>"; };
 		E115B7411A1C4CC600968627 /* MainRestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainRestViewController.m; sourceTree = "<group>"; };
 		E115B7431A1C4D1400968627 /* ReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewViewController.h; sourceTree = "<group>"; };
@@ -81,6 +84,11 @@
 		E193B7EE1A1C6AED002CE393 /* RestaurantCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantCell.h; sourceTree = "<group>"; };
 		E193B7EF1A1C6AED002CE393 /* RestaurantCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantCell.m; sourceTree = "<group>"; };
 		E193B7F01A1C6AED002CE393 /* RestaurantCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantCell.xib; sourceTree = "<group>"; };
+		E1C0E3551A1ED4F9009683BB /* child3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = child3.png; sourceTree = "<group>"; };
+		E1C0E3571A1ED548009683BB /* man288.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = man288.png; sourceTree = "<group>"; };
+		E1C0E3581A1ED548009683BB /* sausage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sausage1.png; sourceTree = "<group>"; };
+		E1C0E35B1A1ED5AE009683BB /* plate7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plate7.png; sourceTree = "<group>"; };
+		E1C0E35D1A1ED6AD009683BB /* hamburger5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburger5.png; sourceTree = "<group>"; };
 		E1F774351A1926A2003E0AFE /* GroupProject2nd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupProject2nd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F774391A1926A2003E0AFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1F7743A1A1926A2003E0AFE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -165,7 +173,11 @@
 		E1F7742C1A1926A2003E0AFE = {
 			isa = PBXGroup;
 			children = (
-				E115B73B1A1C4AFA00968627 /* pho.jpg */,
+				E1C0E3571A1ED548009683BB /* man288.png */,
+				E1C0E35D1A1ED6AD009683BB /* hamburger5.png */,
+				E1C0E35B1A1ED5AE009683BB /* plate7.png */,
+				E1C0E3581A1ED548009683BB /* sausage1.png */,
+				E1C0E3551A1ED4F9009683BB /* child3.png */,
 				E1F774791A1AA294003E0AFE /* MapKit.framework */,
 				E1F7746C1A19280E003E0AFE /* VIEWS */,
 				E1F7746B1A192808003E0AFE /* MODELS */,
@@ -363,13 +375,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1F774471A1926A2003E0AFE /* Main.storyboard in Resources */,
-				E115B73C1A1C4AFA00968627 /* pho.jpg in Resources */,
+				E1C0E3591A1ED548009683BB /* man288.png in Resources */,
 				E113CBEA1A1D3DC60010E898 /* bowl8.png in Resources */,
+				E1C0E35E1A1ED6AD009683BB /* hamburger5.png in Resources */,
 				E113CBFA1A1D96920010E898 /* FoodTypeCell.xib in Resources */,
 				E1F7744C1A1926A2003E0AFE /* LaunchScreen.xib in Resources */,
 				E113CBFF1A1DA45A0010E898 /* RatingCategoryCell.xib in Resources */,
+				E1C0E3561A1ED4F9009683BB /* child3.png in Resources */,
+				E1C0E35A1A1ED548009683BB /* sausage1.png in Resources */,
 				E193B7F21A1C6AED002CE393 /* RestaurantCell.xib in Resources */,
 				E1F774491A1926A2003E0AFE /* Images.xcassets in Resources */,
+				E1C0E35C1A1ED5AE009683BB /* plate7.png in Resources */,
 				E113CBF51A1D48020010E898 /* CommentCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

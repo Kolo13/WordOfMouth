@@ -25,8 +25,13 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.searchBar.delegate = self;
-    self.searchBar.barTintColor = [Color color1];
+    self.searchBar.barTintColor = [Color color3];
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    self.navigationController.navigationBar.barTintColor = [Color color2];
+    [[UINavigationBar appearance] setTranslucent:NO];
+    
+
+  
     
 //    [[NetworkController sharedManager]createNewUser:[User DictSerialization] completionHandler:^(bool success) {
 //        if (success) {
@@ -74,7 +79,13 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [self.searchBar resignFirstResponder];
+    NSString *searchText = self.searchBar.text;
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%@", searchText];
+    self.filteredArray= [self.restaurantArray filteredArrayUsingPredicate:predicate];
+    [self.tableView reloadData];
 }
+
+
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.restaurantArray.count;
@@ -86,8 +97,8 @@
     cell.nameLabel.text = selectedRestaurant.name;
     NSInteger index = indexPath.row % self.colors.count;
     cell.backgroundColor = self.colors[index];
-    
     return cell;
+    
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -97,7 +108,5 @@
         [self.navigationController pushViewController:newVC animated:true];
     }
 }
-
-
 
 @end
