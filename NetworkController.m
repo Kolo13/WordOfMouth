@@ -288,6 +288,33 @@
 
 -(void) getGenreTemplateForRatingSubmission: (Food *) selectedFood completionHandler:(void(^)(NSArray* list))completionHandler {
     //genre/cat/:genre
+    NSLog(@"Entered Network Controller");
+    NSMutableString *urlString = [[NSMutableString alloc] initWithString:self.baseURL];
+    [urlString appendString: @"/genre/cat/"];
+    [urlString appendString: selectedFood.name];
+    NSLog(urlString);
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:url];
+    [request setHTTPMethod:@"GET"];
+    NSLog(@"Request ready to go!");
+    [[NetworkController sharedManager]performRequest:request completionHandler:^(NSData *rawData) {
+        //TO-DO Store the Token contained in rawData
+        if (rawData == nil) {
+            NSLog(@"Raw data was Nil");
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                completionHandler(@[]);
+            }];
+        } else {
+            //call json parser with RawData
+            NSLog(@"Have raw data that needs to be processed");
+            NSArray *list = [jsonParser parseJSONIntoListArray:(rawData)];
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                completionHandler(list);
+            }];
+        }
+    }];
+
     
     
 }
