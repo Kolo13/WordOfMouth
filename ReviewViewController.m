@@ -33,33 +33,33 @@
     [self.commentTableView registerNib:nib forCellReuseIdentifier:@"COMMENT_CELL"];
   
     
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear: animated];
+    [[NetworkController sharedManager]getAverageRatingObjectForRest:self.selectedRestaurant selectedFood:self.selectedGenre completionHandler:^(averageObject *avgRest) {
+        self.avgRest = avgRest;
+        
+        self.catKey = [[NSMutableArray alloc]init];
+        
+        for (NSDictionary *dictionary in self.avgRest.catAvgArray){
+            [self.catKey addObjectsFromArray:[dictionary allKeys]];
+        }
+        self.scoreLabel1.text = self.catKey[0];
+        self.scoreLabel2.text = self.catKey[1];
+        self.scoreLabel3.text = self.catKey[2];
+        self.scoreLabel4.text = self.catKey[3];
+        self.scoreLabel5.text = self.catKey[4];
+        self.restaurantLabel.text = self.avgRest.resteraunt;
+    }];
     //populate self.previousReviews with Review Objects
     [[NetworkController sharedManager] getReviewsForRestInGenre:self.selectedRestaurant selectedFood:self.selectedGenre completionHandler:^(NSArray *list) {
         self.reviewArray = list;
         [self.commentTableView reloadData];
         
     }];
-    
-    [[NetworkController sharedManager]getAverageRatingObjectForRest:self.selectedRestaurant selectedFood:self.selectedGenre completionHandler:^(averageObject *avgRest) {
-        self.avgRest = avgRest;
-    
-    self.catKey = [[NSMutableArray alloc]init];
-    
-    for (NSDictionary *dictionary in self.avgRest.catAvgArray){
-        [self.catKey addObjectsFromArray:[dictionary allKeys]];
-    }
-    self.scoreLabel1.text = self.catKey[0];
-    self.scoreLabel2.text = self.catKey[1];
-    self.scoreLabel3.text = self.catKey[2];
-    self.scoreLabel4.text = self.catKey[3];
-    self.scoreLabel5.text = self.catKey[4];
-    self.restaurantLabel.text = self.avgRest.resteraunt;
-}];
-}
-
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear: animated];
-    
+    [self.commentTableView reloadData];
     [self.commentTableView deselectRowAtIndexPath:self.commentTableView.indexPathForSelectedRow animated:true];
 }
 
@@ -90,8 +90,10 @@
 - (IBAction)rateButtonPressed:(id)sender {
     RateViewController*newVC = [self.storyboard instantiateViewControllerWithIdentifier:@"RATING_VC"];
     if ([newVC isKindOfClass:[UIViewController class]]){
-        [self.navigationController pushViewController:newVC animated:true];
+        newVC.selectedFood = self.selectedGenre;
+        newVC.selectedRestaurant = self.selectedRestaurant;
         newVC.selectedReview = self.avgRest;
+        [self.navigationController pushViewController:newVC animated:true];
     }
 
 }
