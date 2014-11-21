@@ -23,5 +23,6 @@
 
 - (instancetype) initWithJSONDictionary: (NSDictionary *) jsonDict;
 + (NSArray *) parseDictionaryIntoArrayOfReviews: (NSDictionary *) dictionary selectedGenre: (Food *)selectedFood selectedRest: (Restaurant *)selectedRest;
++ (NSArray *) parseFullDictionaryIntoArrayOfReviews: (NSDictionary *) dictionary;
 
 @end

@@ -8,8 +8,11 @@
 
 #import "UserViewController.h"
 #import "User.h"
+#import "CommentCell.h"
+#import "Review.h"
 
 @interface UserViewController ()
+
 
 @end
 
@@ -18,20 +21,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
   
-  
-    
-    
+    self.userReviews = [[NSArray alloc]init];
+
 }
+
 
 -(void)viewWillAppear:(BOOL)animated{
   [super viewWillAppear:animated];
 
+    
+    self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
+    self.profileImageView.clipsToBounds = YES;
+    
+
   
   if ([[[NSUserDefaults standardUserDefaults] valueForKey:@"authToken"] isKindOfClass:[NSString class]]) {
       NSLog(@"We have a stored auth token");
+      [[NetworkController sharedManager] getUserComments :^(NSArray *list) {
+          
+      }];
       // getUserRatingList
   }else{
-    
     UIAlertController *loginAlert = [UIAlertController alertControllerWithTitle:@"login" message:nil preferredStyle:UIAlertControllerStyleAlert];
     [loginAlert addTextFieldWithConfigurationHandler:^(UITextField *userNameTextField) {
       userNameTextField.placeholder = @"username";
@@ -85,7 +95,7 @@
       UIAlertAction *Ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         
         
-        UITextField *loginTextField = signUpAlert.textFields[1];
+        UITextField *loginTextField = signUpAlert.textFields[0];
         self.login = loginTextField.text;
         
         UITextField *mailTextField = signUpAlert.textFields[1];
@@ -131,11 +141,20 @@
     [self presentViewController:loginAlert animated:true completion:nil];
     
   }
-  
-  
-  
-  
-
+    
 }
 
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.userReviews.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CommentCell* cell = [tableView dequeueReusableCellWithIdentifier:@"COMMENT_CELL" forIndexPath:indexPath];
+    Review* review = self.userReviews[indexPath.row];
+    cell.commentLabel.text = review.comment;
+    cell.userLabel.text = review.userName;
+    cell.dateLabel.text = review.genreName;
+    return cell;
+}
 @end

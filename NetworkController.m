@@ -361,4 +361,35 @@
         }];
 }
 
+
+//comment/user/list
+-(void)getUserComments: (void(^)(NSArray* list))completionHandler {
+    NSMutableString *urlString = [[NSMutableString alloc] initWithString:self.baseURL];
+    [urlString appendString: @"/comment/user/list"];
+    NSLog(urlString);
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:url];
+    [request setHTTPMethod:@"GET"];
+    NSString* authToken =[[NSUserDefaults standardUserDefaults] objectForKey:@"authToken"];
+    [request setValue:authToken forHTTPHeaderField:@"jwt"];
+    [[NetworkController sharedManager]performRequest:request completionHandler:^(NSData *rawData) {
+        //TO-DO Store the Token contained in rawData
+        if (rawData == nil) {
+            NSLog(@"Raw data was Nil");
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                completionHandler(@[]);
+            }];
+        } else {
+            //call json parser with RawData
+            NSLog(@"Have raw data that needs to be processed");
+            NSDictionary *dictionaryOfReviews = [jsonParser parseJSONIntoReviewDictionaryForSingleUser:rawData];
+            NSArray *list = [Review parseFullDictionaryIntoArrayOfReviews:dictionaryOfReviews];
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                completionHandler(list);
+            }];
+        }
+    }];
+}
+
 @end

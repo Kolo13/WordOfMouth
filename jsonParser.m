@@ -56,6 +56,15 @@
     return itemsDictionary;
 }
 
++ (NSDictionary *) parseJSONIntoReviewDictionaryForSingleUser: (NSData *) jsonData {
+    NSError* error;
+    NSDictionary* dictionaryOfObjects = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&error];
+   // NSMutableDictionary *itemsDictionary;
+    // NSArray* itemsArray = itemsDictionary[@"catsArray"];
+    return dictionaryOfObjects;
+}
+
+
 + (averageObject *) parseJSONIntoAvgReviewObject: (NSData *) jsonData {
     NSError* error;
     NSDictionary* dictionaryOfObjects = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&error];

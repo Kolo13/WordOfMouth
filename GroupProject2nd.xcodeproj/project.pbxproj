@@ -26,6 +26,7 @@
 		E113CBFF1A1DA45A0010E898 /* RatingCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E113CBFD1A1DA45A0010E898 /* RatingCategoryCell.xib */; };
 		E115B7421A1C4CC600968627 /* MainRestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E115B7411A1C4CC600968627 /* MainRestViewController.m */; };
 		E115B7451A1C4D1400968627 /* ReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E115B7441A1C4D1400968627 /* ReviewViewController.m */; };
+		E12A1D7A1A1FB13C00594658 /* bradley.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E12A1D791A1FB13C00594658 /* bradley.jpg */; };
 		E193B7F11A1C6AED002CE393 /* RestaurantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E193B7EF1A1C6AED002CE393 /* RestaurantCell.m */; };
 		E193B7F21A1C6AED002CE393 /* RestaurantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E193B7F01A1C6AED002CE393 /* RestaurantCell.xib */; };
 		E1C0E3561A1ED4F9009683BB /* child3.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C0E3551A1ED4F9009683BB /* child3.png */; };
@@ -93,6 +94,7 @@
 		E115B7411A1C4CC600968627 /* MainRestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainRestViewController.m; sourceTree = "<group>"; };
 		E115B7431A1C4D1400968627 /* ReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewViewController.h; sourceTree = "<group>"; };
 		E115B7441A1C4D1400968627 /* ReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewViewController.m; sourceTree = "<group>"; };
+		E12A1D791A1FB13C00594658 /* bradley.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bradley.jpg; sourceTree = "<group>"; };
 		E193B7EE1A1C6AED002CE393 /* RestaurantCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantCell.h; sourceTree = "<group>"; };
 		E193B7EF1A1C6AED002CE393 /* RestaurantCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantCell.m; sourceTree = "<group>"; };
 		E193B7F01A1C6AED002CE393 /* RestaurantCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantCell.xib; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				E1C0E35D1A1ED6AD009683BB /* hamburger5.png */,
 				E1C0E35B1A1ED5AE009683BB /* plate7.png */,
 				E1C0E3581A1ED548009683BB /* sausage1.png */,
+				E12A1D791A1FB13C00594658 /* bradley.jpg */,
 				E1C0E3551A1ED4F9009683BB /* child3.png */,
 				8BCDBD781A1EAE3900E7A01D /* dot_selected.png */,
 				8BCDBD791A1EAE3900E7A01D /* dot_empty.png */,
@@ -407,6 +410,7 @@
 				E193B7F21A1C6AED002CE393 /* RestaurantCell.xib in Resources */,
 				E1F774491A1926A2003E0AFE /* Images.xcassets in Resources */,
 				E1C0E35C1A1ED5AE009683BB /* plate7.png in Resources */,
+				E12A1D7A1A1FB13C00594658 /* bradley.jpg in Resources */,
 				8BCDBD7A1A1EAE3900E7A01D /* dot_selected.png in Resources */,
 				E113CBF51A1D48020010E898 /* CommentCell.xib in Resources */,
 			);
