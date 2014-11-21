@@ -25,8 +25,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-  [self createRating:self.rateView];
-  
+//  [self createRating:self.rateView];
+//  [self createRating:self.rateView2];
+//  [self createRating:self.rateView3];
+//  [self createRating:self.rateView4];
+//  [self createRating:self.rateView5];
+//
+ 
+
+
   
  //  [self createRating:self.rateView2];
 //  [self createRating:self.rateView3];
@@ -53,7 +60,9 @@
         self.avgRest = avgRest;
         
         self.catKey = [[NSMutableArray alloc]init];
-        
+        self.catVal = [[NSMutableArray alloc]init];
+      
+      
         for (NSDictionary *dictionary in self.avgRest.catAvgArray){
             [self.catKey addObjectsFromArray:[dictionary allKeys]];
         }
@@ -63,7 +72,42 @@
         self.scoreLabel4.text = self.catKey[3];
         self.scoreLabel5.text = self.catKey[4];
         self.restaurantLabel.text = self.avgRest.resteraunt;
+      
+      
+      for (NSDictionary *dictionary in self.avgRest.catAvgArray){
+        [self.catVal addObjectsFromArray:[dictionary allValues]];
+      }
+        //NSNumber  *first = self.catVal[0];
+        //self.rating1 = first.intValue;
+      [self createRating:self.rateView];
+      [self createRating:self.rateView2];
+      [self createRating:self.rateView3];
+      [self createRating:self.rateView4];
+      [self createRating:self.rateView5];
+      
+        //self.rating1 = first.intValue;
+      
+      
+        self.rating1 = [(NSNumber *)self.catVal[0] intValue];
+        [self.rateView setRating:self.rating1];
+        
+     
+        self.rating2 = [(NSNumber *)self.catVal[1] intValue];
+
+        [self.rateView setRating:2];
+              self.rating3 = [(NSNumber *)self.catVal[2] intValue];
+        
+        [self.rateView setRating:self.rating3];
+            self.rating4 = [(NSNumber *)self.catVal[3] intValue];
+        [self.rateView setRating:self.rating4];
+        
+             self.rating5 = [(NSNumber *)self.catVal[4] intValue];
+        [self.rateView setRating:self.rating5];
+      
     }];
+  
+  
+  
     //populate self.previousReviews with Review Objects
     [[NetworkController sharedManager] getReviewsForRestInGenre:self.selectedRestaurant selectedFood:self.selectedGenre completionHandler:^(NSArray *list) {
         self.reviewArray = list;
@@ -110,18 +154,6 @@
 }
 
 - (void)rateView:(RateView *)rateView ratingDidChange:(float)rating {
-  if (rateView.tag == 1){
-    [self.rateView setRating:3];
-
-  }else if (rateView.tag == 2){
-    self.rating2 = rating;
-  }else if (rateView.tag == 3){
-    self.rating3 = rating;
-  }else if (rateView.tag == 4){
-    self.rating4 = rating;
-  }else if (rateView.tag == 5){
-    self.rating5 = rating;
-  }
   
   
 }

@@ -17,6 +17,10 @@
 
 
 @property (weak, nonatomic) IBOutlet RateView *rateView;
+@property (weak, nonatomic) IBOutlet RateView *rateView2;
+@property (weak, nonatomic) IBOutlet RateView *rateView3;
+@property (weak, nonatomic) IBOutlet RateView *rateView4;
+@property (weak, nonatomic) IBOutlet RateView *rateView5;
 
 @property (weak, nonatomic) IBOutlet UILabel *restaurantLabel;
 @property (weak, nonatomic) IBOutlet UITableView *commentTableView;
