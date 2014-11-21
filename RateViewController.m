@@ -29,15 +29,15 @@
 
 - (void)rateView:(RateView *)rateView ratingDidChange:(float)rating {
   if (rateView.tag == 1){
-//     self.scoreLabel1.text = [NSString stringWithFormat:@"%f", rating];
-//  }else if (rateView.tag == 2){
-//    self.scoreLabel2.text = [NSString stringWithFormat:@"%f", rating];
-//  }else if (rateView.tag == 3){
-//    self.scoreLabel3.text = [NSString stringWithFormat:@"%f", rating];
-//  }else if (rateView.tag == 4){
-//    self.scoreLabel4.text = [NSString stringWithFormat:@"%f", rating];
-//  }else if (rateView.tag == 5){
-//    self.scoreLabel5.text = [NSString stringWithFormat:@"%f", rating];
+     self.rating1 = rating;
+  }else if (rateView.tag == 2){
+    self.rating2 = rating;
+  }else if (rateView.tag == 3){
+    self.rating3 = rating;
+  }else if (rateView.tag == 4){
+    self.rating4 = rating;
+  }else if (rateView.tag == 5){
+    self.rating5 = rating;
   }
 
 
@@ -54,5 +54,6 @@
 }
 
 - (IBAction)rateSubmissionPressed:(id)sender {
+  
 }
 @end
