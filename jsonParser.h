@@ -16,5 +16,5 @@
 + (BOOL) extractJWTTokenAndStoreIt: (NSData *) jsonData;
 + (NSDictionary *) parseJSONIntoReviewDictionary: (NSData *) jsonData selectedGenre: (Food *) selectedFood;
 + (averageObject *) parseJSONIntoAvgReviewObject: (NSData *) jsonData;
-
++ (NSDictionary *) parseJSONIntoReviewDictionaryForSingleUser: (NSData *) jsonData;
 @end
