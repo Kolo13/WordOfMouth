@@ -94,15 +94,15 @@
      
         self.rating2 = [(NSNumber *)self.catVal[1] intValue];
 
-        [self.rateView setRating:2];
+        [self.rateView2 setRating:2];
               self.rating3 = [(NSNumber *)self.catVal[2] intValue];
         
-        [self.rateView setRating:self.rating3];
+        [self.rateView3 setRating:self.rating3];
             self.rating4 = [(NSNumber *)self.catVal[3] intValue];
-        [self.rateView setRating:self.rating4];
+        [self.rateView4 setRating:self.rating4];
         
              self.rating5 = [(NSNumber *)self.catVal[4] intValue];
-        [self.rateView setRating:self.rating5];
+        [self.rateView5 setRating:self.rating5];
       
     }];
   

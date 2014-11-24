@@ -63,7 +63,7 @@
   newRating.halfSelectedImage = [UIImage imageNamed:@"kermit_half.png"];
   newRating.fullSelectedImage = [UIImage imageNamed:@"dot_selected.png"];
   newRating.rating = 0;
-  newRating.editable = NO;
+  newRating.editable = YES;
   newRating.maxRating = 5;
   newRating.delegate = self;
 }
